@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let theme = document.documentElement.getAttribute('data-theme');
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = theme === 'light' ? `rgba(99, 102, 241, ${this.alpha * 0.8})` : `rgba(6, 182, 212, ${this.alpha})`;
+                ctx.fillStyle = theme === 'light' ? `rgba(0, 102, 204, ${this.alpha * 0.8})` : `rgba(0, 212, 170, ${this.alpha})`;
                 ctx.fill();
             }
 
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function connectParticles() {
             let theme = document.documentElement.getAttribute('data-theme');
-            let lineColor = theme === 'light' ? 'rgba(99, 102, 241, 0.04)' : 'rgba(6, 182, 212, 0.05)';
+            let lineColor = theme === 'light' ? 'rgba(0, 102, 204, 0.04)' : 'rgba(0, 212, 170, 0.05)';
             let maxDistance = 120;
 
             for (let i = 0; i < particles.length; i++) {
