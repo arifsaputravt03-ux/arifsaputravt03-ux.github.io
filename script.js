@@ -194,6 +194,51 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('modal-desc').textContent = desc;
             document.getElementById('modal-results').textContent = results;
 
+            // Inject images gallery
+            const imagesAttr = card.getAttribute('data-images');
+            const modalGallery = document.getElementById('modal-gallery');
+            const mainGalleryImg = document.getElementById('modal-gallery-img');
+            const thumbsContainer = document.getElementById('modal-gallery-thumbs');
+            
+            if (imagesAttr) {
+                const images = imagesAttr.split(',').map(img => img.trim()).filter(img => img.length > 0);
+                
+                if (images.length > 0) {
+                    modalGallery.style.display = 'flex';
+                    mainGalleryImg.src = images[0];
+                    mainGalleryImg.style.opacity = '1';
+                    
+                    thumbsContainer.innerHTML = '';
+                    if (images.length > 1) {
+                        thumbsContainer.style.display = 'flex';
+                        images.forEach((imgSrc, idx) => {
+                            const thumb = document.createElement('img');
+                            thumb.src = imgSrc;
+                            thumb.alt = `${title} Screenshot ${idx + 1}`;
+                            thumb.className = idx === 0 ? 'thumb-item active' : 'thumb-item';
+                            
+                            thumb.addEventListener('click', () => {
+                                mainGalleryImg.style.opacity = '0.3';
+                                setTimeout(() => {
+                                    mainGalleryImg.src = imgSrc;
+                                    mainGalleryImg.style.opacity = '1';
+                                }, 150);
+                                
+                                thumbsContainer.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+                                thumb.classList.add('active');
+                            });
+                            thumbsContainer.appendChild(thumb);
+                        });
+                    } else {
+                        thumbsContainer.style.display = 'none';
+                    }
+                } else {
+                    modalGallery.style.display = 'none';
+                }
+            } else {
+                modalGallery.style.display = 'none';
+            }
+
             // Render stack tags
             const stackContainer = document.getElementById('modal-stack');
             stackContainer.innerHTML = '';
