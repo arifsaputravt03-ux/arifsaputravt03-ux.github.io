@@ -43,19 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- DARK / LIGHT MODE ---
-    const themeBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    themeBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
+    // --- FORCE DARK MODE ---
+    document.documentElement.setAttribute('data-theme', 'dark');
 
     // --- SCROLLSPY ---
     const sections = document.querySelectorAll('section[id]');
@@ -81,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- TYPING ANIMATION ---
-    const words = ["IT Support", "System Administrator", "Fullstack Developer"];
+    const words = ["IT Engineer", "System Administrator", "Fullstack Developer", "ERP Developer"];
     let i = 0;
     let timer;
 
@@ -152,18 +141,19 @@ document.addEventListener('DOMContentLoaded', () => {
             
             projectCards.forEach(card => {
                 const cardCategories = card.getAttribute('data-category').split(' ');
+                const wrapper = card.closest('.project-timeline-item') || card;
                 
                 if (filterValue === 'all' || cardCategories.includes(filterValue)) {
-                    card.style.display = 'flex';
+                    wrapper.style.display = 'flex';
                     setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
+                        wrapper.style.opacity = '1';
+                        wrapper.style.transform = 'scale(1)';
                     }, 50);
                 } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.95)';
+                    wrapper.style.opacity = '0';
+                    wrapper.style.transform = 'scale(0.95)';
                     setTimeout(() => {
-                        card.style.display = 'none';
+                        wrapper.style.display = 'none';
                     }, 300);
                 }
             });
@@ -270,45 +260,29 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    // --- CONTACT FORM ANIMATION ---
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Basic validation
-            const name = document.getElementById('form-name').value.trim();
-            const email = document.getElementById('form-email').value.trim();
-            const subject = document.getElementById('form-subject').value.trim();
-            const message = document.getElementById('form-message').value.trim();
-            
-            if (!name || !email || !subject || !message) {
-                alert('Silakan lengkapi semua kolom form kontak.');
-                return;
-            }
+    // --- PROJECTS CAROUSEL CONTROLS ---
+    const track = document.querySelector('.projects-horizontal-track');
+    const prevBtn = document.getElementById('project-prev-btn');
+    const nextBtn = document.getElementById('project-next-btn');
 
-            // Simulate success callback
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Mengirim...';
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="bx bx-check"></i> Pesan Terkirim!';
-                submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)'; // Green gradient
-                submitBtn.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.3)';
-                
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.style.background = '';
-                    submitBtn.style.boxShadow = '';
-                }, 3000);
-            }, 1500);
+    if (track && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -400, behavior: 'smooth' }); // card width (360) + gap (40) = 400
         });
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+        
+        const toggleButtons = () => {
+            const maxScrollLeft = track.scrollWidth - track.clientWidth;
+            prevBtn.style.opacity = track.scrollLeft <= 5 ? '0.3' : '1';
+            nextBtn.style.opacity = track.scrollLeft >= maxScrollLeft - 5 ? '0.3' : '1';
+        };
+        
+        track.addEventListener('scroll', toggleButtons);
+        window.addEventListener('resize', toggleButtons);
+        // Initial check after loading cards
+        setTimeout(toggleButtons, 300);
     }
 
     // --- CANVAS PARTICLES ---
@@ -322,17 +296,22 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.4;
-                this.vy = (Math.random() - 0.5) * 0.4;
+                this.vx = (Math.random() - 0.5) * 0.35;
+                this.vy = (Math.random() - 0.5) * 0.35;
                 this.radius = Math.random() * 2 + 1;
-                this.alpha = Math.random() * 0.5 + 0.1;
+                this.alpha = Math.random() * 0.5 + 0.15;
+                this.isGreen = Math.random() > 0.5;
             }
 
             draw() {
                 let theme = document.documentElement.getAttribute('data-theme');
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = theme === 'light' ? `rgba(0, 102, 204, ${this.alpha * 0.8})` : `rgba(0, 212, 170, ${this.alpha})`;
+                if (theme === 'light') {
+                    ctx.fillStyle = this.isGreen ? `rgba(0, 179, 119, ${this.alpha * 0.7})` : `rgba(0, 82, 217, ${this.alpha * 0.7})`;
+                } else {
+                    ctx.fillStyle = this.isGreen ? `rgba(0, 230, 153, ${this.alpha})` : `rgba(0, 98, 255, ${this.alpha})`;
+                }
                 ctx.fill();
             }
 
@@ -360,8 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function connectParticles() {
             let theme = document.documentElement.getAttribute('data-theme');
-            let lineColor = theme === 'light' ? 'rgba(0, 102, 204, 0.04)' : 'rgba(0, 212, 170, 0.05)';
-            let maxDistance = 120;
+            let maxDistance = 110;
 
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
@@ -371,7 +349,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (dist < maxDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = lineColor;
+                        let alpha = (1 - dist / maxDistance) * 0.08;
+                        if (theme === 'light') {
+                            ctx.strokeStyle = `rgba(0, 82, 217, ${alpha})`;
+                        } else {
+                            if (particles[i].isGreen && particles[j].isGreen) {
+                                ctx.strokeStyle = `rgba(0, 230, 153, ${alpha * 1.2})`;
+                            } else if (!particles[i].isGreen && !particles[j].isGreen) {
+                                ctx.strokeStyle = `rgba(0, 98, 255, ${alpha * 1.2})`;
+                            } else {
+                                ctx.strokeStyle = `rgba(0, 164, 255, ${alpha})`;
+                            }
+                        }
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
