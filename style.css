@@ -244,6 +244,14 @@ header.navbar.scrolled {
     color: var(--accent-primary);
 }
 
+.nav-cta {
+    padding: 8px 20px !important;
+    font-size: 0.85rem !important;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
 .logo-icon {
     width: 32px;
     height: 32px;
