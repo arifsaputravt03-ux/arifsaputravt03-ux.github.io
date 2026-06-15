@@ -149,7 +149,7 @@ li {
 }
 
 .text-gradient {
-    background: var(--gradient-1);
+    background: var(--gradient-btn);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -470,9 +470,9 @@ header.navbar.scrolled {
     width: 320px;
     height: 320px;
     border-radius: 50%;
-    background: var(--gradient-1);
+    background: var(--gradient-btn);
     filter: blur(40px);
-    opacity: 0.25;
+    opacity: 0.2;
     z-index: 0;
     animation: rotateGlow 10s infinite linear;
 }
@@ -482,20 +482,17 @@ header.navbar.scrolled {
     width: 280px;
     height: 280px;
     border-radius: 50%;
-    padding: 4px;
-    background: var(--gradient-1);
-    box-shadow: var(--shadow-lg);
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05), var(--shadow-lg);
     z-index: 1;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.hero-avatar-border::after {
-    content: '';
-    position: absolute;
-    inset: -12px;
-    border-radius: 50%;
-    border: 1px solid var(--accent-glow);
-    animation: glowPulse 4s ease-in-out infinite;
-    pointer-events: none;
+.hero-avatar-border:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15), var(--shadow-lg);
 }
 
 .hero-avatar {
