@@ -24,6 +24,9 @@
     --gradient-1: linear-gradient(135deg, #0052ff 0%, #00e699 45%, #d4ff00 80%, #ffffff 100%);
     --gradient-2: linear-gradient(135deg, #0052ff 0%, #d4ff00 100%);
     
+    /* Green-Blue Gradient for Buttons (No Lemon) */
+    --gradient-btn: linear-gradient(135deg, #00e699 0%, #0052ff 100%);
+    
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 24px rgba(0, 98, 255, 0.08);
     --shadow-lg: 0 16px 40px rgba(0, 98, 255, 0.15);
@@ -412,8 +415,8 @@ header.navbar.scrolled {
 }
 
 .btn-primary {
-    background: var(--gradient-1);
-    color: #0a0e17;
+    background: var(--gradient-btn);
+    color: #02040a;
     padding: 14px 32px;
     border-radius: 100px;
     font-weight: 700;
@@ -866,8 +869,8 @@ header.navbar.scrolled {
 }
 
 .filter-btn.active {
-    background: var(--gradient-1);
-    color: #03060f;
+    background: var(--gradient-btn);
+    color: #02040a;
     border-color: transparent;
     box-shadow: 0 4px 12px var(--accent-glow);
     font-weight: 700;
@@ -1374,8 +1377,8 @@ footer {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: var(--gradient-1);
-    color: #000;
+    background: var(--gradient-btn);
+    color: #02040a;
     display: flex;
     align-items: center;
     justify-content: center;
