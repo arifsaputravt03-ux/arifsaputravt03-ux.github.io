@@ -1688,6 +1688,41 @@ footer {
         gap: 6px;
     }
 
+    #about {
+        text-align: center;
+    }
+
+    #about .section-label {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-summary {
+        align-items: center;
+    }
+
+    .about-bullets {
+        align-items: center;
+    }
+
+    .bullet-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .tab-content-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tab-content-item i {
+        margin-top: 0;
+    }
+
     .timeline::before {
         left: 20px;
         transform: none;
