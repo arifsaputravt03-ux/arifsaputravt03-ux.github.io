@@ -1,1 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arif Saputra | Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    line-height:1.6;
+}
+
+header{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    font-size:4rem;
+}
+
+header h2{
+    color:#38bdf8;
+    margin:10px 0;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:#000;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.title{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:40px;
+    color:#38bdf8;
+}
+
+.about{
+    text-align:center;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.skill{
+    background:#1e293b;
+    padding:10px 15px;
+    border-radius:20px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+}
+
+a{
+    color:#38bdf8;
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    margin-bottom:20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="https://avatars.githubusercontent.com/u/1?v=4" class="profile">
+
+    <h1>Arif Saputra</h1>
+
+    <h2>IT Support | System Administrator | Fullstack Developer</h2>
+
+    <p>
+        Berpengalaman lebih dari 3 tahun di bidang IT Support,
+        Procurement, System Administration, Networking dan
+        Software Development.
+    </p>
+
+    <a href="#about" class="btn">Lihat Portfolio</a>
+</header>
+
+<section id="about">
+    <h2 class="title">Tentang Saya</h2>
+
+    <div class="about">
+        <p>
+            Lulusan D3 Manajemen Informatika dan saat ini sedang
+            menempuh S1 Teknik Informatika.
+            Memiliki pengalaman dalam pengelolaan server,
+            jaringan komputer, procurement, ERP,
+            pengembangan aplikasi web, IoT dan database.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2 class="title">Keahlian</h2>
+
+    <div class="skills">
+        <div class="skill">Laravel</div>
+        <div class="skill">React JS</div>
+        <div class="skill">Vue JS</div>
+        <div class="skill">NestJS</div>
+        <div class="skill">Golang</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">PostgreSQL</div>
+        <div class="skill">MongoDB</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Proxmox</div>
+        <div class="skill">Mikrotik</div>
+        <div class="skill">Cisco</div>
+        <div class="skill">IoT</div>
+        <div class="skill">Firebase</div>
+    </div>
+</section>
+
+<section>
+    <h2 class="title">Pengalaman Kerja</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>IT Support & Procurement</h3>
+            <p>
+                Mengelola infrastruktur IT perusahaan,
+                troubleshooting hardware/software,
+                pengadaan barang dan administrasi aset.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>System Administrator</h3>
+            <p>
+                Mengelola server Linux, Proxmox,
+                database, jaringan LAN/WAN,
+                VLAN, CCTV dan sistem absensi.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Fullstack Developer</h3>
+            <p>
+                Mengembangkan ERP, CRM,
+                E-Commerce, PPDB Online,
+                Sistem Perpustakaan dan Dashboard Monitoring.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="title">Project Unggulan</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Monitoring Gudang Kimia IoT</h3>
+            <p>
+                Sistem monitoring suhu dan kelembapan
+                berbasis fuzzy logic dan NodeMCU.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Gate Barrier RFID</h3>
+            <p>
+                Sistem akses perpustakaan menggunakan
+                RFID dan API berbasis Arduino Mega.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>ERP Management System</h3>
+            <p>
+                Sistem manajemen perusahaan
+                berbasis web dengan multi modul.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="title">Sertifikasi</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>CCNA</h3>
+            <p>Cisco Certified Network Associate</p>
+        </div>
+
+        <div class="card">
+            <h3>MTCNA</h3>
+            <p>MikroTik Certified Network Associate</p>
+        </div>
+
+        <div class="card">
+            <h3>BNSP DBA</h3>
+            <p>Database Administrator</p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="title">Kontak</h2>
+
+    <div class="about">
+        <p>Email : arif@example.com</p>
+        <p>LinkedIn : linkedin.com/in/arifsaputravt03</p>
+        <p>Instagram : @arifsaputravt03</p>
+        <p>Bandung, Jawa Barat</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Arif Saputra | Portfolio Website
+</footer>
+
+</body>
+</html>
