@@ -1669,13 +1669,42 @@ footer {
         margin-bottom: 20px;
     }
     
+    .section-label {
+        display: inline-flex !important;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-title {
+        text-align: center !important;
+        width: 100%;
+    }
+
     .stats-banner {
         grid-template-columns: 1fr;
         margin-top: 20px;
     }
+
+    .stat-card {
+        justify-content: center;
+        text-align: center;
+    }
     
     .skills-grid, .cert-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-column {
+        text-align: center;
+    }
+
+    .skills-column h3 {
+        justify-content: center;
+    }
+
+    .skills-items {
+        justify-content: center;
     }
     
     .about-tabs-container {
@@ -1688,18 +1717,9 @@ footer {
         gap: 6px;
     }
 
-    #about {
-        text-align: center;
-    }
-
-    #about .section-label {
-        display: inline-flex;
-        justify-content: center;
-        width: 100%;
-    }
-
     .about-summary {
         align-items: center;
+        text-align: center;
     }
 
     .about-bullets {
@@ -1721,6 +1741,10 @@ footer {
 
     .tab-content-item i {
         margin-top: 0;
+    }
+
+    .timeline-card {
+        text-align: center;
     }
 
     .timeline::before {
