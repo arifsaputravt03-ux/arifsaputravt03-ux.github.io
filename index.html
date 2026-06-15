@@ -1,279 +1,764 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arif Saputra | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:#0f172a;
-    color:#fff;
-    line-height:1.6;
-}
-
-header{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    padding:20px;
-}
-
-header h1{
-    font-size:4rem;
-}
-
-header h2{
-    color:#38bdf8;
-    margin:10px 0;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:#38bdf8;
-    color:#000;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:600;
-}
-
-section{
-    max-width:1100px;
-    margin:auto;
-    padding:80px 20px;
-}
-
-.title{
-    text-align:center;
-    font-size:2rem;
-    margin-bottom:40px;
-    color:#38bdf8;
-}
-
-.about{
-    text-align:center;
-}
-
-.card-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:15px;
-}
-
-.card h3{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    justify-content:center;
-}
-
-.skill{
-    background:#1e293b;
-    padding:10px 15px;
-    border-radius:20px;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#020617;
-}
-
-a{
-    color:#38bdf8;
-}
-
-.profile{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    border:5px solid #38bdf8;
-    margin-bottom:20px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Profesional Arif Saputra - IT Support, System Administrator, dan Fullstack Developer Berpengalaman.">
+    <title>Arif Saputra | Portfolio</title>
+    
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <img src="https://avatars.githubusercontent.com/u/1?v=4" class="profile">
+    <!-- Canvas Background for Particles -->
+    <canvas id="particle-canvas"></canvas>
 
-    <h1>Arif Saputra</h1>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">A</span>
+                Arif Saputra
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home" class="nav-item active">Beranda</a>
+                <a href="#about" class="nav-item">Tentang</a>
+                <a href="#skills" class="nav-item">Keahlian</a>
+                <a href="#experience" class="nav-item">Pengalaman</a>
+                <a href="#projects" class="nav-item">Proyek</a>
+                <a href="#certifications" class="nav-item">Sertifikasi</a>
+                <a href="#contact" class="nav-item">Kontak</a>
+            </nav>
 
-    <h2>IT Support | System Administrator | Fullstack Developer</h2>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                    <i class="bx bx-moon"></i>
+                    <i class="bx bx-sun"></i>
+                </button>
+                <div class="menu-toggle">
+                    <i class="bx bx-menu"></i>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <p>
-        Berpengalaman lebih dari 3 tahun di bidang IT Support,
-        Procurement, System Administration, Networking dan
-        Software Development.
-    </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="bx bx-code-alt"></i> IT Support | SysAdmin | Developer
+                </div>
+                <h1 class="hero-title">Halo, Saya <br><span class="text-gradient">Arif Saputra</span></h1>
+                <h2 class="hero-subtitle">Saya seorang <span id="typing-text" class="text-gradient"></span></h2>
+                <p class="hero-desc">
+                    Berpengalaman lebih dari 3 tahun di bidang IT Support, Procurement, System Administration, Networking, dan Software Development. Terbiasa membangun otomasi dan sistem skala operasional.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">Lihat Proyek <i class="bx bx-arrow-to-bottom"></i></a>
+                    <a href="#contact" class="btn-secondary">Hubungi Saya <i class="bx bx-chat"></i></a>
+                </div>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <div class="hero-avatar-glow"></div>
+                <div class="hero-avatar-border">
+                    <img src="Foto.jpg" alt="Arif Saputra Profile" class="hero-avatar" onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/arifsaputravt03-ux';">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="#about" class="btn">Lihat Portfolio</a>
-</header>
-
-<section id="about">
-    <h2 class="title">Tentang Saya</h2>
-
-    <div class="about">
-        <p>
-            Lulusan D3 Manajemen Informatika dan saat ini sedang
-            menempuh S1 Teknik Informatika.
-            Memiliki pengalaman dalam pengelolaan server,
-            jaringan komputer, procurement, ERP,
-            pengembangan aplikasi web, IoT dan database.
-        </p>
+    <!-- Stats Banner -->
+    <div class="container">
+        <div class="stats-banner glass-panel">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bx bx-briefcase"></i></div>
+                <div class="stat-info">
+                    <h3>3+</h3>
+                    <p>Tahun Pengalaman</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bx bx-layer"></i></div>
+                <div class="stat-info">
+                    <h3>12+</h3>
+                    <p>Proyek Selesai</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bx bx-certification"></i></div>
+                <div class="stat-info">
+                    <h3>3+</h3>
+                    <p>Sertifikasi Profesional</p>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
 
-<section>
-    <h2 class="title">Keahlian</h2>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="about-grid">
+                <div class="about-summary">
+                    <h3>Latar Belakang & Pendidikan</h3>
+                    <p>
+                        Saya lulusan D3 Manajemen Informatika dan saat ini sedang menempuh studi lanjut S1 Teknik Informatika. Menggabungkan pengetahuan teoretis dan implementasi praktis untuk memberikan solusi terbaik.
+                    </p>
+                    <p>
+                        Keahlian saya berfokus pada infrastruktur IT yang kokoh, otomasi proses bisnis, dan pengembangan perangkat lunak terintegrasi yang andal untuk efisiensi operasional.
+                    </p>
+                    <ul class="about-bullets">
+                        <li><i class="bx bx-check-double"></i> Berorientasi pada efisiensi biaya dan optimasi proses</li>
+                        <li><i class="bx bx-check-double"></i> Terbiasa mengelola sistem logistik, server fisik & awan</li>
+                        <li><i class="bx bx-check-double"></i> Mampu mengotomasi dokumen menggunakan Python</li>
+                    </ul>
+                </div>
 
-    <div class="skills">
-        <div class="skill">Laravel</div>
-        <div class="skill">React JS</div>
-        <div class="skill">Vue JS</div>
-        <div class="skill">NestJS</div>
-        <div class="skill">Golang</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">PostgreSQL</div>
-        <div class="skill">MongoDB</div>
-        <div class="skill">Linux</div>
-        <div class="skill">Proxmox</div>
-        <div class="skill">Mikrotik</div>
-        <div class="skill">Cisco</div>
-        <div class="skill">IoT</div>
-        <div class="skill">Firebase</div>
+                <div class="about-tabs-container glass-panel" style="padding: 30px;">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="it-systems">IT & Systems</button>
+                        <button class="tab-btn" data-tab="logistics">Logistics & Proc</button>
+                        <button class="tab-btn" data-tab="admin">Administration</button>
+                    </div>
+
+                    <div id="it-systems" class="tab-panel active">
+                        <div class="tab-content-list">
+                            <div class="tab-content-item">
+                                <i class="bx bx-server"></i>
+                                <div>
+                                    <h4>IT Infrastructure & Servers</h4>
+                                    <p>Mengelola Proxmox, server database (MySQL/PGSQL/MongoDB), NAS Storage, container Docker, PABX, serta CCTV.</p>
+                                </div>
+                            </div>
+                            <div class="tab-content-item">
+                                <i class="bx bx-git-branch"></i>
+                                <div>
+                                    <h4>Fullstack Software Development</h4>
+                                    <p>Mengembangkan sistem ERP PWA multi-modul (HR, Finance, Logistik, Aset, Procurement) menggunakan Node JS & React.</p>
+                                </div>
+                            </div>
+                            <div class="tab-content-item">
+                                <i class="bx bx-network-chart"></i>
+                                <div>
+                                    <h4>Networking & Automation</h4>
+                                    <p>Konfigurasi VLAN, routing/switching (Cisco/MikroTik), otomasi Python (OCR, pemrosesan dokumen batch) & IoT.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="logistics" class="tab-panel">
+                        <div class="tab-content-list">
+                            <div class="tab-content-item">
+                                <i class="bx bx-cart"></i>
+                                <div>
+                                    <h4>End-to-End Procurement</h4>
+                                    <p>Merencanakan anggaran belanja operasional, pengadaan barang IT & non-IT, negosiasi vendor, PO/DO, dan administrasi.</p>
+                                </div>
+                            </div>
+                            <div class="tab-content-item">
+                                <i class="bx bx-package"></i>
+                                <div>
+                                    <h4>Stock & Quality Control</h4>
+                                    <p>Mengelola penyimpanan gudang, kontrol kualitas material teknis, dan distribusi logistik operasional proyek.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="admin" class="tab-panel">
+                        <div class="tab-content-list">
+                            <div class="tab-content-item">
+                                <i class="bx bx-spreadsheet"></i>
+                                <div>
+                                    <h4>Reporting & Sheets</h4>
+                                    <p>Mengolah data transaksi, analisis anggaran, dan pelaporan berkala menggunakan Microsoft Excel serta Google Sheets.</p>
+                                </div>
+                            </div>
+                            <div class="tab-content-item">
+                                <i class="bx bx-file-find"></i>
+                                <div>
+                                    <h4>Digital Archiving & Docs</h4>
+                                    <p>Membuat dokumen paket uji teknis (test package Hydro Test pipa, Daily Welding Report, dan laporan inspeksi).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Keahlian Saya</h2>
+            <div class="skills-grid">
+                <div class="skills-column glass-panel">
+                    <h3><i class="bx bx-code"></i> Programming & Web</h3>
+                    <div class="skills-items">
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Laravel / PHP</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>React JS / Vue JS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Node JS / NestJS</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Golang / Python / C++</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-column glass-panel">
+                    <h3><i class="bx bx-data"></i> Databases & Tools</h3>
+                    <div class="skills-items">
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>MySQL / PostgreSQL</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>MongoDB</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Firebase</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Git / Postman / Vite</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-column glass-panel">
+                    <h3><i class="bx bx-hdd"></i> Systems & Network</h3>
+                    <div class="skills-items">
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Linux OS (Ubuntu/Debian)</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Proxmox VE & Containers</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>MikroTik (Routing/VLAN)</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-info">
+                                <span>Cisco CCNA Core</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress-bg">
+                                <div class="skill-progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Riwayat Karir & Proyek</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-card glass-panel">
+                        <span class="timeline-date">Feb 2026 - Sekarang</span>
+                        <h3 class="timeline-title">Software Developer</h3>
+                        <h4 class="timeline-subtitle">PT Trigatra Sistem Integrasi, South Tangerang</h4>
+                        <p class="timeline-desc">Fokus pada pengembangan sistem ERP custom berbasis Web PWA untuk logistik, HR, finance, dan aset, serta integrasi mesin absensi ZKTeco.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card glass-panel">
+                        <span class="timeline-date">Agt 2024 - Mar 2025</span>
+                        <h3 class="timeline-title">IT Infrastructure & Procurement</h3>
+                        <h4 class="timeline-subtitle">SMKN 5 Bandung & SMKS Al-Falah</h4>
+                        <p class="timeline-desc">Melakukan perencanaan, desain laboratorium komputer, instalasi software/hardware, perakitan papan interaktif, dan pengadaan mesin las.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card glass-panel">
+                        <span class="timeline-date">Jul 2023 - Apr 2025</span>
+                        <h3 class="timeline-title">Procurement Coordinator</h3>
+                        <h4 class="timeline-subtitle">SMKS Hussein Sastra Negara, Bandung</h4>
+                        <p class="timeline-desc">Bertanggung jawab penuh atas pengadaan alat berat bengkel "Car Lift 2 Post", mulai dari pemilihan supplier hingga komisioning operasional.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card glass-panel">
+                        <span class="timeline-date">Jun 2021 - Jan 2022</span>
+                        <h3 class="timeline-title">IT Infrastructure & IoT Dev</h3>
+                        <h4 class="timeline-subtitle">PGN Com Regional Office Lampung</h4>
+                        <p class="timeline-desc">Membangun perangkat absensi nirsentuh berbasis NFC, sensor suhu MLX90614, protokol komunikasi MQTT, dan penyimpanan data Firebase.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card glass-panel">
+                        <span class="timeline-date">Des 2019</span>
+                        <h3 class="timeline-title">IoT Research & Developer</h3>
+                        <h4 class="timeline-subtitle">Pond Dept. Fisheries Lampung Polytechnic</h4>
+                        <p class="timeline-desc">Merancang arsitektur IoT pemantauan air kolam (pH & level air) otomatis dengan notifikasi real-time via bot Telegram.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Proyek Unggulan</h2>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+                <button class="filter-btn" data-filter="software">Software Dev</button>
+                <button class="filter-btn" data-filter="iot">IoT & Systems</button>
+                <button class="filter-btn" data-filter="procurement">Procurement</button>
+            </div>
+
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card glass-panel" 
+                     data-category="software" 
+                     data-category-label="Software Development"
+                     data-title="Enterprise Resource Planning (ERP)"
+                     data-role="Software Developer | Feb 2026 - Sekarang"
+                     data-location="PT Trigatra Sistem Integrasi - South Tangerang, Banten"
+                     data-date="Februari 2026 - Sekarang"
+                     data-desc="Pengembangan sistem ERP berbasis PWA yang komprehensif mencakup frontend, backend, desain arsitektur, dan integrasi perangkat keras absensi. Sistem mengelola Supply Chain, Logistik Gudang, Pengadaan, Keuangan, HR, dan Aset dalam satu platform terpusat dengan alur kerja end-to-end terintegrasi otomatis."
+                     data-results="Operasional perusahaan berjalan lebih terstruktur dan efisien. Mengurangi pekerjaan manual berulang serta meminimalisasi kesalahan penginputan data."
+                     data-stack="React JS (PWA), Node JS, Express JS, Vite, Axios, REST API, ZKTeco BioTime Integration, MongoDB, JavaScript">
+                    <div class="project-thumbnail">
+                        <i class="bx bx-rocket project-thumbnail-icon"></i>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">Lihat Detail <i class="bx bx-zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Software Development</span>
+                        <h3 class="project-title">Enterprise Resource Planning (ERP)</h3>
+                        <p class="project-desc">Sistem ERP berbasis PWA mencakup HR, Logistik, Procurement, Finance, Aset & absensi otomatis.</p>
+                        <div class="project-stack">
+                            <span class="stack-tag">React JS</span>
+                            <span class="stack-tag">Node JS</span>
+                            <span class="stack-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-panel" 
+                     data-category="software" 
+                     data-category-label="Software Development"
+                     data-title="Web Company Profile & Landing Page"
+                     data-role="Software Developer | Jan 2026"
+                     data-location="PT Trigatra Sistem Integrasi - South Tangerang, Banten"
+                     data-date="Januari 2026"
+                     data-desc="Pembuatan website company profile PT Trigatra Sistem Integrasi secara utuh dan independen (end-to-end) sebagai media presentasi layanan, portofolio ICT, Building Automation, MEP Engineering, dan Software Development yang terintegrasi dengan Google Maps, WhatsApp Web Link, dan pengiriman email SMTP."
+                     data-results="Meningkatkan kredibilitas profesionalisme perusahaan dan memudahkan komunikasi dengan calon klien. Kunjungi web di: https://trigatra.co/"
+                     data-stack="HTML, CSS, PHP, SMTP Email, Google Maps API, WhatsApp Link Integration">
+                    <div class="project-thumbnail">
+                        <i class="bx bx-globe project-thumbnail-icon"></i>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">Lihat Detail <i class="bx bx-zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Software Development</span>
+                        <h3 class="project-title">Web Company Profile & Landing Page</h3>
+                        <p class="project-desc">Website profil perusahaan resmi yang responsif dilengkapi integrasi email SMTP dan maps API.</p>
+                        <div class="project-stack">
+                            <span class="stack-tag">HTML / CSS</span>
+                            <span class="stack-tag">PHP</span>
+                            <span class="stack-tag">SMTP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-panel" 
+                     data-category="software" 
+                     data-category-label="Software Development"
+                     data-title="Smart OCR & Document Processing System"
+                     data-role="Software Developer | Sep 2025"
+                     data-location="Chrysalis Tripatra LOBP Shell Project - West Java"
+                     data-date="September 2025"
+                     data-desc="Pengembangan aplikasi desktop Python untuk otomasi pemrosesan dokumen legasi. Fitur utama mencakup deteksi dokumen berbasis OCR, penginputan batch otomatis ke database relasional, serta pembagian dan penggantian nama berkas RFI secara pintar."
+                     data-results="Mengurangi tumpukan dokumen tertunda (outstanding) secara drastis dari 11.000 dokumen menjadi hanya 2.000 dokumen, sekaligus mempercepat penyiapan paket uji Hydro Test pipa."
+                     data-stack="Python, SQL, PyMuPDF, Pytesseract, Pandas, Tkinter, Fitz, PyQt5">
+                    <div class="project-thumbnail">
+                        <i class="bx bx-scan project-thumbnail-icon"></i>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">Lihat Detail <i class="bx bx-zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Software Development</span>
+                        <h3 class="project-title">Smart OCR & Document Processing</h3>
+                        <p class="project-desc">Otomasi desktop berbasis Python untuk memindai dokumen dengan OCR, dan ekstraksi data batch.</p>
+                        <div class="project-stack">
+                            <span class="stack-tag">Python</span>
+                            <span class="stack-tag">PyTesseract</span>
+                            <span class="stack-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-panel" 
+                     data-category="iot" 
+                     data-category-label="IoT & Systems"
+                     data-title="Fuzzy Logic Chemical Storage Monitoring System"
+                     data-role="IT Infrastructure & Software Developer | Mar 2025 - Jun 2025"
+                     data-location="PT Ladang Karya Husada - Bandung, Jawa Barat"
+                     data-date="Maret 2025 - Juni 2025"
+                     data-desc="Membangun sistem pemantauan suhu dan kelembapan secara real-time pada gudang penyimpanan bahan kimia cair (Hydrogen Peroxide) berbasis IoT. Logika fuzzy digunakan untuk mengatur aktivasi AC dan exhaust fan secara otomatis. Dilengkapi dengan antarmuka web PWA dan analisis data Matlab."
+                     data-results="Sistem mampu menstabilkan kondisi lingkungan dalam batas aman secara otomatis, meminimalkan risiko kerusakan kimiawi akibat suhu ekstrem, dan mendigitalisasi pelaporan pengawasan."
+                     data-stack="C++, ESP32/Arduino, Sensor Suhu & Kelembapan, Relay System, IoT Automation, Matlab, PWA Interface">
+                    <div class="project-thumbnail">
+                        <i class="bx bx-water project-thumbnail-icon"></i>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">Lihat Detail <i class="bx bx-zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">IoT & Systems</span>
+                        <h3 class="project-title">Fuzzy Chemical Warehouse IoT</h3>
+                        <p class="project-desc">Sistem monitoring sensor suhu gudang kimia berbasis IoT dengan pengontrol AC otomatis.</p>
+                        <div class="project-stack">
+                            <span class="stack-tag">ESP32</span>
+                            <span class="stack-tag">C++</span>
+                            <span class="stack-tag">Matlab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card glass-panel" 
+                     data-category="iot" 
+                     data-category-label="IoT & Systems"
+                     data-title="Non-Contact Temp & Attendance Device"
+                     data-role="IT Infrastructure & Software Developer | Jun 2021 - Jan 2022"
+                     data-location="PGN Com Regional Office Lampung"
+                     data-date="Juni 2021 - Januari 2022"
+                     data-desc="Mengembangkan perangkat keras kehadiran nirsentuh dengan mengintegrasikan modul NFC (RC522), sensor jarak, dan sensor suhu non-kontak (MLX90614). Sistem menggunakan protokol MQTT untuk mengirimkan data ke backend Node JS secara real-time, dengan visualisasi web berbasis React dan log penyimpanan Firebase."
+                     data-results="Mengurangi risiko penularan penyakit di kantor dengan meminimalkan kontak fisik, mempercepat proses check-in karyawan, dan mendata suhu tubuh secara presisi."
+                     data-stack="C++, JavaScript, ESP32, NFC RC522, MLX90614 Temp Sensor, MQTT Protocol, Node JS, React JS, Firebase">
+                    <div class="project-thumbnail">
+                        <i class="bx bx-user-check project-thumbnail-icon"></i>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">Lihat Detail <i class="bx bx-zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">IoT & Systems</span>
+                        <h3 class="project-title">Non-Contact Temp & Attendance</h3>
+                        <p class="project-desc">Perangkat absensi pintar non-kontak berbasis NFC & sensor suhu inframerah dengan log data MQTT.</p>
+                        <div class="project-stack">
+                            <span class="stack-tag">ESP32</span>
+                            <span class="stack-tag">NFC</span>
+                            <span class="stack-tag">MQTT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card glass-panel" 
+                     data-category="iot" 
+                     data-category-label="IoT & Systems"
+                     data-title="IoT Flood Monitoring for Fishpond"
+                     data-role="IT Infrastructure & Software Developer | Des 2019"
+                     data-location="Politeknik Negeri Lampung - Lampung"
+                     data-date="Desember 2019"
+                     data-desc="Mengembangkan sistem pemantauan kolam ikan terpadu, mencakup deteksi tingkat air untuk pencegahan banjir (menggunakan sensor ultrasonik), pengukuran tingkat keasaman (sensor pH), dan sistem pakan otomatis. Seluruh data disalurkan via protokol MQTT dan mengaktifkan notifikasi Telegram otomatis."
+                     data-results="Meningkatkan efisiensi pemeliharaan ikan, mencegah kerugian akibat banjir luapan, serta menjaga kestabilan kualitas air melalui bot Telegram."
+                     data-stack="C++, ESP32 / NodeMCU, Arduino IDE, MQTT, Python, Telegram Bot API, Sensor pH, Sensor Ultrasonik">
+                    <div class="project-thumbnail">
+                        <i class="bx bx-line-chart project-thumbnail-icon"></i>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">Lihat Detail <i class="bx bx-zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">IoT & Systems</span>
+                        <h3 class="project-title">IoT Flood Monitoring for Fishpond</h3>
+                        <p class="project-desc">Monitoring sensor keasaman air, elevasi kolam, dan aktuator pakan terjadwal via bot Telegram.</p>
+                        <div class="project-stack">
+                            <span class="stack-tag">NodeMCU</span>
+                            <span class="stack-tag">MQTT</span>
+                            <span class="stack-tag">Telegram API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card glass-panel" 
+                     data-category="procurement" 
+                     data-category-label="Procurement & Logistics"
+                     data-title="Technical Sourcing & Equipment Procurement"
+                     data-role="Procurement Specialist | 2023 - 2025"
+                     data-location="Berbagai Instansi Pendidikan & Pemerintahan - Bandung"
+                     data-date="Juli 2023 - April 2025"
+                     data-desc="Mengelola seluruh siklus pengadaan alat-alat teknis operasional tingkat menengah hingga besar: pengadaan alat berat Car Lift 2 Post untuk bengkel praktik SMKS Hussein Sastra Negara, desain layout dan pengadaan perangkat keras laboratorium komputer SMKN 5 Bandung, penyediaan mesin las & perakitan papan interaktif SMKS Al-Falah, instalasi CCTV Kantor DP3A Bandung, serta QC dan logistik pengiriman laptop Dinas Pendidikan Kota Bandung."
+                     data-results="Tercapainya pengadaan barang tepat waktu dengan anggaran efisien, serta lulus uji kelayakan fungsi saat diserahkan ke pengguna akhir."
+                     data-stack="Vendor Vetting, Budgeting, Quality Control, Technical Equipment Sourcing, Device Assembly, Logistics & Shipping">
+                    <div class="project-thumbnail">
+                        <i class="bx bx-package project-thumbnail-icon"></i>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">Lihat Detail <i class="bx bx-zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Procurement</span>
+                        <h3 class="project-title">Technical Sourcing & Equipment Procurement</h3>
+                        <p class="project-desc">Manajemen pengadaan barang teknis mencakup laboratorium komputer, lift mobil bengkel, dan perangkat IT dinas.</p>
+                        <div class="project-stack">
+                            <span class="stack-tag">Sourcing</span>
+                            <span class="stack-tag">Quality Control</span>
+                            <span class="stack-tag">Logistics</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Sertifikasi Profesional</h2>
+            <div class="cert-grid">
+                
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bx-network-chart"></i></div>
+                    <h3 class="cert-title">Cisco Certified Network Associate (CCNA)</h3>
+                    <p class="cert-issuer">Cisco Systems</p>
+                    <p class="cert-desc">Keahlian validasi dasar jaringan komputer mencakup routing, switching, keamanan IP, dan pemecahan masalah (troubleshooting).</p>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bx-shield-quarter"></i></div>
+                    <h3 class="cert-title">MikroTik Certified Network Associate (MTCNA)</h3>
+                    <p class="cert-issuer">MikroTik</p>
+                    <p class="cert-desc">Menguasai dasar pengelolaan perangkat RouterOS, konfigurasi firewall, DHCP, routing, NAT, dan alokasi bandwidth.</p>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bx-data"></i></div>
+                    <h3 class="cert-title">Database Administrator (BNSP DBA)</h3>
+                    <p class="cert-issuer">Badan Nasional Sertifikasi Profesi</p>
+                    <p class="cert-desc">Sertifikasi kompetensi resmi negara dalam hal administrasi, optimasi skema, manajemen backup, dan keamanan database.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-header">
+                        <h3>Mari Bekerja Sama</h3>
+                        <p>Tertarik mendiskusikan peluang kerja, integrasi infrastruktur IT, otomasi dokumen, atau pengembangan web fullstack? Hubungi saya kapan saja!</p>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-icon"><i class="bx bx-envelope"></i></div>
+                            <div class="contact-info-text">
+                                <p>Email</p>
+                                <p><a href="mailto:arifsaputravt03@gmail.com">arifsaputravt03@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-icon"><i class="bx bx-map"></i></div>
+                            <div class="contact-info-text">
+                                <p>Lokasi</p>
+                                <p>Bandung, Jawa Barat, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/arifsaputravt03" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://instagram.com/arifsaputravt03" target="_blank" class="social-btn" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://github.com/arifsaputravt03-ux" target="_blank" class="social-btn" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form glass-panel">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="form-name">Nama Lengkap</label>
+                            <input type="text" id="form-name" class="form-control" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email</label>
+                            <input type="email" id="form-email" class="form-control" placeholder="email@domain.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-subject">Subjek</label>
+                        <input type="text" id="form-subject" class="form-control" placeholder="Judul Pesan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message">Pesan Anda</label>
+                        <textarea id="form-message" class="form-control" placeholder="Tuliskan detail kebutuhan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="justify-content: center; width: 100%;">
+                        Kirim Pesan <i class="bx bx-send"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <a href="#" class="footer-logo">
+                <span class="logo-icon">A</span>
+                Arif Saputra
+            </a>
+            <p class="footer-text">&copy; 2026 Arif Saputra | Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <i class="bx bx-up-arrow-alt"></i>
+    </button>
+
+    <!-- Project Modal Dialog -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <button class="modal-close" aria-label="Close modal"><i class="bx bx-x"></i></button>
+            <div class="modal-header">
+                <span id="modal-tag" class="modal-tag">Kategori</span>
+                <h3 id="modal-title" class="modal-title">Nama Proyek</h3>
+            </div>
+            
+            <div class="modal-meta-grid">
+                <div class="modal-meta-item">
+                    <p>Peran / Posisi</p>
+                    <p id="modal-role">Developer</p>
+                </div>
+                <div class="modal-meta-item">
+                    <p>Waktu Pengerjaan</p>
+                    <p id="modal-date">Januari 2026</p>
+                </div>
+                <div class="modal-meta-item">
+                    <p>Lokasi Proyek</p>
+                    <p id="modal-location">Bandung, Jawa Barat</p>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    <h4><i class="bx bx-detail"></i> Deskripsi Proyek</h4>
+                    <p id="modal-desc">Detail deskripsi proyek di sini...</p>
+                </div>
+                <div>
+                    <h4><i class="bx bx-trophy"></i> Hasil & Dampak</h4>
+                    <p id="modal-results">Dampak positif proyek...</p>
+                </div>
+                <div>
+                    <h4><i class="bx bx-wrench"></i> Stack Teknologi</h4>
+                    <div id="modal-stack" class="modal-stack">
+                        <!-- Stack tags will be dynamically added -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
 
-<section>
-    <h2 class="title">Pengalaman Kerja</h2>
-
-    <div class="card-container">
-
-        <div class="card">
-            <h3>IT Support & Procurement</h3>
-            <p>
-                Mengelola infrastruktur IT perusahaan,
-                troubleshooting hardware/software,
-                pengadaan barang dan administrasi aset.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>System Administrator</h3>
-            <p>
-                Mengelola server Linux, Proxmox,
-                database, jaringan LAN/WAN,
-                VLAN, CCTV dan sistem absensi.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Fullstack Developer</h3>
-            <p>
-                Mengembangkan ERP, CRM,
-                E-Commerce, PPDB Online,
-                Sistem Perpustakaan dan Dashboard Monitoring.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2 class="title">Project Unggulan</h2>
-
-    <div class="card-container">
-
-        <div class="card">
-            <h3>Monitoring Gudang Kimia IoT</h3>
-            <p>
-                Sistem monitoring suhu dan kelembapan
-                berbasis fuzzy logic dan NodeMCU.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Gate Barrier RFID</h3>
-            <p>
-                Sistem akses perpustakaan menggunakan
-                RFID dan API berbasis Arduino Mega.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>ERP Management System</h3>
-            <p>
-                Sistem manajemen perusahaan
-                berbasis web dengan multi modul.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2 class="title">Sertifikasi</h2>
-
-    <div class="card-container">
-
-        <div class="card">
-            <h3>CCNA</h3>
-            <p>Cisco Certified Network Associate</p>
-        </div>
-
-        <div class="card">
-            <h3>MTCNA</h3>
-            <p>MikroTik Certified Network Associate</p>
-        </div>
-
-        <div class="card">
-            <h3>BNSP DBA</h3>
-            <p>Database Administrator</p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2 class="title">Kontak</h2>
-
-    <div class="about">
-        <p>Email : arif@example.com</p>
-        <p>LinkedIn : linkedin.com/in/arifsaputravt03</p>
-        <p>Instagram : @arifsaputravt03</p>
-        <p>Bandung, Jawa Barat</p>
-    </div>
-</section>
-
-<footer>
-    © 2026 Arif Saputra | Portfolio Website
-</footer>
-
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
