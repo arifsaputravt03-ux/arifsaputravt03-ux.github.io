@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio of Arif Saputra - IT Engineer specializing in ERP development, systems integration, server administration, enterprise networking, and databases.">
-    <title>Arif Saputra | Portfolio</title>
+    <meta name="description" content="Arif Saputra Professional Portfolio - Bachelor of Informatics Engineering, IT Engineer specializing in ERP system development, system integration, IT infrastructure, DevOps, and technical support.">
+    <title>Arif Saputra | IT Engineer & Fullstack Developer Portfolio</title>
     
     <!-- Boxicons CDN -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
@@ -20,19 +20,25 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
+                <div class="logo-icon">AS</div>
                 ASVT
             </a>
             
             <nav class="nav-links">
-                <a href="#about" class="nav-item">About</a>
-                <a href="#experience" class="nav-item">Experience</a>
-                <a href="#projects" class="nav-item">Projects</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#certifications" class="nav-item">Certifications</a>
+                <a href="#about" class="nav-item" data-i18n="nav_about">About</a>
+                <a href="#experience" class="nav-item" data-i18n="nav_experience">Experience</a>
+                <a href="#projects" class="nav-item" data-i18n="nav_projects">Projects</a>
+                <a href="#skills" class="nav-item" data-i18n="nav_skills">Skills</a>
+                <a href="#certifications" class="nav-item" data-i18n="nav_certifications">Certifications</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="#contact" class="btn-primary nav-cta">Hire Me</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="id">ID</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                </div>
+                <a href="#contact" class="btn-primary nav-cta" data-i18n="nav_cta">Contact Me</a>
                 <div class="menu-toggle">
                     <i class="bx bx-menu"></i>
                 </div>
@@ -45,24 +51,29 @@
         <div class="grid-bg"></div>
         <div class="container hero-grid">
             <div class="hero-content">
-                <div class="hero-badge">
-                    IT Engineer | SysAdmin | Developer
+                <div class="hero-badge" data-i18n="hero_badge">
+                    IT Engineer | SysAdmin | ERP Developer
                 </div>
-                <h1 class="hero-title">Hello, I'm <br><span class="text-gradient">Arif Saputra</span></h1>
-                <h2 class="hero-subtitle">I'm an <span id="typing-text" class="text-gradient"></span></h2>
-                <p class="hero-desc">
-                    I am an IT professional with extensive experience in the technology sector, specializing in ERP development, system integration, database administration, and managing complex server and enterprise network infrastructures.
+                <h1 class="hero-title">
+                    <span data-i18n="hero_title_prefix">Hello, I'm</span> <br>
+                    <span class="text-gradient">Arif Saputra</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span data-i18n="hero_subtitle_prefix">I'm an</span> <span id="typing-text" class="text-gradient"></span>
+                </h2>
+                <p class="hero-desc" data-i18n="hero_desc">
+                    Bachelor of Informatics Engineering with more than 2 years of professional experience in the field of Information Technology, including ERP development, system integration, IT infrastructure, and technical support. Experienced in business process digitization, EPC project administration, and procurement, with needs analysis, technology solution implementation, and problem solving capabilities.
                 </p>
                 <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">View Projects <i class="bx bx-arrow-to-bottom"></i></a>
-                    <a href="#contact" class="btn-secondary">Contact Me <i class="bx bx-chat"></i></a>
+                    <a href="#projects" class="btn-primary"><span data-i18n="hero_btn_projects">View Projects</span> <i class="bx bx-arrow-to-bottom"></i></a>
+                    <a href="#contact" class="btn-secondary"><span data-i18n="hero_btn_contact">Contact Me</span> <i class="bx bx-chat"></i></a>
                 </div>
             </div>
             
             <div class="hero-image-wrapper">
                 <div class="hero-avatar-glow"></div>
                 <div class="hero-avatar-border">
-                    <img src="Foto.jpg" alt="Arif Saputra Profile" class="hero-avatar" onerror="this.onerror=null; this.src='https://github.com/valdistatilamaeo';">
+                    <img src="Foto.jpg" alt="Arif Saputra Profile" class="hero-avatar" onerror="this.onerror=null; this.src='https://github.com/valdistatilamaeo.png';">
                 </div>
             </div>
         </div>
@@ -74,22 +85,22 @@
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-briefcase"></i></div>
                 <div class="stat-info">
-                    <h3>3+</h3>
-                    <p>Years Experience</p>
+                    <h3>2+</h3>
+                    <p data-i18n="stat_exp">Years Experience</p>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-layer"></i></div>
                 <div class="stat-info">
-                    <h3>13+</h3>
-                    <p>Projects & Procurements</p>
+                    <h3>7+</h3>
+                    <p data-i18n="stat_projects">IT Projects</p>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-certification"></i></div>
                 <div class="stat-info">
-                    <h3>6+</h3>
-                    <p>Professional Certificates</p>
+                    <h3>10</h3>
+                    <p data-i18n="stat_certs">Certificates of Competence</p>
                 </div>
             </div>
         </div>
@@ -98,37 +109,37 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <div class="section-label">About Me</div>
-            <h2 class="section-title">Background & Competencies</h2>
+            <div class="section-label" data-i18n="about_label">About Me</div>
+            <h2 class="section-title" data-i18n="about_title">Background & Professional Profile</h2>
             <div class="about-grid">
                 <div class="about-summary">
-                    <h3>Profile & Core Competencies</h3>
-                    <p>
-                        I am an IT professional with experience in the technology sector, specializing in ERP development, systems integration, and the administration of server, network, and database infrastructures.
+                    <h3 data-i18n="about_subtitle">Profile Summary</h3>
+                    <p data-i18n="about_p1">
+                        Bachelor of Informatics Engineering with more than 2 years of professional experience in the field of Information Technology, including ERP development, system integration, IT infrastructure, and technical support.
                     </p>
-                    <p>
-                        I am experienced in end-to-end software development lifecycle and IT infrastructure management, ranging from architectural design and coding to hardware integration and technical procurement logistics.
+                    <p data-i18n="about_p2">
+                        Experienced in business process digitization, EPC project administration, and procurement, with needs analysis, technology solution implementation, and problem solving capabilities.
                     </p>
                     <ul class="about-bullets">
                         <li class="bullet-item">
                             <i class="bx bx-cog"></i>
                             <div class="bullet-content">
-                                <strong>ERP & Software Development</strong>
-                                <p>Experienced in building custom integrated ERP systems</p>
+                                <strong data-i18n="about_b1_title">ERP & System Integration</strong>
+                                <p data-i18n="about_b1_desc">Web-based app architecture, API integration, HR, Finance, Logistics, & Biometrics modules</p>
                             </div>
                         </li>
                         <li class="bullet-item">
                             <i class="bx bx-server"></i>
                             <div class="bullet-content">
-                                <strong>IT Infrastructure</strong>
-                                <p>Administering Proxmox virtual environments, databases, & enterprise networks</p>
+                                <strong data-i18n="about_b2_title">IT Infrastructure & DevOps</strong>
+                                <p data-i18n="about_b2_desc">Proxmox, Docker, Nginx, CI/CD, Nextcloud, Grafana, Kuma Uptime, PABX, & CCTV</p>
                             </div>
                         </li>
                         <li class="bullet-item">
                             <i class="bx bx-check-double"></i>
                             <div class="bullet-content">
-                                <strong>Problem Solver</strong>
-                                <p>Focused on robust integrations and efficiency automation</p>
+                                <strong data-i18n="about_b3_title">Business Process Digitization & Procurement</strong>
+                                <p data-i18n="about_b3_desc">Python OCR app automation, QC Test Package documentation, & ERP Procurement management</p>
                             </div>
                         </li>
                     </ul>
@@ -136,9 +147,9 @@
 
                 <div class="about-tabs-container glass-panel">
                     <div class="tabs-nav">
-                        <button class="tab-btn active" data-tab="it-systems">IT & Systems</button>
-                        <button class="tab-btn" data-tab="logistics">Logistics & Proc</button>
-                        <button class="tab-btn" data-tab="admin">Administration</button>
+                        <button class="tab-btn active" data-tab="it-systems" data-i18n="tab_it">IT & Systems</button>
+                        <button class="tab-btn" data-tab="logistics" data-i18n="tab_logistics">Logistics & Procurement</button>
+                        <button class="tab-btn" data-tab="admin" data-i18n="tab_admin">Administration & QC</button>
                     </div>
 
                     <div id="it-systems" class="tab-panel active">
@@ -146,22 +157,22 @@
                             <div class="tab-content-item">
                                 <i class="bx bx-server"></i>
                                 <div>
-                                    <h4>IT Infrastructure & Servers</h4>
-                                    <p>Managing Proxmox VE, relational/non-relational databases, NAS storage servers, Docker containers, PABX, and IP CCTV networks.</p>
+                                    <h4 data-i18n="it_item1_title">Server Infrastructure & DevOps</h4>
+                                    <p data-i18n="it_item1_desc">Managing Proxmox, Docker, Nginx, CI/CD pipeline, Nextcloud cloud storage, Grafana, and Kuma Uptime.</p>
                                 </div>
                             </div>
                             <div class="tab-content-item">
                                 <i class="bx bx-git-branch"></i>
                                 <div>
-                                    <h4>Fullstack ERP Development</h4>
-                                    <p>Building custom web PWA ERP systems that integrate HR, Supply Chain, Logistics, Finance, Asset Management, and automated biometric attendance.</p>
+                                    <h4 data-i18n="it_item2_title">Web-Based ERP Development</h4>
+                                    <p data-i18n="it_item2_desc">Designing application architecture, API integration, and module development as per business needs.</p>
                                 </div>
                             </div>
                             <div class="tab-content-item">
                                 <i class="bx bx-chip"></i>
                                 <div>
-                                    <h4>Networking & Automation</h4>
-                                    <p>Configuring VLAN, routing/switching (Cisco/MikroTik), scripting Python automations (OCR, file processors), and deploying IoT solutions.</p>
+                                    <h4 data-i18n="it_item3_title">Networking & Python Automation</h4>
+                                    <p data-i18n="it_item3_desc">LAN infrastructure, cabling, switching, Python OCR document extraction apps, and IoT.</p>
                                 </div>
                             </div>
                         </div>
@@ -172,15 +183,15 @@
                             <div class="tab-content-item">
                                 <i class="bx bx-cart"></i>
                                 <div>
-                                    <h4>End-to-End Procurement</h4>
-                                    <p>Managing budgets, vendor vetting, issuing Purchase Orders (PO) & Delivery Orders (DO), auditing vendor invoices, and handling supply chains.</p>
+                                    <h4 data-i18n="log_item1_title">Procurement & Vendor Admin</h4>
+                                    <p data-i18n="log_item1_desc">Managing procurement via ERP systems (from PO to vendor payment), price negotiations, and supplier evaluation.</p>
                                 </div>
                             </div>
                             <div class="tab-content-item">
                                 <i class="bx bx-package"></i>
                                 <div>
-                                    <h4>Stock & Quality Control</h4>
-                                    <p>Managing warehouse storage operations, validating technical equipment specifications, and ensuring safe logistics handling.</p>
+                                    <h4 data-i18n="log_item2_title">Stock & Quality Control</h4>
+                                    <p data-i18n="log_item2_desc">Verifying Delivery Orders (DOs), invoices, and inspecting incoming/outgoing goods according to QC standards.</p>
                                 </div>
                             </div>
                         </div>
@@ -191,15 +202,15 @@
                             <div class="tab-content-item">
                                 <i class="bx bx-spreadsheet"></i>
                                 <div>
-                                    <h4>Reporting & Sheets</h4>
-                                    <p>Compiling procurement logs, analyzing operating expenses, and creating automated data dashboards with Microsoft Excel and Google Sheets.</p>
+                                    <h4 data-i18n="adm_item1_title">EPC & QC Project Docs</h4>
+                                    <p data-i18n="adm_item1_desc">Managing Test Package, Welding Report, Cleaning Inspection Report, and engineering drawings on SharePoint.</p>
                                 </div>
                             </div>
                             <div class="tab-content-item">
                                 <i class="bx bx-file-find"></i>
                                 <div>
-                                    <h4>Digital Archiving & Docs</h4>
-                                    <p>Organizing QA/QC documentation, technical test packages (pipe hydrostatic tests, daily welding logs, and inspection files).</p>
+                                    <h4 data-i18n="adm_item2_title">Technical Support & IT Assets</h4>
+                                    <p data-i18n="adm_item2_desc">Remote & on-site technical support, IT asset management, product catalogs, and marketplace administration.</p>
                                 </div>
                             </div>
                         </div>
@@ -212,55 +223,51 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <div class="section-label">Skills</div>
-            <h2 class="section-title">Tech Stack & Tools</h2>
+            <div class="section-label" data-i18n="skills_label">Skills</div>
+            <h2 class="section-title" data-i18n="skills_title">Tech Stack & Main Tools</h2>
             <div class="skills-grid">
                 
                 <div class="skills-column">
-                    <h3><i class="bx bx-code"></i> Technical Development</h3>
+                    <h3><i class="bx bx-code"></i> <span data-i18n="skills_col1">ERP & Software Development</span></h3>
                     <div class="skills-items">
+                        <span class="skill-chip">REST API Integration</span>
+                        <span class="skill-chip">Web Application</span>
                         <span class="skill-chip">JavaScript (ES6+)</span>
                         <span class="skill-chip">React JS</span>
-                        <span class="skill-chip">Vue JS</span>
-                        <span class="skill-chip">Node JS</span>
-                        <span class="skill-chip">Express JS</span>
-                        <span class="skill-chip">NestJS</span>
-                        <span class="skill-chip">Golang</span>
-                        <span class="skill-chip">Python</span>
+                        <span class="skill-chip">Node JS / Express</span>
+                        <span class="skill-chip">Python & OCR</span>
+                        <span class="skill-chip">SQL & PostgreSQL</span>
+                        <span class="skill-chip">MongoDB</span>
                         <span class="skill-chip">C/C++</span>
-                        <span class="skill-chip">SQL</span>
                         <span class="skill-chip">HTML5 & CSS3</span>
                     </div>
                 </div>
 
                 <div class="skills-column">
-                    <h3><i class="bx bx-hdd"></i> Infrastructure & Networking</h3>
+                    <h3><i class="bx bx-hdd"></i> <span data-i18n="skills_col2">IT Infrastructure & DevOps</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip">Troubleshooting LAN/WAN</span>
-                        <span class="skill-chip">MikroTik RouterOS</span>
-                        <span class="skill-chip">Cisco switching</span>
-                        <span class="skill-chip">VLAN & Routing</span>
                         <span class="skill-chip">Proxmox VE</span>
                         <span class="skill-chip">Docker Containers</span>
-                        <span class="skill-chip">NAS Storage</span>
-                        <span class="skill-chip">PABX System</span>
-                        <span class="skill-chip">CCTV NVR/IP Camera</span>
-                        <span class="skill-chip">IoT (Arduino/ESP32)</span>
-                        <span class="skill-chip">Linux Administration</span>
+                        <span class="skill-chip">Nginx Web Server</span>
+                        <span class="skill-chip">CI/CD Pipeline</span>
+                        <span class="skill-chip">Grafana & Kuma Uptime</span>
+                        <span class="skill-chip">MikroTik & Cisco</span>
+                        <span class="skill-chip">Routing & Switching</span>
+                        <span class="skill-chip">VLAN & Fiber Optic</span>
+                        <span class="skill-chip">PABX & IP CCTV</span>
                     </div>
                 </div>
 
                 <div class="skills-column">
-                    <h3><i class="bx bx-user-voice"></i> Professional Skills</h3>
+                    <h3><i class="bx bx-user-voice"></i> <span data-i18n="skills_col3">Soft Skills & System Design</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip">Problem Solving</span>
-                        <span class="skill-chip">Vendor Negotiation</span>
-                        <span class="skill-chip">Collaboration & Teamwork</span>
-                        <span class="skill-chip">Effective Communication</span>
-                        <span class="skill-chip">Microsoft Excel / Word</span>
-                        <span class="skill-chip">Google Sheets</span>
-                        <span class="skill-chip">Adobe Illustrator</span>
-                        <span class="skill-chip">CorelDRAW</span>
+                        <span class="skill-chip">IoT & System Design</span>
+                        <span class="skill-chip">Solution Architecture</span>
+                        <span class="skill-chip">Problem Solving & Analytical</span>
+                        <span class="skill-chip">Communication & Collaboration</span>
+                        <span class="skill-chip">Fast Learning & Adaptability</span>
+                        <span class="skill-chip">Needs Analysis</span>
+                        <span class="skill-chip">Procurement & QC</span>
                     </div>
                 </div>
 
@@ -271,52 +278,76 @@
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <div class="section-label">Experience</div>
-            <h2 class="section-title">Career History</h2>
+            <div class="section-label" data-i18n="exp_label">Experience</div>
+            <h2 class="section-title" data-i18n="exp_title">Professional Work Experience</h2>
             <div class="timeline">
                 
                 <div class="timeline-item">
                     <div class="timeline-card glass-panel">
-                        <span class="timeline-date">Jan 2026 - Present</span>
+                        <span class="timeline-date" data-i18n="job1_date">January 2026 – Present</span>
                         <h3 class="timeline-title">IT Engineer</h3>
-                        <h4 class="timeline-subtitle">PT Trigatra Sistem Integrasi, South Tangerang, Banten, Indonesia</h4>
-                        <p class="timeline-desc">Developing and managing the company's custom ERP system. Administering Proxmox virtual servers, relational databases, enterprise networks, biometric attendance systems, PABX, CCTV, and handling direct or remote device maintenance and hardware asset management.</p>
+                        <h4 class="timeline-subtitle">PT Trigatra Sistem Integrasi – South Tangerang, Banten</h4>
+                        <ul class="exp-bullet-list">
+                            <li data-i18n="exp_job1_b1">Analyze client needs, design solution architecture, and coordinate system implementation with clients and principals.</li>
+                            <li data-i18n="exp_job1_b2">Develop a web-based ERP through application architecture design, API integration, and module development as per business needs.</li>
+                            <li data-i18n="exp_job1_b3">Managing IT infrastructure, DevOps, and system services including Proxmox, Docker, Nginx, database, network, CI/CD, pipeline deployment, SMTP email, Nextcloud as private cloud storage, as well as PABX and CCTV services.</li>
+                            <li data-i18n="exp_job1_b4">Monitor, optimize, and troubleshoot servers, networks, applications, and websites using Grafana and Kuma Uptime.</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-card glass-panel">
-                        <span class="timeline-date">Aug 2025 - Dec 2025</span>
-                        <h3 class="timeline-title">Test Package Admin</h3>
-                        <h4 class="timeline-subtitle">PT Tiga Pilar Energi, Marunda, West Java, Indonesia</h4>
-                        <p class="timeline-desc">Processing Welding & Inspection Reports, compiling Test Package documentation complying with QC standards, migrating digital archives to databases, and regularly updating tracking log sheets.</p>
+                        <span class="timeline-date" data-i18n="job2_date">August 2025 – December 2025</span>
+                        <h3 class="timeline-title">Admin Test Package</h3>
+                        <h4 class="timeline-subtitle">PT Tiga Pilar Energi – Marunda, West Java</h4>
+                        <ul class="exp-bullet-list">
+                            <li data-i18n="exp_job2_b1">Manage project QC documentation including Test Package, Welding Report, and Cleaning Inspection Report.</li>
+                            <li data-i18n="exp_job2_b2">Manage document control, log sheets, and project documentation using Microsoft 365 SharePoint.</li>
+                            <li data-i18n="exp_job2_b3">Update inspection data and engineering drawings on the project documentation system.</li>
+                            <li data-i18n="exp_job2_b4">Develop Python OCR applications for document extraction, search, and management automation.</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-card glass-panel">
-                        <span class="timeline-date">May 2023 - Jul 2025</span>
-                        <h3 class="timeline-title">Purchasing</h3>
-                        <h4 class="timeline-subtitle">PT Ladang Karya Husada, Bandung, West Java, Indonesia</h4>
-                        <p class="timeline-desc">Creating Purchase Orders (PO), negotiating vendor pricing, performing quality control checks on materials, verifying Delivery Orders (DO) & Invoices, and managing project material supply chains.</p>
+                        <span class="timeline-date" data-i18n="job3_date">May 2023 – July 2025</span>
+                        <h3 class="timeline-title">Purchasing Staff</h3>
+                        <h4 class="timeline-subtitle">PT Ladang Karya Husada – Bandung, West Java</h4>
+                        <ul class="exp-bullet-list">
+                            <li data-i18n="exp_job3_b1">Manage procurement through an ERP system, from PO to vendor payment.</li>
+                            <li data-i18n="exp_job3_b2">Conduct price negotiations, supplier evaluation, and procurement administration.</li>
+                            <li data-i18n="exp_job3_b3">Verifying Delivery Orders (DOs), invoices, and procurement documents.</li>
+                            <li data-i18n="exp_job3_b4">Inspect incoming and outgoing goods according to QC standards and client requirements.</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-card glass-panel">
-                        <span class="timeline-date">May 2022 - May 2023</span>
+                        <span class="timeline-date" data-i18n="job4_date">May 2022 – May 2023</span>
                         <h3 class="timeline-title">IT Admin</h3>
-                        <h4 class="timeline-subtitle">PT Ladang Karya Husada, Bandung, West Java, Indonesia</h4>
-                        <p class="timeline-desc">Troubleshooting computer hardware and local area networks (LAN), installing computer operating systems, managing digital product catalogs, handling Excel-based administrative reports, and coordinating across divisions.</p>
+                        <h4 class="timeline-subtitle">PT Ladang Karya Husada – Bandung, West Java</h4>
+                        <ul class="exp-bullet-list">
+                            <li data-i18n="exp_job4_b1">Installation, configuration, maintenance, and troubleshooting of IT devices, networks, and operating systems.</li>
+                            <li data-i18n="exp_job4_b2">Manage LAN infrastructure, cabling, switching, inventory, and IT assets.</li>
+                            <li data-i18n="exp_job4_b3">Manage stock data, product catalogs, and administration through ERP systems and marketplaces.</li>
+                            <li data-i18n="exp_job4_b4">Technical support to internal users and marketplace users remotely and on-site.</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-card glass-panel">
-                        <span class="timeline-date">Feb 2022 - May 2022</span>
-                        <h3 class="timeline-title">IT Support (Internship)</h3>
-                        <h4 class="timeline-subtitle">PT PGAS Telekomunikasi Nusantara, Lampung, Indonesia</h4>
-                        <p class="timeline-desc">Troubleshooting fiber optic networks, monitoring CCTV security feeds, conducting physical inspections of cable routes, and handling first-level troubleshooting for customer network issues.</p>
+                        <span class="timeline-date" data-i18n="job5_date">February 2022 – May 2022</span>
+                        <h3 class="timeline-title" data-i18n="job5_title">IT Support (Internship)</h3>
+                        <h4 class="timeline-subtitle">PT PGAS Telekomunikasi Nusantara – Lampung</h4>
+                        <ul class="exp-bullet-list">
+                            <li data-i18n="exp_job5_b1">Install, maintain, and troubleshoot IT devices and networks.</li>
+                            <li data-i18n="exp_job5_b2">Fiber optic network troubleshooting, CCTV monitoring, and cable infrastructure inspection.</li>
+                            <li data-i18n="exp_job5_b3">Customer technical support for outage handling and network repair.</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -327,14 +358,14 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <div class="section-label">Portfolio</div>
-            <h2 class="section-title">Projects & Procurements</h2>
+            <div class="section-label" data-i18n="projects_label">Portfolio</div>
+            <h2 class="section-title" data-i18n="projects_title">Projects & Procurements</h2>
             
             <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="software">Software Dev</button>
-                <button class="filter-btn" data-filter="iot">IoT & Systems</button>
-                <button class="filter-btn" data-filter="procurement">Procurement</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Projects</button>
+                <button class="filter-btn" data-filter="software" data-i18n="filter_software">Software Dev</button>
+                <button class="filter-btn" data-filter="iot" data-i18n="filter_iot">IoT & Systems</button>
+                <button class="filter-btn" data-filter="procurement" data-i18n="filter_procurement">Procurement</button>
             </div>
 
             <div class="projects-carousel-wrapper">
@@ -354,27 +385,34 @@
                         </div>
                         <div class="project-card glass-panel" 
                              data-category="iot" 
-                             data-category-label="IoT & Systems"
-                             data-title="IoT Flood Monitoring for Fishpond"
-                             data-role="IT Infrastructure & Software Developer"
-                             data-location="Fisheries Department Pond, Lampung State Polytechnic - Lampung, Indonesia"
-                             data-date="December 2019"
-                             data-desc="Implemented an end-to-end IoT system for fishpond monitoring, automatic feeding, water level measurement (for flood mitigation), and water pH quality, with MQTT integration and real-time notifications via Telegram, managing it from the design stage through deployment."
-                             data-results="The IoT system successfully operated in real-time using MQTT communication and Telegram notifications, enhancing fishpond monitoring responsiveness, automated feeding, and flood risk mitigation."
-                             data-stack="ESP32 / NodeMCU, Arduino IDE, MQTT, Python / Node JS, Telegram Bot API, pH Sensor, Ultrasonic Sensor"
-                             data-images="Asset/Picture Project/IOT Ikan FLood.jpg,Asset/Picture Project/IOT Ikan.jpg">
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="IoT-Based POLIFISH FARM Flood Disaster Early Warning System"
+                             data-title-en="IoT-Based POLIFISH FARM Flood Disaster Early Warning System"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="POLIFISH Farm Unit Politeknik Negeri Lampung - Lampung"
+                             data-location-en="POLIFISH Farm Pond Unit Polytechnic Negeri Lampung - Lampung"
+                             data-date-id="Desember 2019"
+                             data-date-en="December 2019"
+                             data-desc-id="Berkontribusi dalam pemilihan perangkat, perancangan arsitektur, dan implementasi sistem IoT end-to-end untuk pemantauan kolam ikan, pakan otomatis, ketinggian air (mitigasi banjir), dan pH air real-time dengan integrasi MQTT dan Telegram bot."
+                             data-desc-en="Contribute to device selection, architectural design, and end-to-end IoT system implementation for fish pond monitoring, automatic feeding, water level (flood mitigation), and water pH quality, with MQTT integration and real-time notifications via Telegram from design to operation."
+                             data-results-id="As a result, the IoT system successfully runs in real-time with MQTT communication and Telegram notifications, thereby increasing the responsiveness of fish pond monitoring, feed automation, as well as flood risk mitigation and water quality control more effectively."
+                             data-results-en="As a result, the IoT system successfully runs in real-time with MQTT communication and Telegram notifications, thereby increasing the responsiveness of fish pond monitoring, feed automation, as well as flood risk mitigation and water quality control more effectively."
+                             data-stack="C++, ESP32, NodeMCU, MQTT, Telegram Bot API, pH Sensor, Ultrasonic Sensor, Water Level Sensor, Buzzer"
+                             data-images="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/IOT Ikan FLood.jpg,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/IOT Ikan.jpg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/IOT Ikan FLood.jpg" alt="IoT Flood Monitoring for Fishpond" class="project-img">
+                                <img src="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/IOT Ikan FLood.jpg" alt="IoT-Based POLIFISH FARM Early Warning System" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">IoT Flood Monitoring for Fishpond</h3>
-                                <p class="project-desc">Water acidity monitoring, pond elevation sensing, and scheduled feeding actuator via Telegram bot.</p>
+                                <h3 class="project-title">IoT-Based POLIFISH FARM Early Warning System</h3>
+                                <p class="project-desc">End-to-end IoT system for fishpond flood monitoring, automatic feeding, and water quality control with Telegram API.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">NodeMCU</span>
+                                    <span class="stack-tag">ESP32</span>
                                     <span class="stack-tag">MQTT</span>
                                     <span class="stack-tag">Telegram API</span>
                                 </div>
@@ -390,65 +428,79 @@
                         </div>
                         <div class="project-card glass-panel" 
                              data-category="iot" 
-                             data-category-label="IoT & Systems"
-                             data-title="Non-Contact Temperature Measurement & Attendance System"
-                             data-role="IT Infrastructure & Software Developer"
-                             data-location="PGN Com Regional Office Lampung - Bandar Lampung, Indonesia"
-                             data-date="June 2021 - January 2022"
-                             data-desc="Developed an IoT-based non-contact attendance system using NFC (RC522) and proximity sensor to trigger attendance logs and automatically measure body temperature (MLX90614) in real-time."
-                             data-results="The attendance system successfully recorded employee presence in real-time, accurately measured body temperature without physical contact, and sent instant notifications via Telegram."
-                             data-stack="C++, JavaScript, ESP32 / NodeMCU, NFC RC522, MLX90614, MQTT, React, Node JS, Firebase"
-                             data-images="Asset/Picture Project/TA Absensi IOT Non Kontak.png,Asset/Picture Project/Absensi Fisik.png">
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="IoT-Based Non-Contact Body Temperature & Attendance Device"
+                             data-title-en="IoT-Based Non-Contact Body Temperature & Attendance Device"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="Kantor PGN Com Regional Lampung – Bandar Lampung"
+                             data-location-en="PGN Com Regional Office Lampung – Bandar Lampung"
+                             data-date-id="Juni 2021 – Januari 2022"
+                             data-date-en="June 2021 – January 2022"
+                             data-desc-id="Mengembangkan sistem absensi berbasis IoT menggunakan sensor NFC dan kedekatan untuk mendeteksi absensi dan mengukur suhu tubuh non-kontak secara real-time."
+                             data-desc-en="Develop an IoT-based non-contact attendance system using NFC and proximity sensors as triggers to automatically detect attendance and measure body temperature to support a fast, accurate, and non-contact attendance process in real-time."
+                             data-results-id="The attendance system successfully recorded employee presence in real-time, accurately measured body temperature without physical contact, and sent instant notifications via Telegram."
+                             data-results-en="The attendance system successfully recorded employee presence in real-time, accurately measured body temperature without physical contact, and sent instant notifications via Telegram."
+                             data-stack="C++, JavaScript, ESP32, NodeMCU, RC522 NFC, MLX90614 Temperature Sensor, MQTT, React JS, Node JS, Firebase"
+                             data-images="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Absensi Fisik.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Arsitektur.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Dasbor.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Login.PNG">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/TA Absensi IOT Non Kontak.png" alt="Non-Contact Temperature & Attendance System" class="project-img">
+                                <img src="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png" alt="IoT-Based Non-Contact Attendance Device" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">Non-Contact Temp & Attendance</h3>
-                                <p class="project-desc">Smart non-contact attendance device based on NFC and infrared temperature sensor with MQTT logs.</p>
+                                <h3 class="project-title">IoT-Based Non-Contact Temperature & Attendance Device</h3>
+                                <p class="project-desc">IoT attendance system with non-contact MLX90614 infrared temperature sensing and Firebase integration.</p>
                                 <div class="project-stack">
                                     <span class="stack-tag">ESP32</span>
                                     <span class="stack-tag">NFC</span>
-                                    <span class="stack-tag">MQTT</span>
+                                    <span class="stack-tag">Firebase</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3 (2023) -->
+                    <!-- Project 3 (2024) -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2023</div>
+                            <div class="timeline-year">2024</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="procurement" 
-                             data-category-label="Procurement & Logistics"
-                             data-title="Technical Sourcing & Educational Equipment Procurement"
-                             data-role="Procurement Coordinator"
-                             data-location="Various Educational & Government Institutions - Bandung, Indonesia"
-                             data-date="July 2023 - April 2025"
-                             data-desc="Managed the entire procurement lifecycle of technical equipment for schools and government agencies: sourcing a 2-Post Car Lift at SMKS Hussein Sastra Negara, an integrated computer laboratory at SMKN 5 Bandung, welding machines and interactive board assembly at SMKS Al-Falah, CCTV installation at DP3A Bandung, and reviewing and distributing laptops for the Bandung Education Office."
-                             data-results="Successfully procured high-quality equipment on time, meeting QC standards and achieving full operational approval during final handovers."
-                             data-stack="Vendor Vetting, Budgeting, Quality Control, Technical Equipment Sourcing, Device Assembly, Logistics & Shipping"
-                             data-images="Asset/Picture Project/Alat Gate Jadi.jpeg,Asset/Picture Project/gate Barrier.jpeg,Asset/Picture Project/Desain Gate.jpeg,Asset/Picture Project/Gate.jpeg,Asset/Picture Project/Lab Komputer.jpg,Asset/Picture Project/CCTV.jpeg,Asset/Picture Project/CCTV Infra.webp">
+                             data-category="iot" 
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="Gate Barrier System of Widyatama University Library"
+                             data-title-en="Gate Barrier System of Widyatama University Library"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="Universitas Widyatama – Bandung"
+                             data-location-en="Widyatama University – Bandung"
+                             data-date-id="Juni 2024 – Desember 2025"
+                             data-date-en="June 2024 – December 2025"
+                             data-desc-id="Mengembangkan sistem manajemen pengunjung berbasis NFC/RFID dan palang otomatis dengan integrasi SLiMS (Senayan Library Management System) menggunakan Kartu Tanda Mahasiswa sebagai otentikasi."
+                             data-desc-en="Develop an NFC/RFID-based visitor management and automatic gate access system with SLiMS (Senayan Library Management System) integration to replace the manual visitor recording process. The system utilizes student identity cards that already have NFC/RFID chips as a medium for user authentication, automatic visit recording, and library access monitoring."
+                             data-results-id="Improve the accuracy of visitor logging, reduce manual input, and improve library access security."
+                             data-results-en="Improve the accuracy of visitor logging, reduce manual input, and improve library access security."
+                             data-stack="JavaScript, C++, Arduino Mega 2560, ESP32, Servo Motor, PN532 NFC Reader, AMOLED LCD, RFID/NFC Module, Access Control Integration"
+                             data-images="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/gate Barrier.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Gate.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/WhatsApp Image 2026-06-15 at 17.09.45.jpeg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/Alat Gate Jadi.jpeg" alt="Technical Sourcing & Educational Equipment Procurement" class="project-img">
+                                <img src="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg" alt="Gate Barrier System Widyatama University" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">Procurement</span>
-                                <h3 class="project-title">Technical Sourcing & Procurement</h3>
-                                <p class="project-desc">Management of technical procurement including computer labs, workshop car lifts, and municipal IT hardware.</p>
+                                <span class="project-tag">IoT & Systems</span>
+                                <h3 class="project-title">Gate Barrier System of Widyatama University Library</h3>
+                                <p class="project-desc">Automated NFC/RFID library gate access integrated with SLiMS management system and student ID authentication.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">Sourcing</span>
-                                    <span class="stack-tag">Quality Control</span>
-                                    <span class="stack-tag">Logistics</span>
+                                    <span class="stack-tag">ESP32</span>
+                                    <span class="stack-tag">NFC / RFID</span>
+                                    <span class="stack-tag">SLiMS</span>
                                 </div>
                             </div>
                         </div>
@@ -462,29 +514,36 @@
                         </div>
                         <div class="project-card glass-panel" 
                              data-category="iot" 
-                             data-category-label="IoT & Systems"
-                             data-title="Fuzzy Logic Chemical Storage Monitoring System"
-                             data-role="IT Infrastructure & Software Developer"
-                             data-location="PT Ladang Karya Husada - Bandung, West Java, Indonesia"
-                             data-date="March 2025 - June 2025"
-                             data-desc="Developed an IoT-based temperature and humidity monitoring system for a Hydrogen Peroxide storage warehouse using high-precision sensors, integrated with automatic controls for air conditioners and exhaust fans. The system features real-time monitoring via Web PWA and analytical validation using MATLAB."
-                             data-results="The system is capable of tracking temperature and humidity in real-time, automatically triggering AC/exhaust fans to stabilize conditions, minimizing chemical degradation risks."
-                             data-stack="ESP32/Arduino, C/C++, Temperature & Humidity Sensor, Relay System, IoT Automation, Matlab, PWA"
-                             data-images="Asset/Picture Project/Pendingin gudang berbasi fuzy logic.png">
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="Fuzzy Logic Chemical Liquid Storage Monitoring System"
+                             data-title-en="Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="PT Ladang Karya Husada, Bandung, Jawa Barat"
+                             data-location-en="PT Ladang Karya Husada, Bandung, West Java"
+                             data-date-id="Maret 2025 - Juni 2025"
+                             data-date-en="March 2025 - June 2025"
+                             data-desc-id="Mengembangkan sistem monitoring suhu dan kelembapan berbasis IoT di gudang penyimpanan Hidrogen Peroksida menggunakan algoritma Fuzzy Logic untuk mengontrol AC dan exhaust fan secara otomatis. Dilengkapi Web PWA dan simulasi MATLAB."
+                             data-desc-en="Developed a temperature and humidity monitoring system in an IoT-based Hydrogen Peroxide storage warehouse using high-precision sensors, which are integrated with automatic control of air conditioning and exhaust fan to keep environmental conditions stable within safe limits. The system is equipped with web-based real-time monitoring and calculation analysis using MATLAB."
+                             data-results-id="Improve real-time monitoring of warehouse conditions and maintain the stability of the chemical storage environment."
+                             data-results-en="Improve real-time monitoring of warehouse conditions and maintain the stability of the chemical storage environment."
+                             data-stack="C++, HTML, ESP32, Arduino, Temperature & Humidity Sensor, Relay Control, MQTT, MATLAB, IoT Automation"
+                             data-images="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Pendingin gudang berbasi fuzy logic.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Implementasi Box.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Arsitektur Desain_1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Hasil Web.jpg,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Desain Box 3D.png">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/Pendingin gudang berbasi fuzy logic.png" alt="Fuzzy Logic Chemical Storage Monitoring System" class="project-img">
+                                <img src="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Pendingin gudang berbasi fuzy logic.png" alt="Fuzzy Logic Chemical Storage Monitoring System" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">Fuzzy Chemical Warehouse IoT</h3>
-                                <p class="project-desc">System monitoring sensor temperature warehouse chemical based IoT with controller AC automatic.</p>
+                                <h3 class="project-title">Fuzzy Logic Chemical Storage Monitoring System</h3>
+                                <p class="project-desc">IoT temperature & humidity monitoring for chemical storage with Fuzzy Logic automated AC/fan relay control.</p>
                                 <div class="project-stack">
                                     <span class="stack-tag">ESP32</span>
-                                    <span class="stack-tag">C++</span>
-                                    <span class="stack-tag">Matlab</span>
+                                    <span class="stack-tag">Fuzzy Logic</span>
+                                    <span class="stack-tag">MATLAB</span>
                                 </div>
                             </div>
                         </div>
@@ -498,29 +557,36 @@
                         </div>
                         <div class="project-card glass-panel" 
                              data-category="software" 
-                             data-category-label="Software Development"
-                             data-title="Smart OCR & Document Processing System"
-                             data-role="Software Developer"
-                             data-location="Chrysalis Project Tripatra LOBP Shell - Tiga Pilar Energi Marunda, West Java, Indonesia"
-                             data-date="September 2025"
-                             data-desc="Developed a Python application to automate the processing of legacy files, featuring document detection, OCR text extraction, relational database batch ingestion, and RFI document splitting/renaming."
-                             data-results="Significantly reduced outstanding data from 11,000 to just 2,000 documents, accelerating the compilation of technical test packages."
-                             data-stack="Python, SQL, PyMuPDF, Pytesseract, Pandas, Tkinter, Fitz, PyQt5"
-                             data-images="Asset/Picture Project/OCR.png,Asset/Picture Project/Aplikasi OCR .png">
+                             data-category-label-id="Pengembangan Software"
+                             data-category-label-en="Software Development"
+                             data-title-id="Smart OCR & Document Processing System"
+                             data-title-en="Smart OCR & Document Processing System"
+                             data-role-id="Pengembang Software"
+                             data-role-en="Software Developer"
+                             data-location-id="Proyek Chrysalis Tripatra LOBP Shell – Tiga Pilar Energi Marunda, Jawa Barat"
+                             data-location-en="Chrysalis Tripatra LOBP Shell Project – Tiga Pilar Energi Marunda, West Java"
+                             data-date-id="September 2025"
+                             data-date-en="September 2025"
+                             data-desc-id="Mengembangkan aplikasi Python untuk otomatisasi pemrosesan dokumen legacy dengan fitur deteksi, OCR, input batch database, dan RFI document split & rename."
+                             data-desc-en="Develop Python applications for automation of legacy document processing with detection features, OCR, batch database input, and RFI document split & rename."
+                             data-results-id="Reduce outstanding documents from 11,000 to 2,000 documents and speed up the process of preparing Test Packages."
+                             data-results-en="Reduce outstanding documents from 11,000 to 2,000 documents and speed up the process of preparing Test Packages."
+                             data-stack="Python, PyMuPDF, PyTesseract, Pandas, PyQt5"
+                             data-images="Asset/Project Documenter/Smart OCR & Document Processing System/Aplikasi OCR .png">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/OCR.png" alt="Smart OCR & Document Processing System" class="project-img">
+                                <img src="Asset/Project Documenter/Smart OCR & Document Processing System/Aplikasi OCR .png" alt="Smart OCR & Document Processing System" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">Software Development</span>
-                                <h3 class="project-title">Smart OCR & Document Processing</h3>
-                                <p class="project-desc">Python-based desktop automation for scanning documents with OCR and batch data extraction.</p>
+                                <span class="project-tag">Software Dev</span>
+                                <h3 class="project-title">Smart OCR & Document Processing System</h3>
+                                <p class="project-desc">Python desktop OCR application automating legacy document extraction, batch database input, and PDF splitting.</p>
                                 <div class="project-stack">
                                     <span class="stack-tag">Python</span>
                                     <span class="stack-tag">PyTesseract</span>
-                                    <span class="stack-tag">SQL</span>
+                                    <span class="stack-tag">PyQt5</span>
                                 </div>
                             </div>
                         </div>
@@ -534,35 +600,42 @@
                         </div>
                         <div class="project-card glass-panel" 
                              data-category="software" 
-                             data-category-label="Software Development"
-                             data-title="Web Company Profile & Landing Page"
-                             data-role="Software Developer"
-                             data-location="PT Trigatra Sistem Integrasi - South Tangerang, Banten, Indonesia"
-                             data-date="January 2026"
-                             data-desc="Developed the official responsive company profile website for PT Trigatra Sistem Integrasi to showcase their ICT, Building Automation, MEP Engineering, and Software Development services, complete with SMTP email contact, Web WhatsApp links, and interactive Google Maps office location."
-                             data-results="The company profile boosted brand professionalism and streamlined client communication through seamless email, WhatsApp, and location map integration. Live at: https://trigatra.co/"
-                             data-stack="HTML, CSS, PHP, SMTP Email, Google Maps API, WhatsApp Link Integration"
-                             data-images="Asset/Picture Project/WEB Compro.png">
+                             data-category-label-id="Pengembangan Software"
+                             data-category-label-en="Software Development"
+                             data-title-id="Web Company Profile & Landing Page"
+                             data-title-en="Web Company Profile & Landing Page"
+                             data-role-id="Pengembang Software Web"
+                             data-role-en="Software Developer"
+                             data-location-id="PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten"
+                             data-location-en="PT Trigatra Sistem Integrasi – South Tangerang, Banten"
+                             data-date-id="Januari 2026"
+                             data-date-en="January 2026"
+                             data-desc-id="Membangun website company profile sebagai media informasi, layanan, dan portofolio dengan fitur integrasi email SMTP, WhatsApp, dan Google Maps API."
+                             data-desc-en="Develop a company profile website as a media for information, services, and portfolios with email, WhatsApp, and Google Maps integration features."
+                             data-results-id="Improving corporate communication media and access to information for clients: https://trigatra.co/"
+                             data-results-en="Improving corporate communication media and access to information for clients: https://trigatra.co/"
+                             data-stack="HTML / CSS, SMTP Email Integration, Google Maps Integration, WhatsApp Link Integration"
+                             data-images="Asset/Project Documenter/Web Company Profile & Landing Page/WEB Compro.png">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/WEB Compro.png" alt="Web Company Profile & Landing Page" class="project-img">
+                                <img src="Asset/Project Documenter/Web Company Profile & Landing Page/WEB Compro.png" alt="Web Company Profile & Landing Page" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">Software Development</span>
+                                <span class="project-tag">Software Dev</span>
                                 <h3 class="project-title">Web Company Profile & Landing Page</h3>
-                                <p class="project-desc">Official responsive company website integrated with SMTP email form and Google Maps API.</p>
+                                <p class="project-desc">Official responsive company website showcasing ICT & software services with SMTP email and Google Maps integration.</p>
                                 <div class="project-stack">
                                     <span class="stack-tag">HTML / CSS</span>
-                                    <span class="stack-tag">PHP</span>
                                     <span class="stack-tag">SMTP</span>
+                                    <span class="stack-tag">Google Maps</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 7 (2026) -->
+                    <!-- Project 7 (2026) - Cold Storage CCTV -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
@@ -570,35 +643,42 @@
                         </div>
                         <div class="project-card glass-panel" 
                              data-category="iot" 
-                             data-category-label="IoT & Systems"
-                             data-title="IT Infrastructure & Enterprise Server Deployment"
-                             data-role="IT Engineer / SysAdmin"
-                             data-location="PT Trigatra Sistem Integrasi - South Tangerang, Banten, Indonesia"
-                             data-date="January 2026 - Present"
-                             data-desc="Designed, deployed, and maintained the company's integrated IT infrastructure. This includes virtualization server deployment using Proxmox VE, Enterprise networking configuration (VLANs, routing, switching), NAS storage deployment, PostgreSQL/MongoDB database management, and IP CCTV surveillance systems."
-                             data-results="All internal operations and networking infrastructure run stably with high uptime, complete with automated backup procedures and real-time monitoring dashboard."
-                             data-stack="Proxmox VE, Linux Administration, Docker, Nginx, PostgreSQL, MikroTik RouterOS, Cisco IOS, NAS Storage, ZKTeco BioTime"
-                             data-images="Asset/Picture Project/Proxmox DEV OPS Monitor Infra.png,Asset/Picture Project/Infraa.png">
+                             data-category-label-id="Infrastruktur IT"
+                             data-category-label-en="IT Infrastructure"
+                             data-title-id="Cold Storage CCTV Infrastructure – Primera Logistic"
+                             data-title-en="Cold Storage CCTV Infrastructure – Primera Logistic"
+                             data-role-id="IT Engineer / Infrastruktur"
+                             data-role-en="IT Engineer / Infrastructure"
+                             data-location-id="Primera Logistic – South Tangerang, Banten"
+                             data-location-en="Primera Logistic – South Tangerang, Banten"
+                             data-date-id="Januari 2026"
+                             data-date-en="January 2026"
+                             data-desc-id="Instalasi dan konfigurasi infrastruktur CCTV IP di fasilitas Cold Storage Primera Logistic, mencakup pemasangan kamera, pengaturan jaringan IP, konfigurasi NVR/DVR, dan pengujian sistem pemantauan."
+                             data-desc-en="Installation and configuration of IP CCTV infrastructure at Primera Logistic Cold Storage facility, including camera mounting, IP network setup, NVR/DVR configuration, and surveillance system testing."
+                             data-results-id="Sistem CCTV beroperasi dengan stabil dan memastikan pengawasan area Cold Storage berjalan optimal dan real-time."
+                             data-results-en="The CCTV system operates stably, ensuring optimal and real-time surveillance coverage across the Cold Storage facility."
+                             data-stack="IP CCTV, NVR/DVR, Network Configuration, Cable Termination, Surveillance System"
+                             data-images="Asset/Project Documenter/Infra CCTV Maintenance/CCTV.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/CCTV Infra.webp,Asset/Project Documenter/Infra CCTV Maintenance/Infraa.png">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/Proxmox DEV OPS Monitor Infra.png" alt="IT Infrastructure & Enterprise Server Deployment" class="project-img">
+                                <img src="Asset/Project Documenter/Infra CCTV Maintenance/CCTV.jpeg" alt="Cold Storage CCTV Infrastructure Primera Logistic" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">IT Infrastructure & Server Admin</h3>
-                                <p class="project-desc">Deployment of virtualization servers using Proxmox VE, NAS storage, and Cisco/MikroTik network optimization.</p>
+                                <span class="project-tag">IT Infrastructure</span>
+                                <h3 class="project-title">Cold Storage CCTV – Primera Logistic</h3>
+                                <p class="project-desc">IP CCTV installation and surveillance system setup for a Cold Storage logistics facility.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">Proxmox VE</span>
-                                    <span class="stack-tag">MikroTik</span>
-                                    <span class="stack-tag">Docker</span>
+                                    <span class="stack-tag">IP CCTV</span>
+                                    <span class="stack-tag">NVR/DVR</span>
+                                    <span class="stack-tag">Networking</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 8 (2026) -->
+                    <!-- Project 8 (2026) - ERP -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
@@ -606,25 +686,32 @@
                         </div>
                         <div class="project-card glass-panel" 
                              data-category="software" 
-                             data-category-label="Software Development"
-                             data-title="Enterprise Resource Planning (ERP) System"
-                             data-role="Software Developer"
-                             data-location="PT Trigatra Sistem Integrasi - South Tangerang, Banten, Indonesia"
-                             data-date="February 2026 - Present"
-                             data-desc="Developed a custom PWA-based ERP system spanning frontend, backend, database design, and ZKTeco biometric integration. The system aggregates Supply Chain, Warehouse Logistics, Procurement, Finance, HR, and Asset Management into a unified end-to-end platform."
-                             data-results="Automated manual procedures and minimized data mismatches, leading to structured, integrated, and highly efficient company operations."
-                             data-stack="React JS (PWA), Node JS, Express JS, Vite, Axios, REST API, ZKTeco BioTime Integration, MongoDB, JavaScript"
-                             data-images="Asset/Picture Project/ERP.png">
+                             data-category-label-id="Pengembangan Software"
+                             data-category-label-en="Software Development"
+                             data-title-id="Enterprise Resource Planning (ERP)"
+                             data-title-en="Enterprise Resource Planning (ERP) System"
+                             data-role-id="Pengembang Software Fullstack"
+                             data-role-en="Software Developer"
+                             data-location-id="PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten"
+                             data-location-en="PT Trigatra Sistem Integrasi – South Tangerang, Banten"
+                             data-date-id="Februari 2026 – Sekarang"
+                             data-date-en="February 2026 – Present"
+                             data-desc-id="Mengembangkan sistem PWA ERP custom terpusat yang mencakup frontend, backend, perancangan arsitektur, dan integrasi perangkat untuk mengelola Supply Chain, Logistik Gudang, Pengadaan, Keuangan, HR, dan Aset."
+                             data-desc-en="I developed a custom PWA-based ERP system that includes frontend, backend, architecture design, and device integration, which manages Supply Chain, Warehouse Logistics, Procurement, Finance, HR, and Asset Management in one centralized platform with end-to-end flows ranging from Material Request, Purchase Order (PO), receipt and disbursement of goods (Surat Jalan), invoice payment, asset management, to automatic recording of employee attendance. Currently, the development has reached around 70% and is still in the stages of completing the Presales and Project modules."
+                             data-results-id="The company's operational processes become more structured, integrated, and efficient, and minimize manual work and the potential for data errors."
+                             data-results-en="The company's operational processes become more structured, integrated, and efficient, and minimize manual work and the potential for data errors."
+                             data-stack="JavaScript, MongoDB Replica Set (ACID Transaction), React JS (PWA), Node JS, Express JS, Vite, Axios, REST API, Docker, CI/CD, SMTP, ZKTeco BioTime Integration"
+                             data-images="Asset/Project Documenter/ERP & Monitoring Infra/ERP.png,Asset/Project Documenter/ERP & Monitoring Infra/CI-CD ERP.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Proxmox DEV OPS Monitor Infra.png,Asset/Project Documenter/ERP & Monitoring Infra/Grafana.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Uptime Kuma.jpg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Picture Project/ERP.png" alt="Enterprise Resource Planning (ERP)" class="project-img">
+                                <img src="Asset/Project Documenter/ERP & Monitoring Infra/ERP.png" alt="Enterprise Resource Planning (ERP) System" class="project-img">
                                 <div class="project-overlay">
-                                    <span class="project-view-btn">View Details <i class="bx bx-zoom-in"></i></span>
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">Software Development</span>
-                                <h3 class="project-title">Enterprise Resource Planning (ERP)</h3>
-                                <p class="project-desc">PWA-based custom ERP system covering HR, Logistics, Procurement, Finance, Asset Management, and automated biometric attendance.</p>
+                                <span class="project-tag">Software Dev</span>
+                                <h3 class="project-title">Enterprise Resource Planning (ERP) System</h3>
+                                <p class="project-desc">Centralized PWA ERP system integrating Supply Chain, Logistics, Procurement, HR, Finance, and ZKTeco biometrics.</p>
                                 <div class="project-stack">
                                     <span class="stack-tag">React JS</span>
                                     <span class="stack-tag">Node JS</span>
@@ -647,56 +734,19 @@
     <!-- Certifications Section -->
     <section id="certifications" class="section">
         <div class="container">
-            <div class="section-label">Certifications</div>
-            <h2 class="section-title">Professional Certifications</h2>
+            <div class="section-label" data-i18n="cert_label">Certifications</div>
+            <h2 class="section-title" data-i18n="cert_title">Certificates of Competence</h2>
             <div class="cert-grid">
                 
                 <div class="cert-card glass-panel">
-                    <div class="cert-badge"><i class="bx bx-network-chart"></i></div>
-                    <h3 class="cert-title">Cisco Certified Network Associate</h3>
-                    <p class="cert-issuer">Cisco Networking Academy</p>
-                    <p class="cert-desc">Configuring routing, switching, IP addressing, subnetting, network security fundamentals, and troubleshooting enterprise network issues.</p>
-                    <div class="cert-credential">
-                        <a href="https://drive.google.com/file/d/1pSGBw-_73Ctr935-Jbi2sbvjji884nCG/view?usp=sharing" target="_blank" class="btn-verify">
-                            View Certificate <i class="bx bx-link-external"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cert-card glass-panel">
                     <div class="cert-badge"><i class="bx bx-shield-quarter"></i></div>
-                    <h3 class="cert-title">MikroTik Certified Network Associate (MTCNA)</h3>
-                    <p class="cert-issuer">MikroTik</p>
-                    <p class="cert-desc">Administering MikroTik RouterOS, configuring firewall filters, static/dynamic routing, bandwidth limitation (queues), and network address translation (NAT).</p>
+                    <h3 class="cert-title">Cisco CyberOps Associate</h3>
+                    <p class="cert-issuer">Cisco Networking Academy</p>
+                    <p class="cert-desc" data-i18n="cert_cyberops">Security operations center (SOC) fundamentals, threat analysis, security log monitoring, and incident response.</p>
                     <div class="cert-credential">
-                        <span class="cert-id">ID: <strong>2011NA6084</strong></span>
-                        <a href="https://drive.google.com/file/d/1bvlgZ1STp9W2She2hHXthYFm6sJ6fRlM/view?usp=sharing" target="_blank" class="btn-verify">
-                            Verify <i class="bx bx-link-external"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cert-card glass-panel">
-                    <div class="cert-badge"><i class="bx bx-data"></i></div>
-                    <h3 class="cert-title">Database Administrator (BNSP DBA)</h3>
-                    <p class="cert-issuer">BNSP (National Board for Professional Certification)</p>
-                    <p class="cert-desc">Official state competency in database administration, database schema optimization, SQL query tuning, and backup/restore procedures.</p>
-                    <div class="cert-credential">
-                        <span class="cert-id">ID: <strong>69201 251 6 0000004 2025</strong></span>
-                        <a href="https://drive.google.com/file/d/1e0Vox7C0eK__6iJ4uqrx0iyePuheCg5H/view" target="_blank" class="btn-verify">
-                            Verify <i class="bx bx-link-external"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cert-card glass-panel">
-                    <div class="cert-badge"><i class="bx bx-bell"></i></div>
-                    <h3 class="cert-title">Honeywell Fire Alarm Certification</h3>
-                    <p class="cert-issuer">Honeywell</p>
-                    <p class="cert-desc">Installation, programming of addressable & conventional fire alarm panels, and ongoing maintenance of facility fire protection systems.</p>
-                    <div class="cert-credential">
-                        <a href="https://drive.google.com/file/d/1x2A-Tw1sr9u_vItMXPbkjsZQoGRj0zqR/view" target="_blank" class="btn-verify">
-                            View Certificate <i class="bx bx-link-external"></i>
+                        <span class="cert-id">ID: <strong>5301438c-74b6-4d31-89da-b2696dc1e1cc</strong></span>
+                        <a href="https://www.credly.com/badges/5301438c-74b6-4d31-89da-b2696dc1e1cc" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -705,11 +755,11 @@
                     <div class="cert-badge"><i class="bx bx-lock-alt"></i></div>
                     <h3 class="cert-title">Fortinet Certified Fundamentals in Cybersecurity</h3>
                     <p class="cert-issuer">Fortinet</p>
-                    <p class="cert-desc">Understanding the modern threat landscape, network defense methodologies, firewall architectures, and data security basics.</p>
+                    <p class="cert-desc" data-i18n="cert_fortinet_f">Understanding modern threat landscapes, network defense methodologies, firewall architectures, and data security.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>0868298211AS</strong></span>
                         <a href="https://training.fortinet.com/pluginfile.php/1/tool_certificate/issues/1779350427/0868298211AS.pdf" target="_blank" class="btn-verify">
-                            Verify <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -718,11 +768,88 @@
                     <div class="cert-badge"><i class="bx bx-check-shield"></i></div>
                     <h3 class="cert-title">Fortinet Certified Associate in Cybersecurity</h3>
                     <p class="cert-issuer">Fortinet</p>
-                    <p class="cert-desc">Competency in managing network security operations, FortiOS administration, firewall policy setups, and log analysis.</p>
+                    <p class="cert-desc" data-i18n="cert_fortinet_a">Competency in network security operations, FortiOS administration, firewall policy setups, and log analysis.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>5606491727AS</strong></span>
                         <a href="https://training.fortinet.com/pluginfile.php/1/tool_certificate/issues/1779349449/5606491727AS.pdf" target="_blank" class="btn-verify">
-                            Verify <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bx-network-chart"></i></div>
+                    <h3 class="cert-title">MikroTik Certified Network Associate (MTCNA)</h3>
+                    <p class="cert-issuer">MikroTik</p>
+                    <p class="cert-desc" data-i18n="cert_mtcna">Administering MikroTik RouterOS, firewall filters, static/dynamic routing, bandwidth queues, and NAT.</p>
+                    <div class="cert-credential">
+                        <span class="cert-id">ID: <strong>2011NA6084</strong></span>
+                        <a href="https://drive.google.com/file/d/16L2N_mwCTrI_0skVWpocNKKzjisQ3cFN/view" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bx-data"></i></div>
+                    <h3 class="cert-title">Database Administrator (BNSP DBA)</h3>
+                    <p class="cert-issuer">Badan Nasional Sertifikasi Profesi (BNSP)</p>
+                    <p class="cert-desc" data-i18n="cert_bnsp">State competency certification in database administration, schema optimization, SQL query tuning, and backup/restore.</p>
+                    <div class="cert-credential">
+                        <span class="cert-id">ID: <strong>69201 251 6 0000004 2025</strong></span>
+                        <a href="https://drive.google.com/file/d/1e0Vox7C0eK__6iJ4uqrx0iyePuheCg5H/view" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bxl-javascript"></i></div>
+                    <h3 class="cert-title">JavaScript Specialist Certification</h3>
+                    <p class="cert-issuer">Cisco Networking Academy & OpenEDG JS Institute</p>
+                    <p class="cert-desc" data-i18n="cert_js">Advanced JavaScript programming: OOP, async handling (Promises/Async-Await), DOM manipulation, and API integration.</p>
+                    <div class="cert-credential">
+                        <span class="cert-id">ID: <strong>cfd22b44-b225-495c-9d86-43bc5c14b71a</strong></span>
+                        <a href="https://www.credly.com/badges/cfd22b44-b225-495c-9d86-43bc5c14b71a/public_url" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bxl-python"></i></div>
+                    <h3 class="cert-title">Python Essentials 2</h3>
+                    <p class="cert-issuer">Cisco Networking Academy & Python Institute</p>
+                    <p class="cert-desc" data-i18n="cert_python">Advanced Python programming: Object-Oriented Programming (OOP), module management, exception handling, and file/OCR processing.</p>
+                    <div class="cert-credential">
+                        <span class="cert-id">ID: <strong>01dac1bf-9ccf-40b7-8153-9d73758d233b</strong></span>
+                        <a href="https://www.credly.com/badges/01dac1bf-9ccf-40b7-8153-9d73758d233b" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bx-chip"></i></div>
+                    <h3 class="cert-title">Information Technology Fundamentals</h3>
+                    <p class="cert-issuer">IBM</p>
+                    <p class="cert-desc" data-i18n="cert_ibm">Information technology fundamentals, cloud computing concepts, cybersecurity, and data system management.</p>
+                    <div class="cert-credential">
+                        <span class="cert-id">ID: <strong>d5e68e95-2840-4070-88da-388eff3b4383</strong></span>
+                        <a href="https://drive.google.com/file/d/1pSGBw-_73Ctr935-Jbi2sbvjji884nCG/view?usp=sharing" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel">
+                    <div class="cert-badge"><i class="bx bx-bell"></i></div>
+                    <h3 class="cert-title">Honeywell Fire Alarm Certification</h3>
+                    <p class="cert-issuer">Honeywell Technologies</p>
+                    <p class="cert-desc" data-i18n="cert_honeywell">Installation, programming of addressable & conventional Notifier fire alarm panels, and building fire protection maintenance.</p>
+                    <div class="cert-credential">
+                        <a href="https://drive.google.com/file/d/1x2A-Tw1sr9u_vItMXPbkjsZQoGRj0zqR/view?usp=sharing" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -734,11 +861,11 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container contact-container-centered">
-            <div class="section-label">Contact</div>
-            <h2 class="section-title">Let's Connect</h2>
+            <div class="section-label" data-i18n="contact_label">Contact</div>
+            <h2 class="section-title" data-i18n="contact_title">Let's Connect</h2>
             
-            <p class="contact-subtitle-centered">
-                Interested in discussing job opportunities, system integrations, IT infrastructure, database management, or custom fullstack software development? Let's connect!
+            <p class="contact-subtitle-centered" data-i18n="contact_desc">
+                Interested in discussing job opportunities, system integrations, IT infrastructure & DevOps, database administration, or custom web ERP software development? Let's connect!
             </p>
             
             <div class="contact-links-centered">
@@ -748,14 +875,14 @@
                 </a>
                 <div class="contact-item-static">
                     <i class="bx bx-map"></i>
-                    <span>South Tangerang, Banten, Indonesia</span>
+                    <span data-i18n="contact_location">South Tangerang, Banten, Indonesia</span>
                 </div>
             </div>
 
             <div class="social-links-centered">
                 <a href="https://linkedin.com/in/arifsaputravt03" target="_blank" class="social-icon-btn" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-                <a href="https://instagram.com/arifsaputravt03" target="_blank" class="social-icon-btn" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
                 <a href="https://github.com/valdistatilamaeo" target="_blank" class="social-icon-btn" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+                <a href="https://instagram.com/arifsaputravt03" target="_blank" class="social-icon-btn" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
             </div>
         </div>
     </section>
@@ -766,7 +893,7 @@
             <a href="#" class="footer-logo">
                 ASVT
             </a>
-            <p class="footer-text">&copy; 2026 Arif Saputra | Portfolio. All rights reserved.</p>
+            <p class="footer-text" data-i18n="footer_text">&copy; 2026 Arif Saputra | Portfolio. All rights reserved.</p>
         </div>
     </footer>
 
@@ -780,22 +907,22 @@
         <div class="modal-content glass-panel">
             <button class="modal-close" aria-label="Close modal"><i class="bx bx-x"></i></button>
             <div class="modal-header">
-                <span id="modal-tag" class="modal-tag">Category</span>
-                <h3 id="modal-title" class="modal-title">Project Name</h3>
+                <span id="modal-tag" class="modal-tag">Kategori</span>
+                <h3 id="modal-title" class="modal-title">Nama Proyek</h3>
             </div>
             
             <div class="modal-meta-grid">
                 <div class="modal-meta-item">
-                    <p>Role / Position</p>
-                    <p id="modal-role">Developer</p>
+                    <p data-i18n="modal_label_role">Peran / Posisi</p>
+                    <p id="modal-role">Pengembang</p>
                 </div>
                 <div class="modal-meta-item">
-                    <p>Timeline</p>
-                    <p id="modal-date">January 2026</p>
+                    <p data-i18n="modal_label_date">Waktu Pelaksanaan</p>
+                    <p id="modal-date">Januari 2026</p>
                 </div>
                 <div class="modal-meta-item">
-                    <p>Project Location</p>
-                    <p id="modal-location">Bandung, West Java</p>
+                    <p data-i18n="modal_label_location">Lokasi Proyek</p>
+                    <p id="modal-location">Bandung, Jawa Barat</p>
                 </div>
             </div>
 
@@ -811,15 +938,15 @@
                 </div>
                 
                 <div>
-                    <h4><i class="bx bx-detail"></i> Project Description</h4>
-                    <p id="modal-desc">Detailed project description here...</p>
+                    <h4><i class="bx bx-detail"></i> <span data-i18n="modal_head_desc">Deskripsi Proyek</span></h4>
+                    <p id="modal-desc">Deskripsi detail proyek...</p>
                 </div>
                 <div>
-                    <h4><i class="bx bx-trophy"></i> Results & Impact</h4>
-                    <p id="modal-results">Positive impact of the project...</p>
+                    <h4><i class="bx bx-trophy"></i> <span data-i18n="modal_head_results">Hasil & Dampak Utama</span></h4>
+                    <p id="modal-results">Dampak positif proyek...</p>
                 </div>
                 <div>
-                    <h4><i class="bx bx-wrench"></i> Technology Stack</h4>
+                    <h4><i class="bx bx-wrench"></i> <span data-i18n="modal_head_stack">Stack Teknologi</span></h4>
                     <div id="modal-stack" class="modal-stack">
                         <!-- Stack tags will be dynamically added -->
                     </div>
