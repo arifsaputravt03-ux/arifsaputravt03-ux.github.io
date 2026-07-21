@@ -236,15 +236,15 @@ header.navbar.scrolled {
 .logo-icon {
     width: 32px;
     height: 32px;
-    background: var(--gradient-1);
+    background: #ffffff;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #000000;
     font-weight: 900;
     font-size: 1.1rem;
-    box-shadow: 0 0 15px var(--accent-glow);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
 }
 
 .nav-links {
