@@ -1692,16 +1692,63 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header.navbar {
+        height: 64px;
+    }
+
+    header.navbar.scrolled {
+        height: 58px;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1.15rem;
+        gap: 6px;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .nav-cta {
+        padding: 6px 14px !important;
+        font-size: 0.76rem !important;
+        margin-right: 4px;
+        letter-spacing: 0;
+    }
+
+    .lang-switcher {
+        padding: 2px 4px;
+        gap: 2px;
+    }
+
+    .lang-btn {
+        padding: 2px 6px;
+        font-size: 0.72rem;
+        border-radius: 8px;
+    }
+
     .menu-toggle {
         display: block;
+        font-size: 1.5rem;
     }
     
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 64px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 64px);
         background: var(--bg-primary);
         flex-direction: column;
         justify-content: flex-start;
@@ -1875,6 +1922,59 @@ footer {
 }
 
 @media (max-width: 480px) {
+    header.navbar {
+        height: 56px;
+    }
+
+    .nav-container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 1.05rem;
+        gap: 4px;
+    }
+
+    .logo-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.82rem;
+        border-radius: 5px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-cta {
+        padding: 5px 10px !important;
+        font-size: 0.7rem !important;
+        margin-right: 2px;
+    }
+
+    .lang-switcher {
+        padding: 1px 3px;
+        gap: 2px;
+    }
+
+    .lang-btn {
+        padding: 2px 4px;
+        font-size: 0.68rem;
+    }
+
+    .menu-toggle {
+        font-size: 1.4rem;
+    }
+
+    .projects-filter {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
     .timeline-horizontal-line {
         left: calc((100vw - 48px) / 2) !important;
         right: calc((100vw - 48px) / 2) !important;
