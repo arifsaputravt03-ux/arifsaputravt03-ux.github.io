@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_skills: "Keahlian",
             nav_certifications: "Sertifikasi",
             nav_cta: "Hubungi Saya",
-            hero_badge: "IT Engineer | SysAdmin | ERP Developer",
+            hero_badge: "IT System Engineer | ERP Developer | DevOps & Infrastruktur <br class=\"badge-br\"> Integrasi Sistem | IoT & Transformasi Digital",
             hero_title_prefix: "Halo, Saya",
             hero_subtitle_prefix: "Saya seorang",
             hero_desc: "Sarjana Teknik Informatika dengan pengalaman profesional lebih dari 2 tahun di bidang Teknologi Informasi, meliputi pengembangan ERP, integrasi sistem, infrastruktur IT, dan dukungan teknis. Berpengalaman dalam digitalisasi proses bisnis, administrasi proyek EPC, serta pengadaan.",
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_skills: "Skills",
             nav_certifications: "Certifications",
             nav_cta: "Hire Me",
-            hero_badge: "IT Engineer | SysAdmin | ERP Developer",
+            hero_badge: "IT System Engineer | ERP Developer | DevOps & Infrastructure <br class=\"badge-br\"> System Integration | IoT & Digital Transformation",
             hero_title_prefix: "Hello, I'm",
             hero_subtitle_prefix: "I'm an",
             hero_desc: "Bachelor of Informatics Engineering with more than 2 years of professional experience in the field of Information Technology, including ERP development, system integration, IT infrastructure, and technical support. Experienced in business process digitization, EPC project administration, and procurement.",
@@ -242,7 +242,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
-                el.textContent = translations[lang][key];
+                if (key === 'hero_badge') {
+                    el.innerHTML = translations[lang][key];
+                } else {
+                    el.textContent = translations[lang][key];
+                }
             }
         });
 
@@ -351,8 +355,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- DYNAMIC TYPING ANIMATION ---
     const wordsDict = {
-        id: ["IT Engineer", "ERP Developer", "SysAdmin & DevOps", "System Integrator"],
-        en: ["IT Engineer", "ERP Developer", "SysAdmin & DevOps", "System Integrator"]
+        id: ["IT System Engineer", "ERP Developer", "DevOps & Infrastructure", "System Integration", "IoT & Digital Transformation"],
+        en: ["IT System Engineer", "ERP Developer", "DevOps & Infrastructure", "System Integration", "IoT & Digital Transformation"]
     };
 
     let typingTimeout;

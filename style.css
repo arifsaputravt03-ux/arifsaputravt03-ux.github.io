@@ -342,10 +342,9 @@ header.navbar.scrolled {
 
 /* --- HERO SECTION --- */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 100px;
+    min-height: auto;
+    padding-top: 115px;
+    padding-bottom: 40px;
     position: relative;
     overflow: hidden;
 }
@@ -402,9 +401,9 @@ header.navbar.scrolled {
 .hero-badge {
     background: var(--accent-dim);
     color: var(--accent-primary);
-    padding: 8px 20px;
+    padding: 7px 18px;
     border-radius: 100px;
-    font-size: 0.82rem;
+    font-size: 0.76rem;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
     align-self: flex-start;
@@ -412,21 +411,27 @@ header.navbar.scrolled {
     align-items: center;
     gap: 8px;
     border: 1px solid var(--accent-primary);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 0 15px rgba(0, 230, 168, 0.15);
+    line-height: 1.45;
+    max-width: 680px;
+    transition: all var(--transition-fast);
 }
 
 .hero-badge::before {
     content: '';
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     background: var(--accent-primary);
     border-radius: 50%;
-    animation: badgeBlink 2s ease infinite;
+    flex-shrink: 0;
+    animation: badgeBlink 2s ease-in-out infinite;
+    box-shadow: 0 0 8px var(--accent-primary);
 }
 
 @keyframes badgeBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(0.85); }
 }
 
 .hero-title {
@@ -553,8 +558,9 @@ header.navbar.scrolled {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    padding: 30px;
-    margin-top: -30px;
+    padding: 26px 30px;
+    margin-top: 24px;
+    margin-bottom: 40px;
     position: relative;
     z-index: 2;
 }
@@ -713,13 +719,22 @@ header.navbar.scrolled {
 
 .tab-content-item {
     display: flex;
+    align-items: center;
     gap: 16px;
 }
 
 .tab-content-item i {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--accent-primary);
-    margin-top: 3px;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(0, 230, 153, 0.2);
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tab-content-item div h4 {
@@ -749,17 +764,32 @@ header.navbar.scrolled {
 
 .skills-column h3 {
     font-size: 1.1rem;
+    line-height: 1.35;
     margin-bottom: 24px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 12px;
+    padding-bottom: 14px;
 }
 
 .skills-column h3 i {
     color: var(--accent-primary);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(0, 230, 153, 0.2);
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-column h3 span {
+    flex: 1;
+    line-height: 1.35;
 }
 
 .skills-items {
@@ -1475,16 +1505,22 @@ footer {
     top: 0;
     left: 0;
     width: 100vw;
+    width: 100dvw;
     height: 100vh;
+    height: 100dvh;
     z-index: 1000;
-    background: rgba(10, 14, 23, 0.9);
-    backdrop-filter: blur(8px);
+    background: rgba(10, 14, 23, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: clamp(16px, 4vh, 40px) 16px;
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-normal);
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal.active {
@@ -1493,15 +1529,18 @@ footer {
 }
 
 .modal-content {
-    width: 90%;
-    max-width: 750px;
-    max-height: 85vh;
+    width: min(92%, 750px);
+    max-height: min(88vh, 88dvh);
     overflow-y: auto;
-    padding: 40px;
+    padding: clamp(20px, 4vw, 36px);
     position: relative;
-    transform: scale(0.9);
+    margin: auto;
+    transform: scale(0.95);
     transition: transform var(--transition-normal);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 230, 153, 0.15);
+    border: 1px solid rgba(0, 230, 153, 0.3);
+    border-radius: 20px;
+    overscroll-behavior: contain;
 }
 
 .modal.active .modal-content {
@@ -1509,33 +1548,41 @@ footer {
 }
 
 .modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 35px;
-    height: 35px;
+    position: sticky;
+    top: 0;
+    float: right;
+    margin-top: -8px;
+    margin-right: -8px;
+    z-index: 20;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: rgba(13, 20, 38, 0.9);
+    border: 1px solid var(--accent-primary);
     color: var(--text-primary);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background var(--transition-fast), border-color var(--transition-fast);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all var(--transition-fast);
 }
 
 .modal-close:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--accent-primary);
+    color: #02040a;
     border-color: var(--accent-primary);
+    transform: rotate(90deg);
 }
 
 .modal-header {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: 6px;
+    margin-bottom: 20px;
+    padding-right: 40px;
 }
 
 .modal-tag {
@@ -1543,24 +1590,26 @@ footer {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .modal-title {
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 800;
+    line-height: 1.25;
 }
 
 .modal-meta-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
     border-bottom: 1px solid var(--border-color);
 }
 
 .modal-meta-item p:first-child {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
     font-weight: 600;
     text-transform: uppercase;
@@ -1568,20 +1617,20 @@ footer {
 
 .modal-meta-item p:last-child {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .modal-body {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 .modal-body h4 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1593,7 +1642,7 @@ footer {
 
 .modal-body p {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.96rem;
     line-height: 1.6;
 }
 .modal-stack {
@@ -1606,14 +1655,14 @@ footer {
 .modal-gallery {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 12px;
     width: 100%;
 }
 
 .gallery-main {
     width: 100%;
-    height: 360px;
+    height: clamp(200px, 32vh, 340px);
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border-color);
@@ -1763,6 +1812,11 @@ footer {
         left: 0;
     }
     
+    .hero {
+        padding-top: 90px;
+        padding-bottom: 30px;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1770,6 +1824,13 @@ footer {
     
     .hero-badge {
         align-self: center;
+        text-align: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        padding: 6px 14px;
+        max-width: 100%;
+        line-height: 1.4;
+        border-radius: 16px;
     }
     
     .hero-desc {
@@ -1978,5 +2039,27 @@ footer {
     .timeline-horizontal-line {
         left: calc((100vw - 48px) / 2) !important;
         right: calc((100vw - 48px) / 2) !important;
+    }
+}
+
+/* Fix for Display Scale > 100% / Short Viewports */
+@media (max-height: 780px) {
+    .modal {
+        padding: 12px 10px;
+    }
+    .modal-content {
+        padding: 20px 22px;
+        max-height: 92dvh;
+    }
+    .modal-header {
+        margin-bottom: 12px;
+    }
+    .modal-meta-grid {
+        gap: 8px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+    }
+    .gallery-main {
+        height: clamp(160px, 28vh, 240px);
     }
 }
