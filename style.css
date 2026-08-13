@@ -626,6 +626,90 @@ header.navbar.scrolled {
     font-size: 1.05rem;
 }
 
+/* --- ABOUT KEY SKILLS & SOFT SKILLS CHIPS --- */
+.about-key-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 6px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.about-skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-skill-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-skill-title i {
+    color: var(--accent-primary);
+    font-size: 1.1rem;
+}
+
+.about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip-glow {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(0, 230, 153, 0.25);
+    border-radius: 100px;
+    color: var(--text-primary);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.chip-glow i {
+    color: var(--accent-primary);
+}
+
+.chip-glow:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 12px rgba(0, 230, 153, 0.25);
+    transform: translateY(-2px);
+}
+
+.chip-soft {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    background: rgba(0, 200, 255, 0.08);
+    border: 1px solid rgba(0, 200, 255, 0.25);
+    border-radius: 100px;
+    color: var(--text-primary);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.chip-soft i {
+    color: #00c8ff;
+}
+
+.chip-soft:hover {
+    border-color: #00c8ff;
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.25);
+    transform: translateY(-2px);
+}
+
 .about-bullets {
     display: flex;
     flex-direction: column;
@@ -751,7 +835,7 @@ header.navbar.scrolled {
 /* --- SKILLS SECTION --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
 }
 
@@ -1902,6 +1986,14 @@ footer {
     .about-summary {
         align-items: center;
         text-align: center;
+    }
+
+    .about-skill-title {
+        justify-content: center;
+    }
+
+    .about-chips {
+        justify-content: center;
     }
 
     .about-bullets {
