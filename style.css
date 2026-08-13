@@ -1072,6 +1072,9 @@ header.navbar.scrolled {
     scrollbar-color: var(--accent-secondary) var(--bg-primary);
     width: 100%;
     position: relative;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    transform: translateZ(0);
 }
 
 .projects-timeline-inner {
@@ -1642,7 +1645,8 @@ footer {
     overflow-y: auto;
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--transition-normal);
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -1658,8 +1662,9 @@ footer {
     padding: clamp(20px, 4vw, 36px);
     position: relative;
     margin: auto;
-    transform: scale(0.95);
-    transition: transform var(--transition-normal);
+    transform: scale(0.92) translateZ(0);
+    will-change: transform, opacity;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 230, 153, 0.15);
     border: 1px solid rgba(0, 230, 153, 0.3);
     border-radius: 20px;
@@ -1667,7 +1672,7 @@ footer {
 }
 
 .modal.active .modal-content {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
 }
 
 .modal-close {
