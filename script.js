@@ -37,13 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
             tab_logistics: "Logistik & Pengadaan",
             tab_admin: "Administrasi & QC",
             it_item1_title: "Pengembangan Software & Arsitektur ERP",
-            it_item1_desc: "Mengembangkan aplikasi ERP berbasis PWA (React JS, Node JS, Express, MongoDB Replica Set) meliputi modul Procurement, Logistik, Finance, HR, Asset Management, Presales, dan Project Management.",
-            it_item2_title: "Integrasi, Deployment & DevOps",
-            it_item2_desc: "Merancang integrasi REST API, sinkronisasi biometrik ZKTeco BioTime, administrasi domain & DNS, CI/CD Gitea, kontainer Docker, dan web server Nginx.",
-            it_item3_title: "Infrastruktur IT & Solusi IoT",
-            it_item3_desc: "Mengelola server kantor (Proxmox, database), jaringan enterprise (MikroTik, Cisco, Aruba, Ruijie), Nextcloud, email SMTP, PABX, CCTV, Access Door, absensi ZKTeco, solusi IoT, serta monitoring Grafana & Uptime Kuma.",
-            it_item4_title: "Dukungan Teknis & Keamanan Siber",
-            it_item4_desc: "Dukungan teknis IT on-site & remote (troubleshooting, instalasi PC/hardware/software, backup/restore), keamanan email SMTP (filtering spam/phishing & email blocking), serta proteksi anti-bot website.",
+            it_item1_desc: "Mengembangkan aplikasi ERP berbasis PWA (React JS, Node JS, Express, dan MongoDB Replica Set) dengan transaksi ACID yang mencakup modul Pengadaan, Logistik, Keuangan, HR, Manajemen Aset, Presales, dan Manajemen Proyek.",
+            it_item2_title: "Integrasi Sistem, Deployment & DevOps",
+            it_item2_desc: "Mengelola proses DevOps dan deployment aplikasi menggunakan REST API, Gitea CI/CD, Docker, Nginx, manajemen domain, sistem email SMTP, serta integrasi biometrik ZKTeco BioTime.",
+            it_item3_title: "Infrastruktur IT Kantor Pusat & Proyek",
+            it_item3_desc: "Mengelola infrastruktur IT Kantor Pusat dan lokasi proyek yang meliputi Proxmox, basis data, VLAN & switching, Nextcloud, PC, printer, PABX, CCTV, Access Control & Absensi ZKTeco, manajemen aset/lisensi, serta pemantauan jaringan dan aplikasi menggunakan Grafana dan Uptime Kuma.",
+            it_item4_title: "Dukungan Teknis IT & Keamanan Sistem",
+            it_item4_desc: "Menangani dukungan teknis IT secara on-site dan remote, mencakup troubleshooting, backup/restore, serta pengelolaan dan keamanan sistem email SMTP dan website company profile melalui pemfilteran spam/phishing, pemblokiran email, anti-bot, dan anti-scraping.",
+            it_item5_title: "Otomatisasi Solusi IoT & ICT",
+            it_item5_desc: "Merancang solusi otomatisasi IoT & ICT bersama prinsipal/vendor, mencakup arsitektur sistem, pengkabelan (wiring) & terminasi perangkat, sensor/aktuator, pemrograman mikrokontroler, protokol MQTT, pemantauan, dan pengendalian otomatis.",
             log_item1_title: "Pengadaan IT & Non-IT, Vendor & Kontrol Stok",
             log_item1_desc: "Mengelola pengadaan IT dan non-IT, termasuk Purchase Order (PO), manajemen vendor, verifikasi DO/faktur, kontrol stok, dan administrasi pengadaan.",
             log_item2_title: "Digitalisasi Proses Bisnis & Modul ERP",
@@ -69,10 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_title: "Pengalaman Kerja Profesional",
             job1_date: "Januari 2026 – Sekarang",
             job1_subtitle: "PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten",
-            exp_job1_b1: "Menganalisis kebutuhan klien, merancang arsitektur solusi, dan mengoordinasikan implementasi sistem bersama klien serta principal.",
-            exp_job1_b2: "Mengembangkan dan melakukan maintenance ERP berbasis web, meliputi arsitektur aplikasi, integrasi API, pengembangan modul, serta database management.",
-            exp_job1_b3: "Mengelola infrastruktur IT & DevOps meliputi server, virtualisasi, container, CI/CD, database, jaringan, SMTP mail system, Nextcloud, PABX, CCTV, Access Door, Absensi, PC, dan printer.",
-            exp_job1_b4: "Memonitor dan melakukan troubleshooting hardware, software, server, jaringan, aplikasi, dan website menggunakan Grafana dan Uptime Kuma, serta mengelola IT asset, inventory, dan license.",
+            exp_job1_b1: "Menganalisis kebutuhan klien, merancang arsitektur solusi, serta mengoordinasikan implementasi sistem bersama klien dan prinsipal vendor.",
+            exp_job1_b2: "Mengembangkan dan memelihara aplikasi ERP berbasis web, meliputi arsitektur aplikasi, integrasi API, pengembangan modul, serta pengelolaan basis data.",
+            exp_job1_b3: "Mengelola infrastruktur IT dan operasi DevOps yang meliputi server, virtualisasi, kontainerisasi, CI/CD, basis data, jaringan enterprise, sistem email SMTP, Nextcloud, PABX, CCTV, kontrol akses pintu, absensi biometrik, PC, dan printer.",
+            exp_job1_b4: "Melakukan pemantauan dan penanganan kendala (troubleshooting) perangkat keras, perangkat lunak, server, jaringan, aplikasi, dan website menggunakan Grafana dan Uptime Kuma, serta mengelola aset IT, inventaris, dan lisensi.",
             job2_date: "Agustus 2025 – Desember 2025",
             exp_job2_b1: "Mengelola dokumentasi QC proyek meliputi Test Package, Welding Report, dan Cleaning Inspection Report.",
             exp_job2_b2: "Mengelola document control, log sheet, dan dokumentasi proyek menggunakan Microsoft 365 SharePoint.",
@@ -165,13 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
             tab_logistics: "Logistics & Procurement",
             tab_admin: "Administration & QC",
             it_item1_title: "Software Development & ERP Architecture",
-            it_item1_desc: "Develop PWA-based ERP applications (React JS, Node JS, Express, MongoDB Replica Set) covering Procurement, Logistics, Finance, HR, Asset Management, Presales, and Project Management modules.",
-            it_item2_title: "Integration, Deployment & DevOps",
-            it_item2_desc: "Design REST API integrations, ZKTeco BioTime biometric synchronization, domain & DNS administration, Gitea CI/CD pipelines, Docker containerization, and Nginx web server configuration.",
-            it_item3_title: "Infrastructure & IoT Solutions",
-            it_item3_desc: "Manage head office servers (Proxmox, databases), enterprise networks (MikroTik, Cisco, Aruba, Ruijie), Nextcloud, SMTP mail, PABX, CCTV, Access Door, ZKTeco attendance, IoT solutions, and monitoring with Grafana & Uptime Kuma.",
-            it_item4_title: "Technical Support & Cyber Security",
-            it_item4_desc: "Handle on-site & remote IT support (troubleshooting, PC/hardware/software installation, backup/restore), SMTP mail security (spam/phishing filtering & email blocking), and website anti-bot protection.",
+            it_item1_desc: "Develop PWA-based ERP systems using React.js, Node.js, Express, and MongoDB Replica Sets with ACID transactions covering Procurement, Logistics, Finance, HR, Asset Management, Presales, and Project Management modules.",
+            it_item2_title: "System Integration, Deployment & DevOps",
+            it_item2_desc: "Orchestrate DevOps workflows and application deployments via REST APIs, Gitea CI/CD, Docker, Nginx, domain management, SMTP Mail systems, and ZKTeco BioTime biometric integration.",
+            it_item3_title: "Head Office & Project IT Infrastructure",
+            it_item3_desc: "Administer Head Office and project IT infrastructure including Proxmox virtualization, databases, VLANs & switching, Nextcloud, PCs, printers, PABX, CCTV, ZKTeco Access Control & Attendance, asset/license management, and network/app monitoring via Grafana and Uptime Kuma.",
+            it_item4_title: "IT Technical Support & System Security",
+            it_item4_desc: "Deliver on-site and remote IT support covering hardware/software troubleshooting, backup/recovery, and corporate SMTP Mail & company profile website security via spam/phishing filtering, email blocking, anti-bot, and anti-scraping mechanisms.",
+            it_item5_title: "IoT & ICT Automation Solutions",
+            it_item5_desc: "Design IoT & ICT automation solutions in collaboration with vendor principals, encompassing system architecture, hardware wiring & device termination, sensor/actuator integration, microcontroller programming, MQTT protocol messaging, telemetry monitoring, and automated control systems.",
             log_item1_title: "IT & Non-IT Procurement & Stock Control",
             log_item1_desc: "Managing IT and non-IT procurement, including Purchase Orders (PO), vendor management, DO/invoice verification, stock control, and procurement administration.",
             log_item2_title: "ERP Digitization for Supply Chain & Assets",
@@ -197,10 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_title: "Professional Work Experience",
             job1_date: "January 2026 – Present",
             job1_subtitle: "PT Trigatra Sistem Integrasi – South Tangerang, Banten",
-            exp_job1_b1: "Analyze client requirements, design solution architecture, and coordinate system implementation with clients and principals.",
-            exp_job1_b2: "Develop and maintain web-based ERP systems, including application architecture, API integration, module development, and database management.",
-            exp_job1_b3: "Manage IT & DevOps infrastructure including servers, virtualization, containers, CI/CD, databases, networks, SMTP mail systems, Nextcloud, PABX, CCTV, Access Door, attendance systems, PCs, and printers.",
-            exp_job1_b4: "Monitor and troubleshoot hardware, software, servers, networks, applications, and websites using Grafana and Uptime Kuma, as well as manage IT assets, inventory, and licenses.",
+            exp_job1_b1: "Analyze client business requirements, design technical solution architectures, and coordinate system implementations alongside clients and vendor principals.",
+            exp_job1_b2: "Develop and maintain web-based ERP systems, covering application architecture, API integration, custom module development, and database administration.",
+            exp_job1_b3: "Manage IT infrastructure and DevOps pipelines, including servers, virtualization, containerization, CI/CD, databases, enterprise networks, SMTP mail systems, Nextcloud, PABX, CCTV, door access control, biometric attendance, PCs, and printers.",
+            exp_job1_b4: "Monitor and troubleshoot IT hardware, software, servers, enterprise networks, applications, and websites using Grafana and Uptime Kuma, while managing IT asset tracking, inventory, and software licensing.",
             job2_date: "August 2025 – December 2025",
             exp_job2_b1: "Manage project QC documentation including Test Package, Welding Report, and Cleaning Inspection Report.",
             exp_job2_b2: "Manage document control, log sheets, and project documentation using Microsoft 365 SharePoint.",
@@ -512,12 +516,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('modal-role').textContent = role;
             document.getElementById('modal-date').textContent = date;
             document.getElementById('modal-location').textContent = location;
-            document.getElementById('modal-desc').textContent = desc;
+            
+            if (desc && desc.includes('\n')) {
+                document.getElementById('modal-desc').innerHTML = desc.replace(/\n/g, '<br>');
+            } else {
+                document.getElementById('modal-desc').textContent = desc || '';
+            }
 
             // Results text with automatic URL link conversion
             const resultsEl = document.getElementById('modal-results');
             if (results && results.includes('http')) {
-                resultsEl.innerHTML = results.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-weight: 600; text-decoration: underline;">$1 <i class="bx bx-link-external" style="font-size: 0.85em;"></i></a>');
+                resultsEl.innerHTML = results.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-weight: 600; text-decoration: underline;">$1 <i class="bx bx-link-external" style="font-size: 0.85em;"></i></a>').replace(/\n/g, '<br>');
+            } else if (results && results.includes('\n')) {
+                resultsEl.innerHTML = results.replace(/\n/g, '<br>');
             } else {
                 resultsEl.textContent = results || '';
             }
@@ -639,12 +650,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(toggleButtons, 300);
     }
 
-    // --- CANVAS PARTICLES ---
+    // --- CANVAS PARTICLES (60 FPS OPTIMIZED) ---
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const maxParticles = 65;
+        let maxParticles = window.innerWidth < 768 ? 28 : 55;
 
         class Particle {
             constructor() {
@@ -675,6 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function initParticles() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            maxParticles = window.innerWidth < 768 ? 28 : 55;
             particles = [];
             for (let p = 0; p < maxParticles; p++) {
                 particles.push(new Particle());
@@ -691,9 +703,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const distSq = dx * dx + dy * dy;
 
-                    if (dist < 120) {
+                    if (distSq < 14400) { // 120 * 120
+                        const dist = Math.sqrt(distSq);
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -710,7 +723,11 @@ document.addEventListener('DOMContentLoaded', () => {
         initParticles();
         animateParticles();
 
-        window.addEventListener('resize', initParticles);
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(initParticles, 150);
+        });
     }
 
     // --- INITIALIZE LANGUAGE ---
