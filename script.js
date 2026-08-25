@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- CYBER TERMINAL PRELOADER CONTROLLER (MODE 1) ---
+    // --- CYBER TERMINAL PRELOADER CONTROLLER (SMOOTH & EXTENDED) ---
     const preloader = document.getElementById('cyber-preloader');
     if (preloader) {
         const line1 = document.getElementById('console-line-1');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const updatePreloader = (val) => {
             progress = Math.min(Math.max(val, 0), 100);
-            if (barEl) barEl.style.width = `${progress}%`;
+            if (barEl) barEl.style.width = `${progress.toFixed(2)}%`;
             if (percentEl) percentEl.textContent = `${Math.round(progress)}%`;
 
             if (progress >= 18 && line1) line1.classList.add('visible');
@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Smooth & snappy progression (~1.1s total)
+        // Smooth & luxurious progression curve (~2.4s total)
         const startTime = performance.now();
-        const duration = 1100;
+        const duration = 2400;
 
         const finishPreloader = () => {
             if (isDone) return;
@@ -51,16 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     preloader.style.display = 'none';
                     document.body.classList.add('loaded');
-                }, 500);
-            }, 200);
+                }, 600);
+            }, 300);
         };
+
+        // Ultra smooth ease-in-out cubic progression
+        const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
         const step = (now) => {
             const elapsed = now - startTime;
-            const currentProgress = Math.min((elapsed / duration) * 100, 100);
+            const normTime = Math.min(elapsed / duration, 1);
+            const currentProgress = easeInOutCubic(normTime) * 100;
+            
             updatePreloader(currentProgress);
 
-            if (currentProgress < 100) {
+            if (normTime < 1) {
                 requestAnimationFrame(step);
             } else {
                 finishPreloader();
@@ -70,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(step);
 
         // Fail-safe fallback timeout
-        setTimeout(finishPreloader, 2200);
+        setTimeout(finishPreloader, 3800);
     }
 
     // --- DICTIONARY FOR I18N BILINGUAL SUPPORT ---
@@ -879,12 +884,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CYBER HANGING ID CARD PHYSICS & 3D INTERACTION ---
+    // --- CYBER HANGING ID CARD PHYSICS & DYNAMIC LANYARD ROPE INTERACTION ---
     const idCardStage = document.getElementById('id-card-stage');
     const cyberIdCard = document.getElementById('cyber-id-card');
     const cardGlare = document.getElementById('card-glare');
 
     if (idCardStage && cyberIdCard) {
+        const lanyardRig = idCardStage.querySelector('.lanyard-rig');
+        const lanyardStrap = idCardStage.querySelector('.lanyard-strap');
+        const lanyardClip = idCardStage.querySelector('.lanyard-metal-clip');
+
         // Trigger realistic drop-in pendulum animation
         const triggerCardDrop = () => {
             idCardStage.classList.remove('idle-swing');
@@ -904,7 +913,7 @@ document.addEventListener('DOMContentLoaded', () => {
             triggerCardDrop();
         }
 
-        // Interactive 3D Parallax Tilt & Drag/Move on Mouse & Touch (RAF Optimized)
+        // Interactive 3D Parallax Tilt & Synchronized Rope/Lanyard Physics
         let isInteracting = false;
         let rafId = null;
 
@@ -919,19 +928,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 const deltaX = (clientX - cardCenterX) / (rect.width / 2);
                 const deltaY = (clientY - cardCenterY) / (rect.height / 2);
 
-                // Clamp values
+                // Clamp values for natural range
                 const clampedX = Math.max(-1.3, Math.min(1.3, deltaX));
                 const clampedY = Math.max(-1.3, Math.min(1.3, deltaY));
 
-                const rotateX = clampedY * -15; // deg
-                const rotateY = clampedX * 17;  // deg
-                const swingZ = clampedX * 6;    // deg
+                const rotateX = clampedY * -15; // deg card tilt X
+                const rotateY = clampedX * 17;  // deg card tilt Y
+                const swingZ = clampedX * 6;    // deg card swing Z
 
                 idCardStage.classList.remove('idle-swing');
                 idCardStage.classList.remove('drop-anim');
 
+                // 1. Transform Card
                 cyberIdCard.style.transform = `perspective(1000px) translate3d(0, ${clampedY * 5}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${swingZ}deg)`;
 
+                // 2. Transform Lanyard Rope & Clip synchronously with card movement
+                if (lanyardRig) {
+                    const ropeSwingZ = clampedX * 8.5; // deg rope sway
+                    const ropeRotateY = clampedX * 12; // deg 3d angle
+                    const ropeShiftX = clampedX * 7;   // px lateral shift
+                    const ropeShiftY = Math.abs(clampedX) * 2;
+                    lanyardRig.style.transform = `perspective(1000px) rotateZ(${ropeSwingZ}deg) rotateY(${ropeRotateY}deg) translate3d(${ropeShiftX}px, ${ropeShiftY}px, 0)`;
+                }
+
+                if (lanyardStrap) {
+                    const strapSkew = clampedX * -6; // dynamic fabric flex
+                    lanyardStrap.style.transform = `skewX(${strapSkew}deg) scaleY(${1 + Math.abs(clampedY) * 0.04})`;
+                }
+
+                if (lanyardClip) {
+                    lanyardClip.style.transform = `rotateZ(${clampedX * 6}deg) rotateX(${rotateX * 0.4}deg)`;
+                }
+
+                // 3. Holographic glare physics
                 if (cardGlare) {
                     const glareX = 50 + clampedX * 35;
                     const glareY = 40 + clampedY * 35;
@@ -945,6 +974,10 @@ document.addEventListener('DOMContentLoaded', () => {
             isInteracting = false;
             if (rafId) cancelAnimationFrame(rafId);
             cyberIdCard.style.transform = 'perspective(1000px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
+            if (lanyardRig) lanyardRig.style.transform = '';
+            if (lanyardStrap) lanyardStrap.style.transform = '';
+            if (lanyardClip) lanyardClip.style.transform = '';
+
             if (cardGlare) {
                 cardGlare.style.opacity = '0.6';
             }
