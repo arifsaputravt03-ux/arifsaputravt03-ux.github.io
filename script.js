@@ -1,4 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- CYBER TERMINAL PRELOADER CONTROLLER (MODE 1) ---
+    const preloader = document.getElementById('cyber-preloader');
+    if (preloader) {
+        const line1 = document.getElementById('console-line-1');
+        const line2 = document.getElementById('console-line-2');
+        const line3 = document.getElementById('console-line-3');
+        const line4 = document.getElementById('console-line-4');
+        const statusLabel = document.getElementById('preloader-status-label');
+        const percentEl = document.getElementById('preloader-percent');
+        const barEl = document.getElementById('preloader-bar');
+
+        let progress = 0;
+        let isDone = false;
+
+        const updatePreloader = (val) => {
+            progress = Math.min(Math.max(val, 0), 100);
+            if (barEl) barEl.style.width = `${progress}%`;
+            if (percentEl) percentEl.textContent = `${Math.round(progress)}%`;
+
+            if (progress >= 18 && line1) line1.classList.add('visible');
+            if (progress >= 48 && line2) line2.classList.add('visible');
+            if (progress >= 78 && line3) line3.classList.add('visible');
+            if (progress >= 95 && line4) line4.classList.add('visible');
+
+            if (progress < 35) {
+                if (statusLabel) statusLabel.textContent = 'FETCHING ASSETS...';
+            } else if (progress < 75) {
+                if (statusLabel) statusLabel.textContent = 'LOADING CONTENT MODULES...';
+            } else if (progress < 100) {
+                if (statusLabel) statusLabel.textContent = 'FINALIZING PORTFOLIO...';
+            } else {
+                if (statusLabel) statusLabel.textContent = 'READY TO EXPLORE [OK]';
+            }
+        };
+
+        // Smooth & snappy progression (~1.1s total)
+        const startTime = performance.now();
+        const duration = 1100;
+
+        const finishPreloader = () => {
+            if (isDone) return;
+            isDone = true;
+            updatePreloader(100);
+
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                // Trigger event so counters and hero effects start right as the screen reveals
+                window.dispatchEvent(new CustomEvent('portfolioReady'));
+
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    document.body.classList.add('loaded');
+                }, 500);
+            }, 200);
+        };
+
+        const step = (now) => {
+            const elapsed = now - startTime;
+            const currentProgress = Math.min((elapsed / duration) * 100, 100);
+            updatePreloader(currentProgress);
+
+            if (currentProgress < 100) {
+                requestAnimationFrame(step);
+            } else {
+                finishPreloader();
+            }
+        };
+
+        requestAnimationFrame(step);
+
+        // Fail-safe fallback timeout
+        setTimeout(finishPreloader, 2200);
+    }
+
     // --- DICTIONARY FOR I18N BILINGUAL SUPPORT ---
     const translations = {
         id: {
@@ -650,6 +724,81 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(toggleButtons, 300);
     }
 
+    // --- SMOOTH STATS COUNTER ANIMATION (TRIGGERS ON SCROLL DOWN) ---
+    const statCounters = document.querySelectorAll('.stat-count');
+    if (statCounters.length > 0) {
+        let hasAnimated = false;
+
+        const animateCount = (element) => {
+            const target = parseInt(element.getAttribute('data-target'), 10) || 0;
+            const duration = 2800; // ms for extra smooth, grand count glide
+            const startTime = performance.now();
+
+            const updateCount = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Ease-out smooth curve for soft, satisfying deceleration
+                const easeOut = 1 - Math.pow(1 - progress, 4.5);
+                const currentVal = Math.round(easeOut * target);
+                
+                element.textContent = currentVal;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = target;
+                }
+            };
+
+            requestAnimationFrame(updateCount);
+        };
+
+        const triggerStatsAnimation = () => {
+            if (hasAnimated) return;
+            hasAnimated = true;
+            statCounters.forEach((counter, idx) => {
+                setTimeout(() => animateCount(counter), idx * 100);
+            });
+        };
+
+        const statsBanner = document.querySelector('.stats-banner');
+
+        const initStatsObserver = () => {
+            if ('IntersectionObserver' in window && statsBanner) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting && !hasAnimated) {
+                            triggerStatsAnimation();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
+                observer.observe(statsBanner);
+            }
+
+            // Scroll listener fallback to ensure reliable trigger when scrolled down
+            const checkScroll = () => {
+                if (hasAnimated || !statsBanner) return;
+                const rect = statsBanner.getBoundingClientRect();
+                if (rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85) {
+                    triggerStatsAnimation();
+                    window.removeEventListener('scroll', checkScroll);
+                }
+            };
+
+            window.addEventListener('scroll', checkScroll, { passive: true });
+        };
+
+        // Listen for preloader completion event before enabling scroll observer
+        window.addEventListener('portfolioReady', initStatsObserver, { once: true });
+
+        // Fallback if preloader element doesn't exist
+        if (!document.getElementById('cyber-preloader')) {
+            initStatsObserver();
+        }
+    }
+
     // --- CANVAS PARTICLES (60 FPS OPTIMIZED) ---
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
@@ -728,6 +877,111 @@ document.addEventListener('DOMContentLoaded', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(initParticles, 150);
         });
+    }
+
+    // --- CYBER HANGING ID CARD PHYSICS & 3D INTERACTION ---
+    const idCardStage = document.getElementById('id-card-stage');
+    const cyberIdCard = document.getElementById('cyber-id-card');
+    const cardGlare = document.getElementById('card-glare');
+
+    if (idCardStage && cyberIdCard) {
+        // Trigger realistic drop-in pendulum animation
+        const triggerCardDrop = () => {
+            idCardStage.classList.remove('idle-swing');
+            idCardStage.classList.add('drop-anim');
+            setTimeout(() => {
+                idCardStage.classList.remove('drop-anim');
+                idCardStage.classList.add('idle-swing');
+            }, 1800);
+        };
+
+        // Listen for preloader finish or fallback on load
+        window.addEventListener('portfolioReady', () => {
+            setTimeout(triggerCardDrop, 120);
+        }, { once: true });
+
+        if (!document.getElementById('cyber-preloader')) {
+            triggerCardDrop();
+        }
+
+        // Interactive 3D Parallax Tilt & Drag/Move on Mouse & Touch (RAF Optimized)
+        let isInteracting = false;
+        let rafId = null;
+
+        const handleMove = (clientX, clientY) => {
+            if (rafId) cancelAnimationFrame(rafId);
+
+            rafId = requestAnimationFrame(() => {
+                const rect = cyberIdCard.getBoundingClientRect();
+                const cardCenterX = rect.left + rect.width / 2;
+                const cardCenterY = rect.top + rect.height / 2;
+
+                const deltaX = (clientX - cardCenterX) / (rect.width / 2);
+                const deltaY = (clientY - cardCenterY) / (rect.height / 2);
+
+                // Clamp values
+                const clampedX = Math.max(-1.3, Math.min(1.3, deltaX));
+                const clampedY = Math.max(-1.3, Math.min(1.3, deltaY));
+
+                const rotateX = clampedY * -15; // deg
+                const rotateY = clampedX * 17;  // deg
+                const swingZ = clampedX * 6;    // deg
+
+                idCardStage.classList.remove('idle-swing');
+                idCardStage.classList.remove('drop-anim');
+
+                cyberIdCard.style.transform = `perspective(1000px) translate3d(0, ${clampedY * 5}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${swingZ}deg)`;
+
+                if (cardGlare) {
+                    const glareX = 50 + clampedX * 35;
+                    const glareY = 40 + clampedY * 35;
+                    cardGlare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.35) 0%, rgba(0, 230, 153, 0.18) 40%, transparent 70%)`;
+                    cardGlare.style.opacity = '1';
+                }
+            });
+        };
+
+        const resetCard = () => {
+            isInteracting = false;
+            if (rafId) cancelAnimationFrame(rafId);
+            cyberIdCard.style.transform = 'perspective(1000px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
+            if (cardGlare) {
+                cardGlare.style.opacity = '0.6';
+            }
+            setTimeout(() => {
+                if (!isInteracting) {
+                    idCardStage.classList.add('idle-swing');
+                }
+            }, 300);
+        };
+
+        // Desktop Mouse Events
+        idCardStage.addEventListener('mouseenter', () => {
+            isInteracting = true;
+            idCardStage.classList.remove('idle-swing');
+        });
+
+        idCardStage.addEventListener('mousemove', (e) => {
+            isInteracting = true;
+            handleMove(e.clientX, e.clientY);
+        });
+
+        idCardStage.addEventListener('mouseleave', resetCard);
+
+        // Mobile Touch Interaction
+        idCardStage.addEventListener('touchstart', (e) => {
+            isInteracting = true;
+            idCardStage.classList.remove('idle-swing');
+        }, { passive: true });
+
+        idCardStage.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                isInteracting = true;
+                handleMove(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        idCardStage.addEventListener('touchend', resetCard);
     }
 
     // --- INITIALIZE LANGUAGE ---

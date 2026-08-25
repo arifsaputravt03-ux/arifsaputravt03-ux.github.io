@@ -13,6 +13,54 @@
 </head>
 <body>
 
+    <!-- Cyber Terminal Preloader (Smart Content Loader & Portfolio Identity) -->
+    <div id="cyber-preloader" class="cyber-preloader" aria-hidden="true">
+        <div class="preloader-bg-grid"></div>
+        <div class="preloader-terminal">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-title"><i class="bx bx-terminal"></i> ASVT://PORTFOLIO_LOADER.sh</div>
+                <div class="terminal-badge">LIVE</div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-logo-box">
+                    <div class="terminal-logo-icon">AS</div>
+                    <div class="terminal-logo-info">
+                        <div class="terminal-logo-title">ARIF SAPUTRA</div>
+                        <div class="terminal-logo-sub">Web Portfolio</div>
+                    </div>
+                </div>
+                <div class="terminal-console">
+                    <div class="console-line line-1" id="console-line-1">
+                        <span class="prompt">></span> <span class="cmd">LOADING PROFILE &amp; IT COMPETENCIES...</span> <span class="status-ok">[OK]</span>
+                    </div>
+                    <div class="console-line line-2" id="console-line-2">
+                        <span class="prompt">></span> <span class="cmd">FETCHING PROJECTS (ERP, DEVOPS, IOT)...</span> <span class="status-ok">[OK]</span>
+                    </div>
+                    <div class="console-line line-3" id="console-line-3">
+                        <span class="prompt">></span> <span class="cmd">VALIDATING SKILLS &amp; CERTIFICATIONS...</span> <span class="status-ok">[OK]</span>
+                    </div>
+                    <div class="console-line active" id="console-line-4">
+                        <span class="prompt">></span> <span class="cmd" id="console-status-text">INTERACTIVE PORTFOLIO READY</span> <span class="cursor-blink">_</span>
+                    </div>
+                </div>
+                <div class="terminal-progress-box">
+                    <div class="progress-info">
+                        <span class="progress-label" id="preloader-status-label">LOADING CONTENT...</span>
+                        <span class="progress-percent" id="preloader-percent">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="preloader-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Canvas Background for Particles -->
     <canvas id="particle-canvas"></canvas>
 
@@ -71,8 +119,68 @@
             
             <div class="hero-image-wrapper">
                 <div class="hero-avatar-glow"></div>
-                <div class="hero-avatar-border">
-                    <img src="Foto.jpg" alt="Arif Saputra Profile" class="hero-avatar" onerror="this.onerror=null; this.src='https://github.com/valdistatilamaeo.png';">
+                
+                <!-- Cyber Lanyard & Hanging ID Card (Interactive Physics) -->
+                <div class="id-card-stage" id="id-card-stage">
+                    <!-- Hanging Lanyard Strap & Metal Clip -->
+                    <div class="lanyard-rig">
+                        <div class="lanyard-strap"></div>
+                        <div class="lanyard-metal-clip">
+                            <div class="clip-ring"></div>
+                            <div class="clip-hook"></div>
+                        </div>
+                    </div>
+
+                    <!-- Hanging Cyber ID Card (Interactive 3D Physics & Tilt) -->
+                    <div class="cyber-id-card" id="cyber-id-card">
+                        <!-- Holographic Light Reflection Layer -->
+                        <div class="card-glare" id="card-glare"></div>
+
+                        <!-- Card Slot Hole for Clip -->
+                        <div class="card-slot-hole"></div>
+
+                        <!-- Card Header -->
+                        <div class="card-header">
+                            <div class="card-logo-mini">AS</div>
+                            <div class="card-brand">
+                                <span class="brand-title">ASVT ENTERPRISE</span>
+                                <span class="brand-sub">IDENTITY // ACCESS PASS</span>
+                            </div>
+                            <div class="card-chip-icon">
+                                <i class="bx bx-chip"></i>
+                            </div>
+                        </div>
+
+                        <!-- Photo Frame with Corner Brackets -->
+                        <div class="card-photo-wrapper">
+                            <div class="photo-corner tl"></div>
+                            <div class="photo-corner tr"></div>
+                            <div class="photo-corner bl"></div>
+                            <div class="photo-corner br"></div>
+                            <img src="Foto.jpg" alt="Arif Saputra ID Photo" class="id-card-photo" onerror="this.onerror=null; this.src='https://github.com/valdistatilamaeo.png';">
+                            <div class="photo-scan-line"></div>
+                        </div>
+
+                        <!-- Card Info Details -->
+                        <div class="card-details">
+                            <div class="card-name">ARIF SAPUTRA</div>
+                            <div class="card-status-badge">
+                                <span class="live-pulse"></span> ACTIVE
+                            </div>
+                            
+                            <!-- Security Details / Barcode / NFC -->
+                            <div class="card-footer-strip">
+                                <div class="card-barcode-box">
+                                    <div class="barcode-lines"></div>
+                                    <span class="barcode-text">ID: ASVT-0391-SYS</span>
+                                </div>
+                                <div class="card-nfc-badge">
+                                    <i class="bx bx-rfid"></i>
+                                    <span>NFC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,21 +192,21 @@
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-briefcase"></i></div>
                 <div class="stat-info">
-                    <h3>4+</h3>
+                    <h3><span class="stat-count" data-target="4">0</span>+</h3>
                     <p data-i18n="stat_exp">Years Total Experience</p>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-layer"></i></div>
                 <div class="stat-info">
-                    <h3>7+</h3>
+                    <h3><span class="stat-count" data-target="7">0</span>+</h3>
                     <p data-i18n="stat_projects">IT Projects</p>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-certification"></i></div>
                 <div class="stat-info">
-                    <h3>11+</h3>
+                    <h3><span class="stat-count" data-target="11">0</span>+</h3>
                     <p data-i18n="stat_certs">Certificates of Competence</p>
                 </div>
             </div>
@@ -251,55 +359,55 @@
                 <div class="skills-column">
                     <h3><i class="bx bx-code-alt"></i> <span data-i18n="skills_col1">ERP & Software Development</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip">REST API Integration</span>
-                        <span class="skill-chip">Web Application</span>
-                        <span class="skill-chip">JavaScript (ES6+)</span>
-                        <span class="skill-chip">React JS</span>
-                        <span class="skill-chip">Node JS / Express</span>
-                        <span class="skill-chip">Python & OCR</span>
-                        <span class="skill-chip">WordPress CMS</span>
-                        <span class="skill-chip">SQL & PostgreSQL</span>
-                        <span class="skill-chip">MongoDB</span>
-                        <span class="skill-chip">HTML5 & CSS3</span>
+                        <span class="skill-chip"><i class="bx bx-transfer-alt"></i> REST API Integration</span>
+                        <span class="skill-chip"><i class="bx bx-globe"></i> Web Application</span>
+                        <span class="skill-chip"><i class="bx bxl-javascript"></i> JavaScript (ES6+)</span>
+                        <span class="skill-chip"><i class="bx bxl-react"></i> React JS</span>
+                        <span class="skill-chip"><i class="bx bxl-nodejs"></i> Node JS / Express</span>
+                        <span class="skill-chip"><i class="bx bxl-python"></i> Python & OCR</span>
+                        <span class="skill-chip"><i class="bx bxl-wordpress"></i> WordPress CMS</span>
+                        <span class="skill-chip"><i class="bx bxl-postgresql"></i> SQL & PostgreSQL</span>
+                        <span class="skill-chip"><i class="bx bxl-mongodb"></i> MongoDB</span>
+                        <span class="skill-chip"><i class="bx bxl-html5"></i> HTML5 & CSS3</span>
                     </div>
                 </div>
 
                 <div class="skills-column">
                     <h3><i class="bx bx-cloud"></i> <span data-i18n="skills_col2">Cloud Infrastructure & DevOps</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip">Proxmox VE</span>
-                        <span class="skill-chip">Docker Containers</span>
-                        <span class="skill-chip">Nextcloud & NAS Storage</span>
-                        <span class="skill-chip">SMTP & Mail Server Admin</span>
-                        <span class="skill-chip">Domain & DNS Management</span>
-                        <span class="skill-chip">Nginx Web Server</span>
-                        <span class="skill-chip">Gitea & CI/CD Pipeline</span>
-                        <span class="skill-chip">Grafana & Uptime Kuma</span>
+                        <span class="skill-chip"><i class="bx bxl-tux"></i> Proxmox VE</span>
+                        <span class="skill-chip"><i class="bx bxl-docker"></i> Docker Containers</span>
+                        <span class="skill-chip"><i class="bx bx-cloud"></i> Nextcloud & NAS Storage</span>
+                        <span class="skill-chip"><i class="bx bx-envelope"></i> SMTP & Mail Server Admin</span>
+                        <span class="skill-chip"><i class="bx bx-globe-alt"></i> Domain & DNS Management</span>
+                        <span class="skill-chip"><i class="bx bx-server"></i> Nginx Web Server</span>
+                        <span class="skill-chip"><i class="bx bxl-git"></i> Gitea & CI/CD Pipeline</span>
+                        <span class="skill-chip"><i class="bx bx-line-chart"></i> Grafana & Uptime Kuma</span>
                     </div>
                 </div>
 
                 <div class="skills-column">
                     <h3><i class="bx bx-network-chart"></i> <span data-i18n="skills_col3">Network Engineering & IoT Systems</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip">MikroTik, Cisco, Aruba & Ruijie</span>
-                        <span class="skill-chip">Routing, Switching & VLAN</span>
-                        <span class="skill-chip">Fiber Optic & Cabling</span>
-                        <span class="skill-chip">PABX & IP CCTV</span>
-                        <span class="skill-chip">Access Door & Attendance (ZKTeco)</span>
-                        <span class="skill-chip">IoT & Solution Architecture</span>
+                        <span class="skill-chip"><i class="bx bx-network-chart"></i> MikroTik, Cisco, Aruba & Ruijie</span>
+                        <span class="skill-chip"><i class="bx bx-transfer"></i> Routing, Switching & VLAN</span>
+                        <span class="skill-chip"><i class="bx bx-broadcast"></i> Fiber Optic & Cabling</span>
+                        <span class="skill-chip"><i class="bx bx-cctv"></i> PABX & IP CCTV</span>
+                        <span class="skill-chip"><i class="bx bx-fingerprint"></i> Access Door & Attendance (ZKTeco)</span>
+                        <span class="skill-chip"><i class="bx bx-chip"></i> IoT & Solution Architecture</span>
                     </div>
                 </div>
 
                 <div class="skills-column">
                     <h3><i class="bx bx-folder-open"></i> <span data-i18n="skills_col4">Administration & QC Tools</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip">Microsoft 365 SharePoint</span>
-                        <span class="skill-chip">Spreadsheets (MS Excel & Google Sheets)</span>
-                        <span class="skill-chip">Data Matching & Quality Reporting</span>
-                        <span class="skill-chip">EPC Document Control & Transmittals</span>
-                        <span class="skill-chip">Test Package & QC Documentation</span>
-                        <span class="skill-chip">Python OCR Data Extraction</span>
-                        <span class="skill-chip">IT Asset & Inventory Management</span>
+                        <span class="skill-chip"><i class="bx bxl-microsoft"></i> Microsoft 365 SharePoint</span>
+                        <span class="skill-chip"><i class="bx bx-table"></i> Spreadsheets (MS Excel & Google Sheets)</span>
+                        <span class="skill-chip"><i class="bx bx-check-double"></i> Data Matching & Quality Reporting</span>
+                        <span class="skill-chip"><i class="bx bx-folder-open"></i> EPC Document Control & Transmittals</span>
+                        <span class="skill-chip"><i class="bx bx-file"></i> Test Package & QC Documentation</span>
+                        <span class="skill-chip"><i class="bx bx-bot"></i> Python OCR Data Extraction</span>
+                        <span class="skill-chip"><i class="bx bx-package"></i> IT Asset & Inventory Management</span>
                     </div>
                 </div>
 
