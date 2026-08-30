@@ -772,29 +772,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const statsBanner = document.querySelector('.stats-banner');
 
         const initStatsObserver = () => {
-            if ('IntersectionObserver' in window && statsBanner) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting && !hasAnimated) {
-                            triggerStatsAnimation();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
-                observer.observe(statsBanner);
-            }
+            let userScrolled = false;
 
-            // Scroll listener fallback to ensure reliable trigger when scrolled down
-            const checkScroll = () => {
+            const checkAndAnimate = () => {
                 if (hasAnimated || !statsBanner) return;
                 const rect = statsBanner.getBoundingClientRect();
-                if (rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85) {
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                const inView = rect.top <= windowHeight * 0.92 && rect.bottom >= 0;
+
+                if (inView && userScrolled) {
                     triggerStatsAnimation();
-                    window.removeEventListener('scroll', checkScroll);
+                    window.removeEventListener('scroll', onScroll);
                 }
             };
 
-            window.addEventListener('scroll', checkScroll, { passive: true });
+            const onScroll = () => {
+                userScrolled = true;
+                checkAndAnimate();
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
         };
 
         // Listen for preloader completion event before enabling scroll observer
