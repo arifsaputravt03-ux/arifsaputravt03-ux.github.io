@@ -1241,8 +1241,6 @@ header.navbar.scrolled {
     letter-spacing: 1.2px;
     text-align: center;
 }
-    color: var(--accent-primary);
-}
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
