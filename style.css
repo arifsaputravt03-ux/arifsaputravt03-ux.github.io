@@ -2114,17 +2114,18 @@ header.navbar.scrolled {
     box-shadow: 0 0 16px rgba(0, 230, 153, 0.3);
 }
 
-.social-icon-img {
-    width: 22px;
-    height: 22px;
+.social-icon-img,
+.social-icon-btn svg {
+    width: 20px;
+    height: 20px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    fill: currentColor;
+    transition: transform 0.3s ease;
 }
 
-.social-icon-btn:hover .social-icon-img {
+.social-icon-btn:hover .social-icon-img,
+.social-icon-btn:hover svg {
     transform: scale(1.15);
-    filter: brightness(0) invert(1);
 }
 
 .project-stack {
