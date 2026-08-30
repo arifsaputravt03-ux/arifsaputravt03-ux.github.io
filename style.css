@@ -2956,6 +2956,24 @@ footer {
         font-size: 0.8rem;
     }
 
+    .cyber-id-card {
+        width: 230px;
+        padding: 12px 12px 10px;
+    }
+
+    .card-photo-wrapper {
+        height: 190px;
+    }
+
+    .cert-card {
+        padding: 16px;
+    }
+
+    .social-links-centered {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
     .timeline-horizontal-line {
         left: calc((100vw - 48px) / 2) !important;
         right: calc((100vw - 48px) / 2) !important;
