@@ -1315,6 +1315,12 @@ header.navbar.scrolled {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .stat-info h3 {
     font-size: 2.2rem;
     font-weight: 800;
@@ -1326,6 +1332,7 @@ header.navbar.scrolled {
     line-height: 1.1;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .stat-count {
@@ -2840,13 +2847,41 @@ footer {
     .stats-banner {
         grid-template-columns: 1fr;
         margin-top: 20px;
+        padding: 24px 20px;
+        gap: 16px;
     }
 
     .stat-card {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
         gap: 12px;
+        padding: 18px 16px;
+        width: 100%;
+    }
+
+    .stat-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .stat-info h3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .stat-info p {
+        text-align: center;
+        width: 100%;
     }
     
     .skills-grid, .cert-grid {
@@ -3019,6 +3054,26 @@ footer {
 
     .menu-toggle {
         font-size: 1.4rem;
+    }
+
+    .stats-banner {
+        padding: 18px 14px;
+        gap: 14px;
+    }
+
+    .stat-card {
+        padding: 14px 10px;
+    }
+
+    .stat-info h3 {
+        font-size: 1.95rem;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .stat-info p {
+        font-size: 0.78rem;
+        text-align: center;
     }
 
     .projects-filter, .cert-filter-container {
