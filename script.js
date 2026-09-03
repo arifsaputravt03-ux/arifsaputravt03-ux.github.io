@@ -784,78 +784,62 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(toggleButtons, 300);
     }
 
-    // --- 4-SECOND LUXURIOUS GRADUAL STATS COUNTER ANIMATION ---
+    // --- GUARANTEED STEP-BY-STEP STATS COUNTER ANIMATION ---
     const statCounters = document.querySelectorAll('.stat-count');
     if (statCounters.length > 0) {
         let hasAnimated = false;
 
         const animateCount = (element) => {
             const target = parseInt(element.getAttribute('data-target'), 10) || 0;
-            const duration = 4000; // 4.0 seconds gradual rise duration
-            const startTime = performance.now();
+            if (target <= 0) return;
 
-            element.classList.add('counting');
+            // Maximum 2.0s timing for gradual, smooth counting
+            const stepDuration = target <= 5 ? 320 : target <= 10 ? 220 : 120;
+            let current = 0;
+            element.textContent = '0';
 
-            const updateCount = (currentTime) => {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                
-                // Gentle ease-out curve for smooth, steady step progression over 4 seconds
-                const easeOut = 1 - Math.pow(1 - progress, 2.5);
-                const currentVal = Math.min(Math.round(easeOut * target), target);
-                
-                element.textContent = currentVal;
+            const stepTimer = setInterval(() => {
+                current += 1;
+                element.textContent = current;
 
-                if (progress < 1) {
-                    requestAnimationFrame(updateCount);
-                } else {
+                if (current >= target) {
+                    clearInterval(stepTimer);
                     element.textContent = target;
-                    element.classList.remove('counting');
-                    element.classList.add('count-complete');
-                    setTimeout(() => element.classList.remove('count-complete'), 600);
                 }
-            };
-
-            requestAnimationFrame(updateCount);
+            }, stepDuration);
         };
 
         const triggerStatsAnimation = () => {
             if (hasAnimated) return;
             hasAnimated = true;
             statCounters.forEach((counter, idx) => {
-                setTimeout(() => animateCount(counter), idx * 250);
+                setTimeout(() => animateCount(counter), idx * 120);
             });
         };
 
         const statsBanner = document.querySelector('.stats-banner');
 
-        const startObserver = () => {
-            if (!statsBanner) return;
-            
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !hasAnimated) {
+        if (statsBanner && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        // Check if preloader is still visible; if so, wait until preloader finishes
+                        const preloader = document.getElementById('cyber-preloader');
+                        if (preloader && getComputedStyle(preloader).display !== 'none' && !preloader.classList.contains('fade-out')) {
+                            window.addEventListener('portfolioReady', () => {
+                                setTimeout(triggerStatsAnimation, 300);
+                            }, { once: true });
+                        } else {
                             triggerStatsAnimation();
-                            observer.disconnect();
                         }
-                    });
-                }, { threshold: 0.15 });
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
 
-                observer.observe(statsBanner);
-            } else {
-                triggerStatsAnimation();
-            }
-        };
-
-        // Ensure preloader is completely faded out and screen is 100% visible before observing/animating
-        window.addEventListener('portfolioReady', () => {
-            setTimeout(startObserver, 650);
-        }, { once: true });
-
-        // Fallback if cyber-preloader does not exist in DOM
-        if (!document.getElementById('cyber-preloader')) {
-            setTimeout(startObserver, 200);
+            observer.observe(statsBanner);
+        } else {
+            triggerStatsAnimation();
         }
     }
 
