@@ -206,7 +206,7 @@
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-certification"></i></div>
                 <div class="stat-info">
-                    <h3><span class="stat-count" data-target="13">0</span>+</h3>
+                    <h3><span class="stat-count" data-target="15">0</span>+</h3>
                     <p data-i18n="stat_certs">Certificates of Competence</p>
                 </div>
             </div>
@@ -881,10 +881,20 @@
         <div class="container">
             <div class="section-label" data-i18n="cert_label">Certifications</div>
             <h2 class="section-title" data-i18n="cert_title">Certificates of Competence</h2>
+            
+            <div class="cert-filter-container">
+                <button class="cert-filter-btn active" data-cert-filter="all"><i class="bx bx-grid-alt"></i> <span data-i18n="cert_filter_all">All Certifications</span></button>
+                <button class="cert-filter-btn" data-cert-filter="cybersecurity"><i class="bx bx-shield"></i> <span data-i18n="cert_filter_cyber">Cybersecurity</span></button>
+                <button class="cert-filter-btn" data-cert-filter="infra"><i class="bx bx-server"></i> <span data-i18n="cert_filter_infra">IT Infra & Networking</span></button>
+                <button class="cert-filter-btn" data-cert-filter="software"><i class="bx bx-code-alt"></i> <span data-i18n="cert_filter_software">Software Dev</span></button>
+                <button class="cert-filter-btn" data-cert-filter="database"><i class="bx bx-data"></i> <span data-i18n="cert_filter_db">Database Admin</span></button>
+                <button class="cert-filter-btn" data-cert-filter="industrial"><i class="bx bx-bell"></i> <span data-i18n="cert_filter_industrial">Industrial Systems</span></button>
+            </div>
+
             <div class="cert-grid">
                 
                 <!-- Cybersecurity & Security Operations -->
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="cybersecurity">
                     <div class="cert-badge"><i class="bx bx-shield-quarter"></i></div>
                     <h3 class="cert-title">Cisco CyberOps Associate</h3>
                     <p class="cert-issuer">Cisco Networking Academy</p>
@@ -892,12 +902,12 @@
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>5301438c-74b6-4d31-89da-b2696dc1e1cc</strong></span>
                         <a href="Asset/Sertifikasi/CyberOps Associate- Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="cybersecurity">
                     <div class="cert-badge"><i class="bx bx-lock-alt"></i></div>
                     <h3 class="cert-title">Fortinet Certified Fundamentals in Cybersecurity</h3>
                     <p class="cert-issuer">Fortinet</p>
@@ -910,7 +920,7 @@
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="cybersecurity">
                     <div class="cert-badge"><i class="bx bx-check-shield"></i></div>
                     <h3 class="cert-title">Fortinet Certified Associate in Cybersecurity</h3>
                     <p class="cert-issuer">Fortinet</p>
@@ -923,46 +933,46 @@
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="cybersecurity">
                     <div class="cert-badge"><i class="bx bx-shield-alt-2"></i></div>
                     <h3 class="cert-title">Cybersecurity Essentials LFC108</h3>
                     <p class="cert-issuer">The Linux Foundation</p>
                     <p class="cert-desc" data-i18n="cert_lfc108">Fundamentals of cybersecurity principles, system hardening, risk mitigation, and security best practices for computing environments.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>LF-z6kwpexkth</strong></span>
-                        <a href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/50c1c9be-54cd-4a51-9b58-e974faa6a8d9-arif-saputra-861dc1ce-32e7-4fa1-93ac-bd9815607a03-certificate.pdf" target="_blank" class="btn-verify">
+                        <a href="https://www.credly.com/badges/141578c1-2b9f-4ba1-888b-0b00f777731d" target="_blank" class="btn-verify">
                             <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- IT Infrastructure, Linux & Networking -->
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="infra">
                     <div class="cert-badge"><i class="bx bxl-tux"></i></div>
                     <h3 class="cert-title">Introduction to Linux LFS101</h3>
                     <p class="cert-issuer">The Linux Foundation</p>
                     <p class="cert-desc" data-i18n="cert_lfs101">Fundamentals of Linux OS, command-line interface (CLI) administration, system operations, and open-source computing environment management.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>LF-spzyb3n9sx</strong></span>
-                        <a href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/50c1c9be-54cd-4a51-9b58-e974faa6a8d9-arif-saputra-2710762f-9b03-4368-b362-cc426dd413bf-certificate.pdf" target="_blank" class="btn-verify">
+                        <a href="https://www.credly.com/badges/a0c1edd4-0d85-4ea0-be16-bbc9eae7b626/public_url" target="_blank" class="btn-verify">
                             <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="infra">
                     <div class="cert-badge"><i class="bx bx-git-repo-forked"></i></div>
                     <h3 class="cert-title">CCNA R&amp;S: Routing and Switching Essentials</h3>
                     <p class="cert-issuer">Cisco Networking Academy</p>
                     <p class="cert-desc" data-i18n="cert_cisco_rs">Router traffic forwarding operations, Ethernet switching, VLAN implementation, static routing &amp; RIPv2, DHCP, NAT, ACL traffic filtering, and network troubleshooting.</p>
                     <div class="cert-credential">
                         <a href="Asset/Sertifikasi/Routing and Switching Essentials - Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="infra">
                     <div class="cert-badge"><i class="bx bx-network-chart"></i></div>
                     <h3 class="cert-title">MikroTik Certified Network Associate (MTCNA)</h3>
                     <p class="cert-issuer">MikroTik</p>
@@ -970,12 +980,12 @@
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>2011NA6084</strong></span>
                         <a href="Asset/Sertifikasi/MTCNA Sertfikasi.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="infra">
                     <div class="cert-badge"><i class="bx bx-chip"></i></div>
                     <h3 class="cert-title">Information Technology Fundamentals</h3>
                     <p class="cert-issuer">IBM</p>
@@ -983,13 +993,13 @@
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>d5e68e95-2840-4070-88da-388eff3b4383</strong></span>
                         <a href="Asset/Sertifikasi/Information Technology Fundamentals - IBM.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Programming & Software Development -->
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="software">
                     <div class="cert-badge"><i class="bx bxl-javascript"></i></div>
                     <h3 class="cert-title">JavaScript Essentials 2</h3>
                     <p class="cert-issuer">Cisco Networking Academy & OpenEDG JS Institute</p>
@@ -997,12 +1007,12 @@
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>cfd22b44-b225-495c-9d86-43bc5c14b71a</strong></span>
                         <a href="Asset/Sertifikasi/Java Script Essentials2 Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="software">
                     <div class="cert-badge"><i class="bx bxl-python"></i></div>
                     <h3 class="cert-title">Python Essentials 2</h3>
                     <p class="cert-issuer">Cisco Networking Academy & Python Institute</p>
@@ -1010,25 +1020,38 @@
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>01dac1bf-9ccf-40b7-8153-9d73758d233b</strong></span>
                         <a href="Asset/Sertifikasi/Python Essentials 2 - Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel" data-category="software">
+                    <div class="cert-badge"><i class="bx bx-code-alt"></i></div>
+                    <h3 class="cert-title">Software Engineer</h3>
+                    <p class="cert-issuer">HackerRank</p>
+                    <p class="cert-desc" data-i18n="cert_software_engineer">It covers core software engineering topics like Problem Solving, Java, Go, SQL, and REST API development.</p>
+                    <div class="cert-credential">
+                        <span class="cert-id">ID: <strong>8AAAF10DD6F2</strong></span>
+                        <a href="https://www.hackerrank.com/certificates/8aaaf10dd6f2" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Database Administration -->
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="database">
                     <div class="cert-badge"><i class="bx bxl-mongodb"></i></div>
                     <h3 class="cert-title">MongoDB - CRUD Complete</h3>
                     <p class="cert-issuer">MongoDB University</p>
                     <p class="cert-desc" data-i18n="cert_mongodb">MongoDB document database operations, CRUD manipulation, indexing strategies, aggregation pipeline, and schema design.</p>
                     <div class="cert-credential">
                         <a href="Asset/Sertifikasi/Mongo DB - CRUD Complete.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="database">
                     <div class="cert-badge"><i class="bx bx-data"></i></div>
                     <h3 class="cert-title">Database Administrator (BNSP DBA)</h3>
                     <p class="cert-issuer">Badan Nasional Sertifikasi Profesi (BNSP)</p>
@@ -1036,13 +1059,26 @@
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>69201 251 6 0000004 2025</strong></span>
                         <a href="Asset/Sertifikasi/Database Associated - BNSP.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="view_cert">View Certificate</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel" data-category="database">
+                    <div class="cert-badge"><i class="bx bx-table"></i></div>
+                    <h3 class="cert-title">SQL (Basic)</h3>
+                    <p class="cert-issuer">HackerRank</p>
+                    <p class="cert-desc" data-i18n="cert_sql_basic">Basic SQL queries, relational database concepts, SELECT statements, filtering with WHERE, joins (INNER, LEFT, RIGHT), aggregations (GROUP BY, HAVING), sorting, and subqueries.</p>
+                    <div class="cert-credential">
+                        <span class="cert-id">ID: <strong>AD5F99EBB627</strong></span>
+                        <a href="https://www.hackerrank.com/certificates/ad5f99ebb627" target="_blank" class="btn-verify">
+                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Industrial / Safety Systems -->
-                <div class="cert-card glass-panel">
+                <div class="cert-card glass-panel" data-category="industrial">
                     <div class="cert-badge"><i class="bx bx-bell"></i></div>
                     <h3 class="cert-title">Honeywell Fire Alarm Certification</h3>
                     <p class="cert-issuer">Honeywell Technologies</p>

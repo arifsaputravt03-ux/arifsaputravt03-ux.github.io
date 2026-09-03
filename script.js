@@ -196,6 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_ibm: "Prinsip dasar teknologi informasi, konsep komputasi awan (cloud computing), keamanan siber, dan pengelolaan sistem data.",
             cert_honeywell: "Instalasi, pemrograman panel alarm kebakaran addressable & konvensional Notifier, serta pemeliharaan proteksi kebakaran gedung.",
             cert_mongodb: "Operasi basis data dokumen MongoDB, manipulasi CRUD, strategi pengindeksan (indexing), aggregation pipeline, dan desain skema data.",
+            cert_sql_basic: "Query SQL dasar, konsep basis data relasional, pernyataan SELECT, pemfilteran data dengan WHERE, penggabungan tabel (JOIN), agregasi (GROUP BY, HAVING), pengurutan, dan subquery.",
+            cert_software_engineer: "Mencakup topik rekayasa perangkat lunak seperti Pemecahan Masalah (Problem Solving), Java, Go, SQL, dan pengembangan REST API.",
+            cert_filter_all: "Semua Sertifikasi",
+            cert_filter_cyber: "Keamanan Siber",
+            cert_filter_infra: "Infrastruktur & Jaringan",
+            cert_filter_software: "Software Dev",
+            cert_filter_db: "Administrasi Database",
+            cert_filter_industrial: "Sistem Industri",
             view_cert: "Lihat Sertifikat",
             verify_cert: "Verifikasi",
             contact_label: "Kontak",
@@ -327,6 +335,14 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_ibm: "Information technology fundamentals, cloud computing concepts, cybersecurity, and data system management.",
             cert_honeywell: "Installation, programming of addressable & conventional Notifier fire alarm panels, and building fire protection maintenance.",
             cert_mongodb: "MongoDB document database operations, CRUD manipulation, indexing strategies, aggregation pipeline, and schema design.",
+            cert_sql_basic: "Basic SQL queries, relational database concepts, SELECT statements, filtering with WHERE, joins (INNER, LEFT, RIGHT), aggregations (GROUP BY, HAVING), sorting, and subqueries.",
+            cert_software_engineer: "It covers core software engineering topics like Problem Solving, Java, Go, SQL, and REST API development.",
+            cert_filter_all: "All Certifications",
+            cert_filter_cyber: "Cybersecurity",
+            cert_filter_infra: "IT Infra & Networking",
+            cert_filter_software: "Software Dev",
+            cert_filter_db: "Database Admin",
+            cert_filter_industrial: "Industrial Systems",
             view_cert: "View Certificate",
             verify_cert: "Verify",
             contact_label: "Contact",
@@ -565,10 +581,47 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 50);
                 } else {
                     wrapper.style.opacity = '0';
-                    wrapper.style.transform = 'scale(0.95)';
+                    wrapper.style.transform = 'scale(0.92)';
                     setTimeout(() => {
                         wrapper.style.display = 'none';
-                    }, 300);
+                    }, 250);
+                }
+            });
+
+            // Smooth scroll timeline track back to start when category changes
+            const track = document.querySelector('.projects-horizontal-track');
+            if (track) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // --- CERTIFICATIONS FILTER ---
+    const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
+    const certCards = document.querySelectorAll('.cert-card');
+
+    certFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filterValue = btn.getAttribute('data-cert-filter');
+            
+            certFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            certCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.92)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 250);
                 }
             });
         });
@@ -731,23 +784,26 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(toggleButtons, 300);
     }
 
-    // --- SMOOTH STATS COUNTER ANIMATION (TRIGGERS ON SCROLL DOWN) ---
+    // --- ULTRA-SMOOTH & RESPONSIVE STATS COUNTER (MOBILE & DESKTOP OPTIMIZED) ---
     const statCounters = document.querySelectorAll('.stat-count');
     if (statCounters.length > 0) {
         let hasAnimated = false;
 
         const animateCount = (element) => {
             const target = parseInt(element.getAttribute('data-target'), 10) || 0;
-            const duration = 2800; // ms for extra smooth, grand count glide
+            // Dynamically duration-scaled for integer targets (4, 7, 15) so numbers tick fluidly without lag
+            const duration = target <= 5 ? 1200 : target <= 10 ? 1600 : 2000;
             const startTime = performance.now();
+
+            element.classList.add('counting');
 
             const updateCount = (currentTime) => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 
-                // Ease-out smooth curve for soft, satisfying deceleration
-                const easeOut = 1 - Math.pow(1 - progress, 4.5);
-                const currentVal = Math.round(easeOut * target);
+                // Fluid ease-out cubic curve
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.floor(easeOut * target);
                 
                 element.textContent = currentVal;
 
@@ -755,6 +811,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     requestAnimationFrame(updateCount);
                 } else {
                     element.textContent = target;
+                    element.classList.remove('counting');
+                    element.classList.add('count-complete');
+                    setTimeout(() => element.classList.remove('count-complete'), 550);
                 }
             };
 
@@ -765,41 +824,34 @@ document.addEventListener('DOMContentLoaded', () => {
             if (hasAnimated) return;
             hasAnimated = true;
             statCounters.forEach((counter, idx) => {
-                setTimeout(() => animateCount(counter), idx * 100);
+                setTimeout(() => animateCount(counter), idx * 140);
             });
         };
 
         const statsBanner = document.querySelector('.stats-banner');
 
-        const initStatsObserver = () => {
-            let userScrolled = false;
+        if (statsBanner && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        triggerStatsAnimation();
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.2 });
 
-            const checkAndAnimate = () => {
-                if (hasAnimated || !statsBanner) return;
-                const rect = statsBanner.getBoundingClientRect();
-                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                const inView = rect.top <= windowHeight * 0.92 && rect.bottom >= 0;
+            window.addEventListener('portfolioReady', () => {
+                observer.observe(statsBanner);
+            }, { once: true });
 
-                if (inView && userScrolled) {
-                    triggerStatsAnimation();
-                    window.removeEventListener('scroll', onScroll);
-                }
-            };
-
-            const onScroll = () => {
-                userScrolled = true;
-                checkAndAnimate();
-            };
-
-            window.addEventListener('scroll', onScroll, { passive: true });
-        };
-
-        // Listen for preloader completion event before enabling scroll observer
-        window.addEventListener('portfolioReady', initStatsObserver, { once: true });
-
-        // Fallback if preloader element doesn't exist
-        if (!document.getElementById('cyber-preloader')) {
-            initStatsObserver();
+            if (!document.getElementById('cyber-preloader')) {
+                observer.observe(statsBanner);
+            }
+        } else {
+            window.addEventListener('portfolioReady', triggerStatsAnimation, { once: true });
+            if (!document.getElementById('cyber-preloader')) {
+                triggerStatsAnimation();
+            }
         }
     }
 

@@ -1329,6 +1329,22 @@ header.navbar.scrolled {
 .stat-count {
     display: inline-block;
     font-variant-numeric: tabular-nums;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.stat-count.counting {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px rgba(0, 230, 153, 0.6));
+}
+
+.stat-count.count-complete {
+    animation: countPulse 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes countPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.18); filter: drop-shadow(0 0 14px rgba(0, 230, 153, 0.8)); }
+    100% { transform: scale(1); filter: none; }
 }
 
 .stat-info p {
@@ -1817,19 +1833,27 @@ header.navbar.scrolled {
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
 }
 
 .filter-btn:hover {
     color: var(--text-primary);
     border-color: var(--accent-secondary);
+    transform: translateY(-2px);
+}
+
+.filter-btn:active {
+    transform: scale(0.95) translateY(0);
 }
 
 .filter-btn.active {
     background: var(--gradient-btn);
     color: #02040a;
     border-color: transparent;
-    box-shadow: 0 4px 12px var(--accent-glow);
+    box-shadow: 0 4px 14px var(--accent-glow);
     font-weight: 700;
 }
 
@@ -1929,7 +1953,8 @@ header.navbar.scrolled {
     align-items: center;
     position: relative;
     z-index: 2;
-    transition: transform 0.3s ease;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .timeline-node {
@@ -2148,6 +2173,48 @@ header.navbar.scrolled {
 }
 
 /* --- CERTIFICATIONS SECTION --- */
+.cert-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.cert-filter-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.cert-filter-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-secondary);
+    transform: translateY(-2px);
+}
+
+.cert-filter-btn:active {
+    transform: scale(0.95) translateY(0);
+}
+
+.cert-filter-btn.active {
+    background: var(--gradient-btn);
+    color: #02040a;
+    border-color: transparent;
+    box-shadow: 0 4px 14px var(--accent-glow);
+    font-weight: 700;
+}
+
 .cert-grid {
     display: flex;
     flex-wrap: wrap;
@@ -2963,11 +3030,11 @@ footer {
         font-size: 1.4rem;
     }
 
-    .projects-filter {
+    .projects-filter, .cert-filter-container {
         gap: 8px;
     }
 
-    .filter-btn {
+    .filter-btn, .cert-filter-btn {
         padding: 8px 14px;
         font-size: 0.8rem;
     }
