@@ -784,15 +784,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(toggleButtons, 300);
     }
 
-    // --- ULTRA-SMOOTH & RESPONSIVE STATS COUNTER (MOBILE & DESKTOP OPTIMIZED) ---
+    // --- 4-SECOND LUXURIOUS GRADUAL STATS COUNTER ANIMATION ---
     const statCounters = document.querySelectorAll('.stat-count');
     if (statCounters.length > 0) {
         let hasAnimated = false;
 
         const animateCount = (element) => {
             const target = parseInt(element.getAttribute('data-target'), 10) || 0;
-            // Dynamically duration-scaled for integer targets (4, 7, 15) so numbers tick fluidly without lag
-            const duration = target <= 5 ? 1200 : target <= 10 ? 1600 : 2000;
+            const duration = 4000; // 4.0 seconds gradual rise duration
             const startTime = performance.now();
 
             element.classList.add('counting');
@@ -801,9 +800,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 
-                // Fluid ease-out cubic curve
-                const easeOut = 1 - Math.pow(1 - progress, 3);
-                const currentVal = Math.floor(easeOut * target);
+                // Gentle ease-out curve for smooth, steady step progression over 4 seconds
+                const easeOut = 1 - Math.pow(1 - progress, 2.5);
+                const currentVal = Math.min(Math.round(easeOut * target), target);
                 
                 element.textContent = currentVal;
 
@@ -813,7 +812,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     element.textContent = target;
                     element.classList.remove('counting');
                     element.classList.add('count-complete');
-                    setTimeout(() => element.classList.remove('count-complete'), 550);
+                    setTimeout(() => element.classList.remove('count-complete'), 600);
                 }
             };
 
@@ -824,34 +823,39 @@ document.addEventListener('DOMContentLoaded', () => {
             if (hasAnimated) return;
             hasAnimated = true;
             statCounters.forEach((counter, idx) => {
-                setTimeout(() => animateCount(counter), idx * 140);
+                setTimeout(() => animateCount(counter), idx * 250);
             });
         };
 
         const statsBanner = document.querySelector('.stats-banner');
 
-        if (statsBanner && 'IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !hasAnimated) {
-                        triggerStatsAnimation();
-                        observer.disconnect();
-                    }
-                });
-            }, { threshold: 0.2 });
+        const startObserver = () => {
+            if (!statsBanner) return;
+            
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !hasAnimated) {
+                            triggerStatsAnimation();
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.15 });
 
-            window.addEventListener('portfolioReady', () => {
                 observer.observe(statsBanner);
-            }, { once: true });
-
-            if (!document.getElementById('cyber-preloader')) {
-                observer.observe(statsBanner);
-            }
-        } else {
-            window.addEventListener('portfolioReady', triggerStatsAnimation, { once: true });
-            if (!document.getElementById('cyber-preloader')) {
+            } else {
                 triggerStatsAnimation();
             }
+        };
+
+        // Ensure preloader is completely faded out and screen is 100% visible before observing/animating
+        window.addEventListener('portfolioReady', () => {
+            setTimeout(startObserver, 650);
+        }, { once: true });
+
+        // Fallback if cyber-preloader does not exist in DOM
+        if (!document.getElementById('cyber-preloader')) {
+            setTimeout(startObserver, 200);
         }
     }
 
