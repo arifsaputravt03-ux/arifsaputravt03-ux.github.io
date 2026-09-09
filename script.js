@@ -691,7 +691,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (images.length > 0) {
                     modalGallery.style.display = 'flex';
-                    mainGalleryImg.src = images[0];
+                    mainGalleryImg.src = encodeURI(images[0]);
                     mainGalleryImg.style.opacity = '1';
                     
                     thumbsContainer.innerHTML = '';
@@ -699,14 +699,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         thumbsContainer.style.display = 'flex';
                         images.forEach((imgSrc, idx) => {
                             const thumb = document.createElement('img');
-                            thumb.src = imgSrc;
+                            thumb.src = encodeURI(imgSrc);
                             thumb.alt = `${title} Screenshot ${idx + 1}`;
                             thumb.className = idx === 0 ? 'thumb-item active' : 'thumb-item';
                             
                             thumb.addEventListener('click', () => {
                                 mainGalleryImg.style.opacity = '0.3';
                                 setTimeout(() => {
-                                    mainGalleryImg.src = imgSrc;
+                                    mainGalleryImg.src = encodeURI(imgSrc);
                                     mainGalleryImg.style.opacity = '1';
                                 }, 150);
                                 

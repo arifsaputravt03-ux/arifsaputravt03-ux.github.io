@@ -9,6 +9,9 @@ const MIME = {
   '.js': 'text/javascript',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
+  '.gif': 'image/gif',
   '.pdf': 'application/pdf',
   '.svg': 'image/svg+xml'
 };
