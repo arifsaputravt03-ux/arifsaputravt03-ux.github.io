@@ -1612,9 +1612,9 @@ header.navbar.scrolled {
     counter-increment: skill-counter;
     content: "0" counter(skill-counter);
     position: absolute;
-    top: 18px;
+    top: 20px;
     right: 22px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-family: var(--font-mono, monospace);
     font-weight: 800;
     color: var(--accent-primary);
@@ -1625,6 +1625,7 @@ header.navbar.scrolled {
     letter-spacing: 1px;
     box-shadow: 0 0 12px rgba(0, 230, 153, 0.25);
     transition: all 0.3s ease;
+    z-index: 2;
 }
 
 .skills-column:hover::after {
@@ -1652,7 +1653,7 @@ header.navbar.scrolled {
 
     .skills-items {
         flex: 1;
-        padding-right: 40px;
+        padding-right: 50px;
     }
 }
 
@@ -1666,6 +1667,8 @@ header.navbar.scrolled {
     gap: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 14px;
+    padding-right: 55px; /* Reserve space for step badge (01 - 05) on mobile/tablet */
+    position: relative;
 }
 
 .skills-column h3 i {
@@ -1692,9 +1695,12 @@ header.navbar.scrolled {
 
 .skills-column h3 span {
     flex: 1;
+    min-width: 0;
     line-height: 1.35;
     color: var(--text-primary);
     letter-spacing: 0.2px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .skills-items {
@@ -2961,11 +2967,27 @@ footer {
 
     .skills-column h3 {
         justify-content: flex-start;
-        margin-top: 6px;
+        margin-top: 2px;
+        padding-right: 54px; /* Ensure title wrap does not hit top-right badge */
+    }
+
+    .skills-column::after {
+        top: 18px;
+        right: 18px;
+        font-size: 0.8rem;
+        padding: 2px 9px;
     }
 
     .skills-items {
         justify-content: flex-start;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
     }
     
     .about-tabs-container {
@@ -3142,6 +3164,40 @@ footer {
     .stat-info p {
         font-size: 0.78rem;
         text-align: center;
+    }
+
+    .skills-column {
+        padding: 18px 14px;
+    }
+
+    .skills-column h3 {
+        font-size: 0.98rem;
+        padding-right: 48px;
+        gap: 10px;
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+    }
+
+    .skills-column h3 i {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+    }
+
+    .skills-column::after {
+        top: 16px;
+        right: 14px;
+        font-size: 0.76rem;
+        padding: 2px 8px;
+    }
+
+    .skill-chip {
+        font-size: 0.82rem;
+        padding: 7px 14px;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
     }
 
     .projects-filter, .cert-filter-container {
