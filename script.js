@@ -449,9 +449,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = sec.getAttribute('id');
         return {
             sec,
-            link: document.querySelector(`.nav-links a[href*="${id}"]`)
+            link: document.querySelector(`.nav-links a[href*="${id}"]`),
+            top: 0,
+            height: 0
         };
     });
+
+    function updateSectionOffsets() {
+        sectionNavMap.forEach(item => {
+            if (item.sec) {
+                item.top = item.sec.offsetTop - 120;
+                item.height = item.sec.offsetHeight;
+            }
+        });
+    }
+
+    updateSectionOffsets();
+    window.addEventListener('resize', updateSectionOffsets, { passive: true });
 
     let isScrollTicking = false;
 
@@ -470,12 +484,10 @@ document.addEventListener('DOMContentLoaded', () => {
             else backToTopBtn.classList.remove('active');
         }
 
-        // 3. ScrollSpy
+        // 3. ScrollSpy (Zero-reflow using cached offset values)
         sectionNavMap.forEach(item => {
             if (item.link) {
-                const sectionTop = item.sec.offsetTop - 120;
-                const sectionHeight = item.sec.offsetHeight;
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                if (scrollY > item.top && scrollY <= item.top + item.height) {
                     item.link.classList.add('active');
                 } else {
                     item.link.classList.remove('active');

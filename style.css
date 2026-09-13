@@ -41,7 +41,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 html, body {
@@ -823,15 +827,15 @@ header.navbar.scrolled {
 
 .hero-avatar-glow {
     position: absolute;
-    width: 360px;
-    height: 420px;
+    width: 440px;
+    height: 480px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 230, 153, 0.18) 0%, rgba(0, 98, 255, 0.14) 50%, transparent 70%);
-    filter: blur(40px);
-    opacity: 0.8;
+    background: radial-gradient(circle, rgba(0, 230, 153, 0.22) 0%, rgba(0, 98, 255, 0.12) 40%, rgba(0, 98, 255, 0.04) 60%, transparent 75%);
+    opacity: 0.85;
     z-index: 0;
     pointer-events: none;
-    animation: rotateGlow 12s infinite linear;
+    animation: rotateGlow 14s infinite linear;
+    transform: translate3d(0, 0, 0);
 }
 
 @keyframes rotateGlow {
@@ -991,8 +995,6 @@ header.navbar.scrolled {
         0 0 35px rgba(0, 98, 255, 0.25),
         0 0 20px rgba(0, 230, 153, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     overflow: hidden;
     transform-style: preserve-3d;
     transition: transform 0.15s ease-out, box-shadow 0.2s ease;
