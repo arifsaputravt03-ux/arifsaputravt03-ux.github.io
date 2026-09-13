@@ -439,23 +439,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- STICKY NAVBAR & BACK TO TOP ---
+    // --- STICKY NAVBAR, BACK TO TOP & HIGH-PERFORMANCE SCROLLSPY ---
     const navbar = document.querySelector('header.navbar');
     const backToTopBtn = document.querySelector('.back-to-top');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('active');
-        } else {
-            backToTopBtn.classList.remove('active');
-        }
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    
+    // Cache section elements and corresponding nav links for layout reflow prevention
+    const sectionNavMap = sections.map(sec => {
+        const id = sec.getAttribute('id');
+        return {
+            sec,
+            link: document.querySelector(`.nav-links a[href*="${id}"]`)
+        };
     });
+
+    let isScrollTicking = false;
+
+    function handleScrollPerformance() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        // 1. Sticky Navbar
+        if (navbar) {
+            if (scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        }
+
+        // 2. Back to Top Button
+        if (backToTopBtn) {
+            if (scrollY > 300) backToTopBtn.classList.add('active');
+            else backToTopBtn.classList.remove('active');
+        }
+
+        // 3. ScrollSpy
+        sectionNavMap.forEach(item => {
+            if (item.link) {
+                const sectionTop = item.sec.offsetTop - 120;
+                const sectionHeight = item.sec.offsetHeight;
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    item.link.classList.add('active');
+                } else {
+                    item.link.classList.remove('active');
+                }
+            }
+        });
+
+        isScrollTicking = false;
+    }
+
+    // Passive listener + rAF throttle for 60/120Hz ultra-smooth scrolling
+    window.addEventListener('scroll', () => {
+        if (!isScrollTicking) {
+            requestAnimationFrame(handleScrollPerformance);
+            isScrollTicking = true;
+        }
+    }, { passive: true });
 
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', () => {
@@ -491,29 +528,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- FORCE DARK MODE ---
     document.documentElement.setAttribute('data-theme', 'dark');
-
-    // --- SCROLLSPY ---
-    const sections = document.querySelectorAll('section[id]');
-    
-    window.addEventListener('scroll', () => {
-        const scrollY = window.pageYOffset;
-        
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 120;
-            const sectionId = current.getAttribute('id');
-            const navLink = document.querySelector(`.nav-links a[href*=${sectionId}]`);
-            
-            if (navLink) {
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelector('.nav-links a.active')?.classList.remove('active');
-                    navLink.classList.add('active');
-                } else {
-                    navLink.classList.remove('active');
-                }
-            }
-        });
-    });
 
     // --- DYNAMIC TYPING ANIMATION ---
     const wordsDict = {
