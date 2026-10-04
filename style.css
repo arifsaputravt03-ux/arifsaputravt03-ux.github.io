@@ -2450,8 +2450,11 @@ header.navbar.scrolled {
     color: var(--text-primary);
     font-weight: 600;
     font-size: 0.98rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 0 15px rgba(0, 98, 255, 0.05);
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
 }
 
 .contact-btn-glow:hover {
@@ -2460,6 +2463,55 @@ header.navbar.scrolled {
     transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(0, 98, 255, 0.35);
     border-color: transparent;
+}
+
+.contact-btn-glow.copied {
+    background: rgba(0, 230, 153, 0.15) !important;
+    border-color: var(--accent-primary) !important;
+    color: var(--accent-primary) !important;
+    box-shadow: 0 0 25px rgba(0, 230, 153, 0.35) !important;
+    transform: scale(1.02);
+}
+
+.contact-btn-glow.copied i {
+    color: var(--accent-primary) !important;
+}
+
+/* Toast Notification for Clipboard Copy */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(40px);
+    background: rgba(10, 15, 29, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: #ffffff;
+    border: 1px solid var(--accent-primary);
+    box-shadow: 0 10px 35px rgba(0, 230, 153, 0.25);
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.toast-notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast-notification i {
+    color: var(--accent-primary);
+    font-size: 1.25rem;
 }
 
 .contact-item-static {

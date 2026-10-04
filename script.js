@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_mongodb: "Operasi basis data dokumen MongoDB, manipulasi CRUD, strategi pengindeksan (indexing), aggregation pipeline, dan desain skema data.",
             cert_sql_basic: "Query SQL dasar, konsep basis data relasional, pernyataan SELECT, pemfilteran data dengan WHERE, penggabungan tabel (JOIN), agregasi (GROUP BY, HAVING), pengurutan, dan subquery.",
             cert_software_engineer: "Mencakup topik rekayasa perangkat lunak seperti Pemecahan Masalah (Problem Solving), Java, Go, SQL, dan pengembangan REST API.",
+            cert_toefl: "Uji Kemahiran Bahasa Inggris (TOEFL Prediction) dengan Skor 633 (Listening: 63, Structure: 60, Reading: 67) yang membuktikan kemahiran tingkat lanjut dalam tata bahasa, pemahaman bacaan, dan listening profesional.",
             cert_filter_all: "Semua Sertifikasi",
             cert_filter_cyber: "Keamanan Siber",
             cert_filter_devops: "DevOps",
@@ -223,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_filter_software: "Pengembangan Software",
             cert_filter_db: "Administrasi Database",
             cert_filter_industrial: "Sistem Industri",
+            cert_filter_language: "Kemahiran Bahasa (English)",
             view_cert: "Lihat Sertifikat",
             verify_cert: "Verifikasi",
             contact_label: "Kontak",
@@ -373,6 +375,8 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_mongodb: "MongoDB document database operations, CRUD manipulation, indexing strategies, aggregation pipeline, and schema design.",
             cert_sql_basic: "Basic SQL queries, relational database concepts, SELECT statements, filtering with WHERE, joins (INNER, LEFT, RIGHT), aggregations (GROUP BY, HAVING), sorting, and subqueries.",
             cert_software_engineer: "Core software engineering topics including Problem Solving, Java, Go, SQL, and REST API development.",
+            cert_lfs158: "Kubernetes architecture & containerization (Docker): Cluster setup, node administration, application deployment and workload orchestration with Pods, Services, & Deployments.",
+            cert_toefl: "Standardized English Proficiency Test (TOEFL Prediction) with a Total Score of 633 (Listening: 63, Structure: 60, Reading: 67) demonstrating advanced professional proficiency in English listening, grammar, and reading comprehension.",
             cert_filter_all: "All Certifications",
             cert_filter_cyber: "Cybersecurity",
             cert_filter_devops: "DevOps",
@@ -380,6 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_filter_software: "Software Dev",
             cert_filter_db: "Database Admin",
             cert_filter_industrial: "Industrial Systems",
+            cert_filter_language: "Language Proficiency",
             view_cert: "View Certificate",
             verify_cert: "Verify",
             contact_label: "Contact",
@@ -1117,6 +1122,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
 
         idCardStage.addEventListener('touchend', resetCard);
+    }
+
+    // --- EMAIL CLICK TO COPY ---
+    const contactEmailBtn = document.getElementById('contact-email-btn');
+    if (contactEmailBtn) {
+        let copyTimeout = null;
+        contactEmailBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = contactEmailBtn.getAttribute('data-email') || 'arifsaputravt03@gmail.com';
+
+            const executeCopy = async () => {
+                try {
+                    if (navigator.clipboard && window.isSecureContext) {
+                        await navigator.clipboard.writeText(email);
+                    } else {
+                        const textArea = document.createElement('textarea');
+                        textArea.value = email;
+                        textArea.style.position = 'fixed';
+                        textArea.style.left = '-999999px';
+                        textArea.style.top = '-999999px';
+                        document.body.appendChild(textArea);
+                        textArea.focus();
+                        textArea.select();
+                        document.execCommand('copy');
+                        textArea.remove();
+                    }
+                    triggerSuccessUI();
+                } catch (err) {
+                    console.error('Failed to copy email:', err);
+                }
+            };
+
+            const triggerSuccessUI = () => {
+                if (copyTimeout) clearTimeout(copyTimeout);
+
+                contactEmailBtn.classList.add('copied');
+
+                // Floating toast notification
+                let toast = document.getElementById('copy-toast');
+                if (!toast) {
+                    toast = document.createElement('div');
+                    toast.id = 'copy-toast';
+                    toast.className = 'toast-notification';
+                    document.body.appendChild(toast);
+                }
+
+                const toastText = currentLang === 'id' ? 'Telah disalin' : 'Copied to clipboard';
+                toast.innerHTML = `<i class="bx bx-check-circle"></i> <span>${toastText}</span>`;
+                toast.classList.add('show');
+
+                copyTimeout = setTimeout(() => {
+                    contactEmailBtn.classList.remove('copied');
+                    toast.classList.remove('show');
+                }, 2000);
+            };
+
+            executeCopy();
+        });
     }
 
     // --- INITIALIZE LANGUAGE ---
