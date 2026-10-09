@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_sql_basic: "Query SQL dasar, konsep basis data relasional, pernyataan SELECT, pemfilteran data dengan WHERE, penggabungan tabel (JOIN), agregasi (GROUP BY, HAVING), pengurutan, dan subquery.",
             cert_software_engineer: "Mencakup topik rekayasa perangkat lunak seperti Pemecahan Masalah (Problem Solving), Java, Go, SQL, dan pengembangan REST API.",
             cert_toefl: "Uji Kemahiran Bahasa Inggris (TOEFL Prediction) dengan Skor 633 (Listening: 63, Structure: 60, Reading: 67) yang membuktikan kemahiran tingkat lanjut dalam tata bahasa, pemahaman bacaan, dan listening profesional.",
+            cert_lfd140: "Alur kerja pengembangan standar terbuka menggunakan GitHub: kontrol versi Git, manajemen repositori, otomatisasi CI/CD, alur kerja issues & pull requests, konsensus komunitas, dan tata kelola kolaborasi open-source.",
             cert_filter_all: "Semua Sertifikasi",
             cert_filter_cyber: "Keamanan Siber",
             cert_filter_devops: "DevOps",
@@ -377,6 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cert_software_engineer: "Core software engineering topics including Problem Solving, Java, Go, SQL, and REST API development.",
             cert_lfs158: "Kubernetes architecture & containerization (Docker): Cluster setup, node administration, application deployment and workload orchestration with Pods, Services, & Deployments.",
             cert_toefl: "Standardized English Proficiency Test (TOEFL Prediction) with a Total Score of 633 (Listening: 63, Structure: 60, Reading: 67) demonstrating advanced professional proficiency in English listening, grammar, and reading comprehension.",
+            cert_lfd140: "Open standards development workflows using GitHub: Git version control, repository management, CI/CD automation, issues & PR workflows, consensus building, and open-source collaboration governance.",
             cert_filter_all: "All Certifications",
             cert_filter_cyber: "Cybersecurity",
             cert_filter_devops: "DevOps",
@@ -676,9 +678,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             
             certCards.forEach(card => {
-                const category = card.getAttribute('data-category');
+                const category = card.getAttribute('data-category') || '';
+                const categories = category.split(/\s+/);
                 
-                if (filterValue === 'all' || category === filterValue) {
+                if (filterValue === 'all' || categories.includes(filterValue)) {
                     card.style.display = 'flex';
                     setTimeout(() => {
                         card.style.opacity = '1';
