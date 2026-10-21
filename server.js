@@ -17,14 +17,18 @@ const MIME = {
 };
 
 http.createServer((req, res) => {
-  let filePath = path.join(__dirname, decodeURIComponent(req.url) === '/' ? 'index.html' : decodeURIComponent(req.url));
+  const cleanUrl = decodeURIComponent(req.url.split('?')[0]);
+  let filePath = path.join(__dirname, cleanUrl === '/' ? 'index.html' : cleanUrl);
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404);
       res.end('Not found');
     } else {
       let ext = path.extname(filePath);
-      res.writeHead(200, { 'Content-Type': MIME[ext] || 'text/plain' });
+      res.writeHead(200, {
+        'Content-Type': MIME[ext] || 'text/plain',
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
+      });
       res.end(data);
     }
   });

@@ -153,7 +153,32 @@ document.addEventListener('DOMContentLoaded', () => {
             skills_col2: "Keamanan Sistem & Cybersecurity",
             skills_col3: "Infrastruktur Cloud & DevOps",
             skills_col4: "Infrastruktur Jaringan & IoT",
-            skills_col5: "Analisis Sistem & Pengadaan IT / Admin QC",
+            skills_col5: "Pengelolaan Aset & Admin QC",
+            skill_c1_1: "JavaScript (ES6+), Python, C/C++ & SQL",
+            skill_c1_2: "MERN Stack Specialist (React JS, Node JS, Express & MongoDB)",
+            skill_c1_3: "Arsitektur PWA ERP & Integrasi REST API",
+            skill_c1_4: "System Analyst (Perancangan Arsitektur Solusi)",
+            skill_c1_5: "WordPress CMS, HTML5 & CSS3",
+            skill_c2_1: "System Hardening & Aturan Firewall",
+            skill_c2_2: "Keamanan SMTP Email (SPF, DKIM, DMARC) & Filtering",
+            skill_c2_3: "Keamanan Aplikasi Web & Cloudflare WAF",
+            skill_c2_4: "Keamanan Endpoint & Deteksi Intrusi Jaringan",
+            skill_c2_5: "Respons Insiden & Investigasi Kerentanan (CyberOps)",
+            skill_c3_1: "Proxmox VE, Kontainer LXC & Docker",
+            skill_c3_2: "Gitea & Pipeline CI/CD",
+            skill_c3_3: "Nginx Web Server, Nextcloud & Penyimpanan NAS",
+            skill_c3_4: "Pemantauan Real-Time (Grafana & Uptime Kuma)",
+            skill_c3_5: "Administrasi Sistem, DNS Server & Backup/Restore",
+            skill_c4_1: "Jaringan Enterprise (MikroTik, Cisco, Aruba & Ruijie, VLAN, Switching)",
+            skill_c4_2: "Perancangan Otomatisasi IoT & Sensor (ESP32/Arduino, MQTT)",
+            skill_c4_3: "Jaringan Fiber Optic, IP CCTV & Telepon PABX",
+            skill_c4_4: "Akses Kontrol Pintu & Biometrik (ZKTeco BioTime & CVAccess)",
+            skill_c4_5: "Dukungan Teknis & Maintenance Hardware (PC, Printer, Remote)",
+            skill_c5_1: "Manajemen Aset IT, Inventaris & Lisensi Software",
+            skill_c5_2: "Microsoft 365 (Teams, SharePoint, Outlook, OneDrive)",
+            skill_c5_3: "Validasi Data MS Excel (VLOOKUP, XLOOKUP, Pivot Table)",
+            skill_c5_4: "Kontrol Dokumen QC EPC (Test Package & Transmittal)",
+            skill_c5_5: "Otomatisasi & Ekstraksi Dokumen Python OCR",
             exp_label: "Pengalaman",
             exp_title: "Pengalaman Kerja Profesional",
             job1_date: "Januari 2026 – Sekarang",
@@ -239,7 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
             modal_head_desc: "Deskripsi Proyek",
             modal_head_results: "Hasil & Dampak Utama",
             modal_head_stack: "Technology Stack",
-            visit_website: "Kunjungi Website (trigatra.co)"
+            visit_website: "Kunjungi Website (trigatra.co)",
+            pdf_view_title: "Pratinjau Sertifikat",
+            pdf_open_new_tab: "Buka Tab Baru",
+            pdf_download: "Unduh PDF",
+            pdf_loading: "Memuat Dokumen Sertifikat...",
+            pdf_fallback_hint: "Browser ini tidak mendukung pratinjau PDF langsung di dalam halaman.",
+            lang_label: "Pilih Bahasa:"
         },
         en: {
             nav_about: "About",
@@ -314,7 +345,32 @@ document.addEventListener('DOMContentLoaded', () => {
             skills_col2: "System Security & Cybersecurity",
             skills_col3: "Cloud Infrastructure & DevOps",
             skills_col4: "Network Infrastructure & IoT",
-            skills_col5: "System Analyst & IT Procurement / Admin QC",
+            skills_col5: "Asset Management & QC Admin",
+            skill_c1_1: "JavaScript (ES6+), Python, C/C++ & SQL",
+            skill_c1_2: "MERN Stack Specialist (React JS, Node JS, Express & MongoDB)",
+            skill_c1_3: "PWA ERP Architecture & REST API Integration",
+            skill_c1_4: "System Analyst (Solution Architecture Design)",
+            skill_c1_5: "WordPress CMS, HTML5 & CSS3",
+            skill_c2_1: "System Hardening & Firewall Rules",
+            skill_c2_2: "SMTP Email Security (SPF, DKIM, DMARC) & Filtering",
+            skill_c2_3: "Web Application Security & Cloudflare WAF",
+            skill_c2_4: "Endpoint Security & Network Intrusion Detection",
+            skill_c2_5: "Incident Response & Vulnerability Investigation (CyberOps)",
+            skill_c3_1: "Proxmox VE, LXC & Docker Containers",
+            skill_c3_2: "Gitea & CI/CD Pipeline",
+            skill_c3_3: "Nginx Web Server, Nextcloud & NAS Storage",
+            skill_c3_4: "Real-Time Monitoring (Grafana & Uptime Kuma)",
+            skill_c3_5: "System Administration, DNS Server & Backup/Restore",
+            skill_c4_1: "Enterprise Networking (MikroTik, Cisco, Aruba & Ruijie, VLAN, Switching)",
+            skill_c4_2: "IoT Automation & Sensor Design (ESP32/Arduino, MQTT)",
+            skill_c4_3: "Fiber Optic Network, IP CCTV & PABX Telephone",
+            skill_c4_4: "Door Access Control & Biometrics (ZKTeco BioTime & CVAccess)",
+            skill_c4_5: "Technical Support & Hardware Maintenance (PC, Printer, Remote)",
+            skill_c5_1: "IT Asset Management, Inventory & Software Licensing",
+            skill_c5_2: "Microsoft 365 (Teams, SharePoint, Outlook, OneDrive)",
+            skill_c5_3: "MS Excel Data Validation (VLOOKUP, XLOOKUP, Pivot Table)",
+            skill_c5_4: "EPC QC Document Control (Test Package & Transmittal)",
+            skill_c5_5: "Python OCR Document Automation & Extraction",
             exp_label: "Experience",
             exp_title: "Professional Work Experience",
             job1_date: "January 2026 – Present",
@@ -400,7 +456,13 @@ document.addEventListener('DOMContentLoaded', () => {
             modal_head_desc: "Project Description",
             modal_head_results: "Results & Key Impact",
             modal_head_stack: "Technology Stack",
-            visit_website: "Visit Website (trigatra.co)"
+            visit_website: "Visit Website (trigatra.co)",
+            pdf_view_title: "Certificate Preview",
+            pdf_open_new_tab: "Open in New Tab",
+            pdf_download: "Download PDF",
+            pdf_loading: "Loading Certificate Document...",
+            pdf_fallback_hint: "This browser does not preview PDFs inline in the page.",
+            lang_label: "Select Language:"
         }
     };
 
@@ -411,6 +473,10 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = lang;
         localStorage.setItem('user_lang', lang);
         document.documentElement.setAttribute('lang', lang);
+
+        // Update data-active-lang for smooth sliding pill animation
+        const langSwitchers = document.querySelectorAll('.lang-switcher');
+        langSwitchers.forEach(sw => sw.setAttribute('data-active-lang', lang));
 
         // Update active class on switcher buttons
         document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -447,6 +513,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (titleEl && title) titleEl.textContent = title;
             if (descEl && desc) descEl.textContent = desc;
         });
+
+        // Update PDF modal download button tooltip without inserting text
+        const certPdfDownloadBtnEl = document.getElementById('cert-pdf-download-btn');
+        if (certPdfDownloadBtnEl) {
+            const dlTitle = lang === 'en' ? 'Download PDF' : 'Unduh PDF';
+            certPdfDownloadBtnEl.title = dlTitle;
+            certPdfDownloadBtnEl.setAttribute('aria-label', dlTitle);
+        }
 
         // Restart typing animation with updated language words
         restartTypingEffect();
@@ -564,7 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- DYNAMIC TYPING ANIMATION ---
     const wordsDict = {
-        id: ["Software Developer", "IT System Engineer", "ERP Developer", "DevOps & Infrastructure", "System Integration", "IoT & Digital Transformation"],
+        id: ["Software Developer", "IT System Engineer", "ERP Developer", "Infrastruktur & DevOps", "Integrasi Sistem", "IoT & Transformasi Digital"],
         en: ["Software Developer", "IT System Engineer", "ERP Developer", "DevOps & Infrastructure", "System Integration", "IoT & Digital Transformation"]
     };
 
@@ -696,6 +770,234 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    });
+
+    // --- CERTIFICATION PDF MODAL VIEWER (OPTIMIZED FOR ZERO-LAG & FAST RESPONSE) ---
+    const certPdfModal = document.getElementById('cert-pdf-modal');
+    const certPdfClose = document.getElementById('cert-pdf-close');
+    const certPdfCloseMobile = document.getElementById('cert-pdf-close-mobile');
+    const certPdfIframe = document.getElementById('cert-pdf-iframe');
+    const certPdfLoading = document.getElementById('cert-pdf-loading');
+    const certPdfFallback = document.getElementById('cert-pdf-fallback');
+    const certFallbackTitle = document.getElementById('cert-fallback-title');
+    const certFallbackOpenBtn = document.getElementById('cert-fallback-open-btn');
+    const certFallbackDownloadBtn = document.getElementById('cert-fallback-download-btn');
+    const certPdfTitle = document.getElementById('cert-modal-title');
+    const certPdfIssuer = document.getElementById('cert-modal-issuer');
+    const certPdfId = document.getElementById('cert-modal-id');
+    const certPdfIdWrapper = document.getElementById('cert-modal-id-wrapper');
+    const certPdfExternalBtn = document.getElementById('cert-pdf-external-btn');
+    const certPdfDownloadBtn = document.getElementById('cert-pdf-download-btn');
+
+    let certPdfRevealTimer = null;
+    let certPdfIdleResetTimer = null;
+
+    function openCertPdfModal(data) {
+        if (!certPdfModal) return;
+
+        // Cancel pending timers
+        if (certPdfRevealTimer) {
+            clearTimeout(certPdfRevealTimer);
+            certPdfRevealTimer = null;
+        }
+        if (certPdfIdleResetTimer) {
+            clearTimeout(certPdfIdleResetTimer);
+            certPdfIdleResetTimer = null;
+        }
+
+        // 1. Update text metadata
+        if (certPdfTitle) certPdfTitle.textContent = data.title || 'Certificate Preview';
+        if (certPdfIssuer) certPdfIssuer.textContent = data.issuer || 'Credential';
+        if (certFallbackTitle) certFallbackTitle.textContent = data.title || 'Certificate Preview';
+        
+        if (data.credentialId && certPdfId) {
+            certPdfId.textContent = data.credentialId;
+            if (certPdfIdWrapper) certPdfIdWrapper.style.display = 'inline-flex';
+        } else if (certPdfIdWrapper) {
+            certPdfIdWrapper.style.display = 'none';
+        }
+
+        // 2. Prepare safe URL and actions
+        const rawUrl = data.pdfUrl.split('#')[0];
+        const cleanUrl = encodeURI(decodeURI(rawUrl));
+        const filename = decodeURIComponent(data.pdfUrl.split('/').pop() || `${data.title}.pdf`);
+
+        if (certPdfExternalBtn) certPdfExternalBtn.href = data.pdfUrl;
+        if (certFallbackOpenBtn) certFallbackOpenBtn.href = data.pdfUrl;
+
+        if (certPdfDownloadBtn) {
+            certPdfDownloadBtn.href = data.pdfUrl;
+            certPdfDownloadBtn.setAttribute('download', filename);
+        }
+        if (certFallbackDownloadBtn) {
+            certFallbackDownloadBtn.href = data.pdfUrl;
+            certFallbackDownloadBtn.setAttribute('download', filename);
+        }
+
+        // Reset fallback view
+        if (certPdfFallback) certPdfFallback.classList.add('hidden');
+
+        // Check mobile/unsupported inline PDF environment (e.g. Android Chrome)
+        const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const canInlinePdf = navigator.pdfViewerEnabled !== false;
+
+        // 3. Immediately trigger modal display for instant 60fps response
+        certPdfModal.classList.add('active');
+        certPdfModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        if (isMobileDevice && !canInlinePdf) {
+            // Mobile browser that downloads instead of displaying inline in iframes
+            if (certPdfLoading) certPdfLoading.classList.add('hidden');
+            if (certPdfFallback) certPdfFallback.classList.remove('hidden');
+            return;
+        }
+
+        // 4. Show loading indicator initially
+        if (certPdfLoading) certPdfLoading.classList.remove('hidden');
+
+        const isSmallScreen = window.innerWidth <= 768;
+        // Desktop: Zoom 75% initially for full-view centering, with toolbar active for zoom in/out
+        // Mobile: view=Fit so single page is centered in screen, scrollable for multi-page
+        const pdfParam = isSmallScreen ? '#toolbar=0&navpanes=0&view=Fit' : '#toolbar=1&navpanes=0&zoom=75';
+        const targetSrc = cleanUrl + pdfParam;
+
+        const revealPdf = () => {
+            if (certPdfRevealTimer) {
+                clearTimeout(certPdfRevealTimer);
+                certPdfRevealTimer = null;
+            }
+            if (certPdfLoading) certPdfLoading.classList.add('hidden');
+            if (certPdfIframe) certPdfIframe.classList.add('loaded');
+        };
+
+        // 5. Decouple iframe load with requestAnimationFrame to prevent animation frame drops
+        requestAnimationFrame(() => {
+            if (certPdfIframe) {
+                const activeSrc = certPdfIframe.getAttribute('data-active-src') || '';
+                if (activeSrc === targetSrc) {
+                    // Same document already in iframe - instant zero-latency display
+                    revealPdf();
+                } else {
+                    certPdfIframe.setAttribute('data-active-src', targetSrc);
+                    certPdfIframe.onload = revealPdf;
+                    certPdfIframe.onerror = () => {
+                        revealPdf();
+                        if (certPdfFallback) certPdfFallback.classList.remove('hidden');
+                    };
+                    certPdfIframe.src = targetSrc;
+
+                    // Safety Reveal Timer (400ms):
+                    // Bypasses Chromium PDFium dropped or delayed iframe.onload events.
+                    // Guarantees user never gets stuck waiting on an opaque spinner!
+                    certPdfRevealTimer = setTimeout(revealPdf, 400);
+                }
+            }
+        });
+    }
+
+    function closeCertPdfModal() {
+        if (!certPdfModal) return;
+        if (certPdfRevealTimer) {
+            clearTimeout(certPdfRevealTimer);
+            certPdfRevealTimer = null;
+        }
+        certPdfModal.classList.remove('active');
+        certPdfModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        
+        // Keep the browser PDF plugin process warm for instant reopening.
+        // Only release iframe src if the modal stays closed for more than 60 seconds.
+        if (certPdfIdleResetTimer) clearTimeout(certPdfIdleResetTimer);
+        certPdfIdleResetTimer = setTimeout(() => {
+            if (certPdfIframe && !certPdfModal.classList.contains('active')) {
+                certPdfIframe.removeAttribute('data-active-src');
+                certPdfIframe.src = 'about:blank';
+            }
+        }, 60000);
+    }
+
+    if (certPdfClose) {
+        certPdfClose.addEventListener('click', closeCertPdfModal);
+    }
+
+    if (certPdfCloseMobile) {
+        certPdfCloseMobile.addEventListener('click', closeCertPdfModal);
+    }
+
+    if (certPdfModal) {
+        certPdfModal.addEventListener('click', (e) => {
+            if (e.target === certPdfModal) {
+                closeCertPdfModal();
+            }
+        });
+    }
+
+    // Attach click handler to cert cards / verify buttons
+    certCards.forEach(card => {
+        const verifyBtn = card.querySelector('.btn-verify');
+        if (!verifyBtn) return;
+
+        const href = verifyBtn.getAttribute('href') || '';
+        const isPdf = href.toLowerCase().includes('.pdf') || verifyBtn.getAttribute('data-pdf') === 'true';
+
+        if (isPdf) {
+            // Click on the verify button opens PDF modal
+            verifyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const title = card.querySelector('.cert-title')?.textContent.trim() || '';
+                const issuer = card.querySelector('.cert-issuer')?.textContent.trim() || '';
+                const idEl = card.querySelector('.cert-id strong');
+                const credentialId = idEl ? idEl.textContent.trim() : '';
+
+                openCertPdfModal({
+                    title: title,
+                    issuer: issuer,
+                    credentialId: credentialId,
+                    pdfUrl: href
+                });
+            });
+
+            // Card click opens PDF modal (excluding direct link clicks)
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.btn-verify')) return;
+                const title = card.querySelector('.cert-title')?.textContent.trim() || '';
+                const issuer = card.querySelector('.cert-issuer')?.textContent.trim() || '';
+                const idEl = card.querySelector('.cert-id strong');
+                const credentialId = idEl ? idEl.textContent.trim() : '';
+
+                openCertPdfModal({
+                    title: title,
+                    issuer: issuer,
+                    credentialId: credentialId,
+                    pdfUrl: href
+                });
+            });
+        } else {
+            // Non-PDF certificates (e.g. HackerRank, Google Drive, e-ujian):
+            // Verify button opens external link naturally (target="_blank")
+            // Card click also opens the external link directly
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.btn-verify')) return;
+                if (href && href !== '#') {
+                    window.open(href, '_blank', 'noopener,noreferrer');
+                }
+            });
+        }
+    });
+
+    // Close modals on Escape key
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (certPdfModal && certPdfModal.classList.contains('active')) {
+                closeCertPdfModal();
+            }
+            if (modal && modal.classList.contains('active')) {
+                closeModal();
+            }
+        }
     });
 
     // --- PROJECT DETAILS MODAL ---

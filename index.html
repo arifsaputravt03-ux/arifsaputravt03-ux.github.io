@@ -13,7 +13,7 @@
     <!-- Boxicons CDN -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -85,10 +85,10 @@
             </nav>
 
             <div class="nav-actions">
-                <div class="lang-switcher">
-                    <button class="lang-btn" data-lang="id">ID</button>
-                    <span class="lang-divider">|</span>
-                    <button class="lang-btn active" data-lang="en">EN</button>
+                <div class="lang-switcher" id="lang-switcher" data-active-lang="en">
+                    <span class="lang-slider" aria-hidden="true"></span>
+                    <button type="button" class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+                    <button type="button" class="lang-btn active" data-lang="en" aria-label="English">EN</button>
                 </div>
                 <a href="#contact" class="btn-primary nav-cta" data-i18n="nav_cta">Contact Me</a>
                 <div class="menu-toggle">
@@ -359,55 +359,55 @@
                 <div class="skills-column glass-panel">
                     <h3><i class="bx bx-code-block"></i> <span data-i18n="skills_col1">Software Development &amp; Pemrograman</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip"><i class="bx bx-code-curly"></i> JavaScript (ES6+), Python, C/C++ &amp; SQL</span>
-                        <span class="skill-chip"><i class="bx bxl-react"></i> MERN Stack Specialist (React JS, Node JS, Express &amp; MongoDB)</span>
-                        <span class="skill-chip"><i class="bx bx-transfer-alt"></i> Arsitektur PWA ERP &amp; Integrasi REST API</span>
-                        <span class="skill-chip"><i class="bx bx-bulb"></i> System Analyst (Perancangan Arsitektur Solusi)</span>
-                        <span class="skill-chip"><i class="bx bxl-wordpress"></i> WordPress CMS, HTML5 &amp; CSS3</span>
+                        <span class="skill-chip"><i class="bx bx-code-curly"></i> <span data-i18n="skill_c1_1">JavaScript (ES6+), Python, C/C++ &amp; SQL</span></span>
+                        <span class="skill-chip"><i class="bx bxl-react"></i> <span data-i18n="skill_c1_2">MERN Stack Specialist (React JS, Node JS, Express &amp; MongoDB)</span></span>
+                        <span class="skill-chip"><i class="bx bx-transfer-alt"></i> <span data-i18n="skill_c1_3">Arsitektur PWA ERP &amp; Integrasi REST API</span></span>
+                        <span class="skill-chip"><i class="bx bx-bulb"></i> <span data-i18n="skill_c1_4">System Analyst (Perancangan Arsitektur Solusi)</span></span>
+                        <span class="skill-chip"><i class="bx bxl-wordpress"></i> <span data-i18n="skill_c1_5">WordPress CMS, HTML5 &amp; CSS3</span></span>
                     </div>
                 </div>
 
                 <div class="skills-column glass-panel">
                     <h3><i class="bx bx-shield-quarter"></i> <span data-i18n="skills_col2">Keamanan Sistem &amp; Cybersecurity</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip"><i class="bx bx-lock-alt"></i> System Hardening &amp; Firewall Rules</span>
-                        <span class="skill-chip"><i class="bx bx-envelope"></i> Keamanan SMTP Email (SPF, DKIM, DMARC) &amp; Filtering</span>
-                        <span class="skill-chip"><i class="bx bx-shield-alt-2"></i> Web Application Security &amp; Cloudflare WAF</span>
-                        <span class="skill-chip"><i class="bx bx-radar"></i> Endpoint Security &amp; Deteksi Intrusi Jaringan</span>
-                        <span class="skill-chip"><i class="bx bx-check-shield"></i> Incident Response &amp; Investigasi Kerentanan (CyberOps)</span>
+                        <span class="skill-chip"><i class="bx bx-lock-alt"></i> <span data-i18n="skill_c2_1">System Hardening &amp; Firewall Rules</span></span>
+                        <span class="skill-chip"><i class="bx bx-envelope"></i> <span data-i18n="skill_c2_2">Keamanan SMTP Email (SPF, DKIM, DMARC) &amp; Filtering</span></span>
+                        <span class="skill-chip"><i class="bx bx-shield-alt-2"></i> <span data-i18n="skill_c2_3">Web Application Security &amp; Cloudflare WAF</span></span>
+                        <span class="skill-chip"><i class="bx bx-radar"></i> <span data-i18n="skill_c2_4">Endpoint Security &amp; Deteksi Intrusi Jaringan</span></span>
+                        <span class="skill-chip"><i class="bx bx-check-shield"></i> <span data-i18n="skill_c2_5">Incident Response &amp; Investigasi Kerentanan (CyberOps)</span></span>
                     </div>
                 </div>
 
                 <div class="skills-column glass-panel">
                     <h3><i class="bx bx-cloud-upload"></i> <span data-i18n="skills_col3">Infrastruktur Cloud &amp; DevOps</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip"><i class="bx bxl-docker"></i> Proxmox VE, LXC &amp; Docker Containers</span>
-                        <span class="skill-chip"><i class="bx bxl-git"></i> Gitea &amp; Pipeline CI/CD</span>
-                        <span class="skill-chip"><i class="bx bx-server"></i> Nginx Web Server, Nextcloud &amp; NAS Storage</span>
-                        <span class="skill-chip"><i class="bx bx-line-chart"></i> Monitoring Real-Time (Grafana &amp; Uptime Kuma)</span>
-                        <span class="skill-chip"><i class="bx bx-data"></i> System Administration, Server DNS &amp; Backup/Restore</span>
+                        <span class="skill-chip"><i class="bx bxl-docker"></i> <span data-i18n="skill_c3_1">Proxmox VE, LXC &amp; Docker Containers</span></span>
+                        <span class="skill-chip"><i class="bx bxl-git"></i> <span data-i18n="skill_c3_2">Gitea &amp; Pipeline CI/CD</span></span>
+                        <span class="skill-chip"><i class="bx bx-server"></i> <span data-i18n="skill_c3_3">Nginx Web Server, Nextcloud &amp; NAS Storage</span></span>
+                        <span class="skill-chip"><i class="bx bx-line-chart"></i> <span data-i18n="skill_c3_4">Monitoring Real-Time (Grafana &amp; Uptime Kuma)</span></span>
+                        <span class="skill-chip"><i class="bx bx-data"></i> <span data-i18n="skill_c3_5">System Administration, Server DNS &amp; Backup/Restore</span></span>
                     </div>
                 </div>
 
                 <div class="skills-column glass-panel">
                     <h3><i class="bx bx-sitemap"></i> <span data-i18n="skills_col4">Infrastruktur Jaringan &amp; IoT</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip"><i class="bx bx-network-chart"></i> Jaringan Enterprise (MikroTik, Cisco, Aruba &amp; Ruijie, VLAN, Switching)</span>
-                        <span class="skill-chip"><i class="bx bx-chip"></i> Perancangan Otomatisasi IoT &amp; Sensor (ESP32/Arduino, MQTT)</span>
-                        <span class="skill-chip"><i class="bx bx-broadcast"></i> Jaringan Fiber Optic, IP CCTV &amp; Telepon PABX</span>
-                        <span class="skill-chip"><i class="bx bx-fingerprint"></i> Akses Kontrol Pintu &amp; Biometrik (ZKTeco BioTime &amp; CVAccess)</span>
-                        <span class="skill-chip"><i class="bx bx-wrench"></i> Dukungan Teknis &amp; Maintenance Hardware (PC, Printer, Remote)</span>
+                        <span class="skill-chip"><i class="bx bx-network-chart"></i> <span data-i18n="skill_c4_1">Jaringan Enterprise (MikroTik, Cisco, Aruba &amp; Ruijie, VLAN, Switching)</span></span>
+                        <span class="skill-chip"><i class="bx bx-chip"></i> <span data-i18n="skill_c4_2">Perancangan Otomatisasi IoT &amp; Sensor (ESP32/Arduino, MQTT)</span></span>
+                        <span class="skill-chip"><i class="bx bx-broadcast"></i> <span data-i18n="skill_c4_3">Jaringan Fiber Optic, IP CCTV &amp; Telepon PABX</span></span>
+                        <span class="skill-chip"><i class="bx bx-fingerprint"></i> <span data-i18n="skill_c4_4">Akses Kontrol Pintu &amp; Biometrik (ZKTeco BioTime &amp; CVAccess)</span></span>
+                        <span class="skill-chip"><i class="bx bx-wrench"></i> <span data-i18n="skill_c4_5">Dukungan Teknis &amp; Maintenance Hardware (PC, Printer, Remote)</span></span>
                     </div>
                 </div>
 
                 <div class="skills-column glass-panel">
                     <h3><i class="bx bx-folder-open"></i> <span data-i18n="skills_col5">Pengelolaan Aset &amp; Admin QC</span></h3>
                     <div class="skills-items">
-                        <span class="skill-chip"><i class="bx bx-package"></i> Manajemen Aset IT, Inventaris &amp; Lisensi Software</span>
-                        <span class="skill-chip"><i class="bx bxl-microsoft"></i> Microsoft 365 (Teams, SharePoint, Outlook, OneDrive)</span>
-                        <span class="skill-chip"><i class="bx bx-table"></i> Validasi Data MS Excel (VLOOKUP, XLOOKUP, Pivot Table)</span>
-                        <span class="skill-chip"><i class="bx bx-file"></i> Kontrol Dokumen QC EPC (Test Package &amp; Transmittal)</span>
-                        <span class="skill-chip"><i class="bx bx-bot"></i> Otomatisasi &amp; Ekstraksi Dokumen Python OCR</span>
+                        <span class="skill-chip"><i class="bx bx-package"></i> <span data-i18n="skill_c5_1">Manajemen Aset IT, Inventaris &amp; Lisensi Software</span></span>
+                        <span class="skill-chip"><i class="bx bxl-microsoft"></i> <span data-i18n="skill_c5_2">Microsoft 365 (Teams, SharePoint, Outlook, OneDrive)</span></span>
+                        <span class="skill-chip"><i class="bx bx-table"></i> <span data-i18n="skill_c5_3">Validasi Data MS Excel (VLOOKUP, XLOOKUP, Pivot Table)</span></span>
+                        <span class="skill-chip"><i class="bx bx-file"></i> <span data-i18n="skill_c5_4">Kontrol Dokumen QC EPC (Test Package &amp; Transmittal)</span></span>
+                        <span class="skill-chip"><i class="bx bx-bot"></i> <span data-i18n="skill_c5_5">Otomatisasi &amp; Ekstraksi Dokumen Python OCR</span></span>
                     </div>
                 </div>
 
@@ -544,7 +544,7 @@
                              data-results-id="Hasilnya, sistem IoT berhasil berjalan secara real-time dengan komunikasi MQTT, web monitor, dan notifikasi Telegram, sehingga meningkatkan responsivitas monitoring kolam ikan, otomatisasi pakan, serta mitigasi risiko banjir dan pengendalian kualitas air secara lebih efektif."
                              data-results-en="As a result, the IoT system successfully runs in real-time with MQTT communication, web monitor, and Telegram notifications, thereby increasing the responsiveness of fish pond monitoring, feed automation, as well as flood risk mitigation and water quality control more effectively."
                              data-stack="C++, PHP, ESP32, NodeMCU, MQTT, Telegram Bot API, Web Monitor, Servo Motor, pH Sensor, Ultrasonic Sensor, Water Level Sensor, Buzzer"
-                             data-images="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Foto Doc PUM.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Dashboard Monitor.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Blink Dashboard.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Telegram Bot.png">
+                             data-images="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Blink Dashboard.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Dashboard Monitor.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Foto Doc PUM.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Telegram Bot.png">
                             <div class="project-thumbnail">
                                 <img src="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Foto Doc PUM.png" alt="IoT-Based POLIFISH FARM Early Warning System" class="project-img">
                                 <div class="project-overlay">
@@ -590,7 +590,7 @@
                              data-results-id="Sistem absensi berhasil mencatat kehadiran karyawan secara real-time, mengukur suhu tubuh secara akurat tanpa kontak fisik, dan mengirimkan notifikasi instan melalui Telegram."
                              data-results-en="The attendance system successfully recorded employee presence in real-time, accurately measured body temperature without physical contact, and sent instant notifications via Telegram."
                              data-stack="C++, JavaScript, ESP32, NodeMCU, RC522 NFC, MLX90614 Temperature Sensor, MQTT, React JS, Node JS, Firebase"
-                             data-images="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Absensi Fisik.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Arsitektur.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Dasbor.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Desain 3D.png">
+                             data-images="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Absensi Fisik.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Arsitektur.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Dasbor.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Desain 3D.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Jam Absensi.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Kartu ID.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Kelola Akun.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Login.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Rekam Data.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Suhu Tinggi.PNG">
                             <div class="project-thumbnail">
                                 <img src="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png" alt="IoT-Based Non-Contact Attendance Device" class="project-img">
                                 <div class="project-overlay">
@@ -633,7 +633,7 @@
                              data-results-id="Meningkatkan akurasi pencatatan visitor, mengurangi input manual, dan meningkatkan keamanan akses perpustakaan."
                              data-results-en="Improve the accuracy of visitor logging, reduce manual input, and improve library access security."
                              data-stack="JavaScript, C++, Arduino Mega 2560, ESP32, Servo Motor, PN532 NFC Reader, AMOLED LCD, RFID/NFC Module, Access Control Integration"
-                             data-images="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Gate.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Design Pemaparan.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Hasil Nya Dipasang.jpeg">
+                             data-images="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Design Pemaparan.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Gate.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Hasil Nya Dipasang.jpeg">
                             <div class="project-thumbnail">
                                 <img src="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg" alt="Gate Barrier System Widyatama University" class="project-img">
                                 <div class="project-overlay">
@@ -676,7 +676,7 @@
                              data-results-id="Meningkatkan monitoring kondisi gudang secara real-time dan menjaga stabilitas lingkungan penyimpanan bahan kimia."
                              data-results-en="Improve real-time monitoring of warehouse conditions and maintain the stability of the chemical storage environment."
                              data-stack="C++, HTML, ESP32, Arduino, Temperature & Humidity Sensor, Relay Control, MQTT, MATLAB, IoT Automation"
-                             data-images="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Foto Controler Box V1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Hasil Web.jpg,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Desain Componen Wiring.PNG">
+                             data-images="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Arsitektur Desain_1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Blok Diagram IOT_1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Desain Componen Wiring.PNG,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Foto Controler Box V1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Hasil Web.jpg">
                             <div class="project-thumbnail">
                                 <img src="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Foto Controler Box V1.png" alt="Fuzzy Logic Chemical Storage Monitoring System" class="project-img">
                                 <div class="project-overlay">
@@ -820,7 +820,7 @@ Key Features & Capabilities:
                              data-results-id="Infrastruktur ICT, jaringan, access control, PABX, dan CCTV di seluruh lokasi proyek beroperasi dengan stabil, aman, dan tanpa hambatan."
                              data-results-en="ICT infrastructure, network, access control, PABX, and CCTV systems operate stably, securely, and seamlessly across all project locations."
                              data-stack="ICT Infrastructure, System Integrator, Cisco, Aruba & Ruijie Switching, MikroTik Routing, Pre-Configuration & Field Deployment, Hikvision & Honeywell CCTV, ZKTeco BioTime & Access Control, Honeywell Fire Alarm Systems, PABX Telephony, Domain & SMTP Mail Admin"
-                             data-images="Asset/Project Documenter/Infra CCTV Maintenance/CCTV.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/CCTV PTZ Configure Project Site.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Configure Switch Aruba.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Hardware Troblushoot.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Infra Acces Control.jpg,Asset/Project Documenter/Infra CCTV Maintenance/Maintenance Phisical Server.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Maitenance Server Problem Wiring.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Test Cabling Wiring.png">
+                             data-images="Asset/Project Documenter/Infra CCTV Maintenance/CCTV PTZ Configure Project Site.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/CCTV.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Configure Switch Aruba.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Hardware Troblushoot.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/IMG_20261019_182031.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Infra Acces Control.jpg,Asset/Project Documenter/Infra CCTV Maintenance/Maintenance Phisical Server.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Maitenance Server Problem Wiring.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Test Cabling Wiring.png">
                             <div class="project-thumbnail">
                                 <img src="Asset/Project Documenter/Infra CCTV Maintenance/CCTV.jpeg" alt="IT Infrastructure & System Integration" class="project-img">
                                 <div class="project-overlay">
@@ -863,7 +863,7 @@ Key Features & Capabilities:
                              data-results-id="Berhasil mengembangkan sistem ERP berbasis web menggunakan MERN Stack yang mengintegrasikan modul Logistik, HR, Asset Management, Procurement, Finance, Presales, dan Project Management dalam satu platform. Sistem dilengkapi integrasi ZKTeco BioTime melalui REST API, MongoDB Replica Set dengan ACID Transactions, serta deployment menggunakan Docker, Nginx, dan Gitea CI/CD pada Proxmox, didukung Grafana dan Uptime Kuma untuk monitoring real-time sehingga meningkatkan efisiensi operasional dan keandalan sistem."
                              data-results-en="Successfully developed a web-based ERP system using the MERN Stack integrating Logistics, HR, Asset Management, Procurement, Finance, Presales, and Project Management modules in one platform. System features ZKTeco BioTime integration via REST API, MongoDB Replica Set with ACID Transactions, and deployment using Docker, Nginx, and Gitea CI/CD on Proxmox, supported by Grafana and Uptime Kuma for real-time monitoring to enhance operational efficiency and system reliability."
                              data-stack="React.js, Node.js, Express.js, MongoDB Replica Set, ACID Transactions, REST API, Gitea CI/CD, Docker, Nginx, Proxmox, Grafana, Uptime Kuma"
-                             data-images="Asset/Project Documenter/ERP & Monitoring Infra/ERP.png,Asset/Project Documenter/ERP & Monitoring Infra/CI-CD & Docker ERP.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Develope Coding.jpeg,Asset/Project Documenter/ERP & Monitoring Infra/Grafana.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Proxmox DEV OPS Monitor Infra.png,Asset/Project Documenter/ERP & Monitoring Infra/Uptimekuma.jpg">
+                             data-images="Asset/Project Documenter/ERP & Monitoring Infra/CI-CD & Docker ERP.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Develope Coding.jpeg,Asset/Project Documenter/ERP & Monitoring Infra/Devloper Mobile PWA.jpeg,Asset/Project Documenter/ERP & Monitoring Infra/ERP.png,Asset/Project Documenter/ERP & Monitoring Infra/Grafana.jpg,Asset/Project Documenter/ERP & Monitoring Infra/IMG_20260515_162918.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Proxmox DEV OPS Monitor Infra.png,Asset/Project Documenter/ERP & Monitoring Infra/Uptimekuma.jpg">
                             <div class="project-thumbnail">
                                 <img src="Asset/Project Documenter/ERP & Monitoring Infra/ERP.png" alt="Enterprise Resource Planning (ERP) System" class="project-img">
                                 <div class="project-overlay">
@@ -878,6 +878,52 @@ Key Features & Capabilities:
                                     <span class="stack-tag">MERN Stack</span>
                                     <span class="stack-tag">Docker & Gitea CI/CD</span>
                                     <span class="stack-tag">Grafana & Uptime Kuma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9 (2026) - IKN Infra Project -->
+                    <div class="project-timeline-item">
+                        <div class="timeline-node">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2026</div>
+                        </div>
+                        <div class="project-card glass-panel" 
+                             data-category="infra" 
+                             data-category-label-id="Infrastruktur IT & Integrasi Sistem"
+                             data-category-label-en="IT Infra & System Integration"
+                             data-title-id="Pemeliharaan Infrastruktur Perangkat & Manajemen RMA – Proyek IKN"
+                             data-title-en="IT Infrastructure Maintenance & RMA Management – IKN Project"
+                             data-role-id="IT Infrastructure & Support Engineer"
+                             data-role-en="IT Infrastructure & Support Engineer"
+                             data-location-id="Ibu Kota Nusantara (IKN), Kalimantan Timur"
+                             data-location-en="Nusantara Capital City (IKN), East Kalimantan"
+                             data-date-id="Juli 2026 – Oktober 2026"
+                             data-date-en="July 2026 – October 2026"
+                             data-desc-id="Melaksanakan pemeliharaan rutin, penanganan defect, dan inspeksi perangkat infrastruktur IT di proyek Ibu Kota Nusantara (IKN). Bertanggung jawab melakukan maintenance dan monitoring perangkat CCTV, Digital Signage, Fire Alarm System, serta infrastruktur jaringan data LAN (Access Point, data outlet / keystone, dan integrasi pengkabelan). Berperan aktif merespons cepat setiap laporan defect atau kendala kerusakan unit, melakukan inspeksi teknis langsung di lokasi (on-site troubleshooting), perbaikan/maintenance perangkat di tempat, serta mengajukan dan mengawal Return Material Authorization (RMA) ke pihak vendor/prinsipal untuk penggantian sparepart maupun unit baru apabila ditemukan kerusakan permanen."
+                             data-desc-en="Responsible for on-site hardware maintenance, defect inspection, and technical troubleshooting across infrastructure deployments at the Nusantara Capital City (IKN) project. The operational scope covers CCTV systems, Digital Signage displays, Fire Alarm systems, and LAN data network infrastructure (Wi-Fi Access Points, modular data outlets, and cabling). Actively investigated reported defects or hardware malfunctions on-site, executed technical repairs and corrective maintenance, and managed Return Material Authorization (RMA) workflows with vendors for replacement parts or full unit replacements in cases of permanent hardware failure."
+                             data-results-id="Memastikan keandalan dan kesiapan operasional perangkat vital (CCTV, Digital Signage, Fire Alarm, dan jaringan data LAN / Access Point) di fasilitas IKN tetap prima, meminimalkan downtime sistem melalui respon perbaikan defect on-site yang tanggap, serta memastikan proses klaim garansi vendor dan RMA penggantian unit berjalan cepat dan terdata akurat."
+                             data-results-en="Maintained high operational reliability and uptime for vital CCTV, Digital Signage, Fire Alarm, and LAN data/Access Point infrastructure at IKN, minimized downtime through agile on-site defect troubleshooting, and streamlined vendor RMA warranty claims and unit replacement workflows."
+                             data-stack="CCTV Maintenance, Digital Signage, Fire Alarm Systems, LAN Data Network, Access Points & Data Outlets, Hardware Defect Inspection, On-site Troubleshooting, Return Material Authorization (RMA), Vendor Warranty & Replacement"
+                             data-images="Asset/Project Documenter/Infra-IKN/IMG12124563126.JPEG,Asset/Project Documenter/Infra-IKN/IMG_20261019_162728.jpeg,Asset/Project Documenter/Infra-IKN/IMG_20261019_182015.jpg,Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.39.jpeg,Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.54.jpeg">
+                            <div class="project-thumbnail">
+                                <img src="Asset/Project Documenter/Infra-IKN/IMG_20261019_162728.jpeg" alt="IT Infrastructure Maintenance & RMA Management – IKN Project" class="project-img">
+                                <div class="project-overlay">
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-tag">IT Infra & System Integration</span>
+                                <h3 class="project-title">IT Infrastructure Maintenance & RMA Management – IKN Project</h3>
+                                <p class="project-desc">Maintenance & troubleshooting for CCTV, Digital Signage, Fire Alarm, and LAN Data (Access Points & outlets), on-site defect inspection, and RMA unit replacement at IKN.</p>
+                                <div class="project-stack">
+                                    <span class="stack-tag">CCTV</span>
+                                    <span class="stack-tag">Digital Signage</span>
+                                    <span class="stack-tag">Fire Alarm</span>
+                                    <span class="stack-tag">LAN & Access Point</span>
+                                    <span class="stack-tag">Defect Inspection</span>
+                                    <span class="stack-tag">RMA Replacement</span>
                                 </div>
                             </div>
                         </div>
@@ -920,8 +966,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_cyberops">Enterprise SOC operations, cybersecurity threat analysis, Windows/Linux OS security, network intrusion detection, endpoint vulnerability investigation, and incident response models.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>5301438c-74b6-4d31-89da-b2696dc1e1cc</strong></span>
-                        <a href="Asset/Sertifikasi/CyberOps Associate - Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/CyberOps Associate - Cisco.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -933,8 +979,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_nse1">Understanding cybersecurity fundamentals, network security, cyber threats, malware, phishing, and security awareness.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>5108940165AS</strong></span>
-                        <a href="https://training.fortinet.com/pluginfile.php/1/tool_certificate/issues/1788528269/5108940165AS.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/NSE 1.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -946,8 +992,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_nse2">Understanding Fortinet products and solutions, including firewall concepts, endpoint security, secure connectivity, and network protection.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>2076657129AS</strong></span>
-                        <a href="https://training.fortinet.com/pluginfile.php/1/tool_certificate/issues/1788528062/2076657129AS.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/NSE 2.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -959,8 +1005,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_nse3">Understanding the application of Fortinet Security Fabric, FortiGate, firewall policies, traffic filtering, network segmentation, secure connectivity, and threat protection.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>8867442062AS</strong></span>
-                        <a href="https://training.fortinet.com/pluginfile.php/1/tool_certificate/issues/1788527930/8867442062AS.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/NSE 3.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -972,8 +1018,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_lfc108">Fundamentals of cybersecurity principles, system hardening, risk mitigation, and security best practices for computing environments.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>LF-z6kwpexkth</strong></span>
-                        <a href="Asset/Sertifikasi/Cybersecurity Essentials LFC108.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Cybersecurity Essentials LFC108.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -986,8 +1032,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_lfs158">Arsitektur Kubernetes &amp; kontainerisasi (Docker): Konfigurasi klaster, manajemen node, serta deployment &amp; pengamanan aplikasi via Pods, Services, &amp; Deployments.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>LF-v8dcwa6dsh</strong></span>
-                        <a href="Asset/Sertifikasi/Introduction to Kubernetes (LFS158).pdf" target="_blank" rel="noopener noreferrer" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Introduction to Kubernetes (LFS158).pdf" target="_blank" rel="noopener noreferrer" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -999,8 +1045,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_lfd140">Open standards development workflows using GitHub: Git version control, repository management, CI/CD automation, issues &amp; PR workflows, consensus building, and open-source collaboration governance.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>LF-43sipfvq5k</strong></span>
-                        <a href="Asset/Sertifikasi/GitHub for Open Standards Development LFD140.pdf" target="_blank" rel="noopener noreferrer" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/GitHub for Open Standards Development LFD140.pdf" target="_blank" rel="noopener noreferrer" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1013,8 +1059,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_lfs101">Fundamentals of Linux OS, command-line interface (CLI) administration, system operations, and open-source computing environment management.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>LF-spzyb3n9sx</strong></span>
-                        <a href="Asset/Sertifikasi/Introduction to Linux LFS101.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Introduction to Linux LFS101.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1025,8 +1071,8 @@ Key Features & Capabilities:
                     <p class="cert-issuer">Cisco Networking Academy</p>
                     <p class="cert-desc" data-i18n="cert_cisco_rs">Router traffic forwarding operations, Ethernet switching, VLAN implementation, static routing &amp; RIPv2, DHCP, NAT, ACL traffic filtering, and network troubleshooting.</p>
                     <div class="cert-credential">
-                        <a href="Asset/Sertifikasi/Routing and Switching Essentials - Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Routing and Switching Essentials - Cisco.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1038,8 +1084,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_mtcna">Administering MikroTik RouterOS, firewall filters, static/dynamic routing, bandwidth queues, and NAT.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>2011NA6084</strong></span>
-                        <a href="Asset/Sertifikasi/MTCNA Sertfikasi.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/MTCNA Sertfikasi.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1051,8 +1097,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_ibm">Information technology fundamentals, cloud computing concepts, cybersecurity, and data system management.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>d5e68e95-2840-4070-88da-388eff3b4383</strong></span>
-                        <a href="Asset/Sertifikasi/Information Technology Fundamentals - IBM.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Information Technology Fundamentals - IBM.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1065,8 +1111,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_js">Advanced JavaScript programming: OOP, async handling (Promises/Async-Await), DOM manipulation, and API integration.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>cfd22b44-b225-495c-9d86-43bc5c14b71a</strong></span>
-                        <a href="Asset/Sertifikasi/Java Script Essentials2 Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Java Script Essentials2 Cisco.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1078,8 +1124,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_python">Advanced Python programming: Object-Oriented Programming (OOP), module management, exception handling, and file/OCR processing.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>01dac1bf-9ccf-40b7-8153-9d73758d233b</strong></span>
-                        <a href="Asset/Sertifikasi/Python Essentials 2 - Cisco.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Python Essentials 2 - Cisco.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1091,8 +1137,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_software_engineer">It covers core software engineering topics like Problem Solving, Java, Go, SQL, and REST API development.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>8AAAF10DD6F2</strong></span>
-                        <a href="https://www.hackerrank.com/certificates/8aaaf10dd6f2" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="https://www.hackerrank.com/certificates/8aaaf10dd6f2" target="_blank" rel="noopener noreferrer" class="btn-verify">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1105,8 +1151,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_mongodb">MongoDB document database operations, CRUD manipulation, indexing strategies, aggregation pipeline, and schema design.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>2c706173-0391-41ad-8f23-6d3c70f1d59a</strong></span>
-                        <a href="Asset/Sertifikasi/Mongo DB - CRUD Complete.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Mongo DB - CRUD Complete.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1118,8 +1164,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_bnsp">State competency certification in database administration, schema optimization, SQL query tuning, and backup/restore.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>69201 251 6 0000004 2025</strong></span>
-                        <a href="Asset/Sertifikasi/Database Administrator - BNSP.pdf" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="Asset/Sertifikasi/Database Administrator - BNSP.pdf" target="_blank" class="btn-verify" data-pdf="true">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1131,8 +1177,8 @@ Key Features & Capabilities:
                     <p class="cert-desc" data-i18n="cert_sql_basic">Basic SQL queries, relational database concepts, SELECT statements, filtering with WHERE, joins (INNER, LEFT, RIGHT), aggregations (GROUP BY, HAVING), sorting, and subqueries.</p>
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>AD5F99EBB627</strong></span>
-                        <a href="https://www.hackerrank.com/certificates/ad5f99ebb627" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="https://www.hackerrank.com/certificates/ad5f99ebb627" target="_blank" rel="noopener noreferrer" class="btn-verify">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1144,8 +1190,8 @@ Key Features & Capabilities:
                     <p class="cert-issuer">Honeywell Technologies</p>
                     <p class="cert-desc" data-i18n="cert_honeywell">Installation, programming of addressable & conventional Notifier fire alarm panels, and building fire protection maintenance.</p>
                     <div class="cert-credential">
-                        <a href="https://drive.google.com/file/d/1x2A-Tw1sr9u_vItMXPbkjsZQoGRj0zqR/view?usp=sharing" target="_blank" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                        <a href="https://drive.google.com/file/d/1x2A-Tw1sr9u_vItMXPbkjsZQoGRj0zqR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-verify">
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1159,7 +1205,7 @@ Key Features & Capabilities:
                     <div class="cert-credential">
                         <span class="cert-id">ID: <strong>2131.256027/S-T/EEC/X/2026</strong></span>
                         <a href="https://www.e-ujian.com/cert/8C1JaJ.327076" target="_blank" rel="noopener noreferrer" class="btn-verify">
-                            <span data-i18n="verify_cert">Verify</span> <i class="bx bx-link-external"></i>
+                            <span data-i18n="verify_cert">Verifikasi</span> <i class="bx bx-link-external"></i>
                         </a>
                     </div>
                 </div>
@@ -1272,7 +1318,59 @@ Key Features & Capabilities:
         </div>
     </div>
 
+    <!-- Certification PDF Modal Viewer (Optimized Compact Header & View Focus) -->
+    <div id="cert-pdf-modal" class="modal cert-pdf-modal-backdrop" aria-hidden="true">
+        <div class="modal-content cert-modal-content glass-panel">
+            <button class="cert-mobile-close-btn" id="cert-pdf-close-mobile" aria-label="Close PDF viewer" title="Tutup">
+                <i class="bx bx-x"></i>
+            </button>
+            <div class="cert-modal-header">
+                <div class="cert-modal-info">
+                    <div class="cert-modal-title-row">
+                        <span id="cert-modal-issuer" class="cert-modal-issuer">Lembaga</span>
+                        <span class="cert-modal-dot">•</span>
+                        <h3 id="cert-modal-title" class="cert-modal-title">Nama Sertifikat</h3>
+                        <span id="cert-modal-id-wrapper" class="cert-modal-id"><i class="bx bx-badge-check"></i> <span id="cert-modal-id">Credential ID</span></span>
+                    </div>
+                </div>
+                <div class="cert-modal-actions">
+                    <a id="cert-pdf-external-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-cert-action" title="Buka Tab Baru">
+                        <i class="bx bx-link-external"></i> <span class="action-text" data-i18n="pdf_open_new_tab">Buka Tab Baru</span>
+                    </a>
+                    <a id="cert-pdf-download-btn" href="#" download class="btn-cert-action btn-cert-download" title="Unduh PDF" aria-label="Unduh PDF">
+                        <i class="bx bx-download"></i>
+                    </a>
+                    <button class="cert-modal-close-btn" id="cert-pdf-close" aria-label="Close PDF viewer" title="Tutup">
+                        <i class="bx bx-x"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cert-pdf-body">
+                <div id="cert-pdf-loading" class="cert-pdf-loading">
+                    <div class="cert-spinner"></div>
+                    <span data-i18n="pdf_loading">Memuat Dokumen Sertifikat...</span>
+                </div>
+                <div id="cert-pdf-fallback" class="cert-pdf-fallback hidden">
+                    <div class="cert-fallback-inner">
+                        <i class="bx bxs-file-pdf cert-fallback-icon"></i>
+                        <p class="cert-fallback-title" id="cert-fallback-title">Pratinjau Dokumen Sertifikat</p>
+                        <p class="cert-fallback-hint" data-i18n="pdf_fallback_hint">Browser ini tidak mendukung pratinjau PDF langsung di dalam halaman.</p>
+                        <div class="cert-fallback-buttons">
+                            <a id="cert-fallback-open-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-cert-fallback-action">
+                                <i class="bx bx-link-external"></i> <span data-i18n="pdf_open_new_tab">Buka Tab Baru</span>
+                            </a>
+                            <a id="cert-fallback-download-btn" href="#" download class="btn-cert-fallback-action alt">
+                                <i class="bx bx-download"></i> <span data-i18n="pdf_download">Unduh PDF</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <iframe id="cert-pdf-iframe" src="" title="Pratinjau Sertifikat" class="cert-pdf-iframe"></iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Main JavaScript File -->
-    <script src="script.js"></script>
+    <script src="script.js?v=9"></script>
 </body>
 </html>
