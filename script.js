@@ -34,56 +34,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Fast initial preloader (~750ms) and instant bypass on repeat session visits
+        // 5.5s on initial visit, ~1.5s on refresh / repeat session visits
         const hasVisitedSession = sessionStorage.getItem('portfolio_preloaded') === '1';
-        if (hasVisitedSession) {
-            preloader.style.display = 'none';
-            document.body.classList.add('loaded');
-            window.dispatchEvent(new CustomEvent('portfolioReady'));
-        } else {
-            const startTime = performance.now();
-            const duration = 750;
+        const startTime = performance.now();
+        const duration = hasVisitedSession ? 1500 : 5500;
 
-            const finishPreloader = () => {
-                if (isDone) return;
-                isDone = true;
-                sessionStorage.setItem('portfolio_preloaded', '1');
-                updatePreloader(100);
+        const finishPreloader = () => {
+            if (isDone) return;
+            isDone = true;
+            sessionStorage.setItem('portfolio_preloaded', '1');
+            updatePreloader(100);
+
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                // Trigger event so counters and hero effects start right as the screen reveals
+                window.dispatchEvent(new CustomEvent('portfolioReady'));
 
                 setTimeout(() => {
-                    preloader.classList.add('fade-out');
-                    // Trigger event so counters and hero effects start right as the screen reveals
-                    window.dispatchEvent(new CustomEvent('portfolioReady'));
+                    preloader.style.display = 'none';
+                    document.body.classList.add('loaded');
+                }, 450);
+            }, 150);
+        };
 
-                    setTimeout(() => {
-                        preloader.style.display = 'none';
-                        document.body.classList.add('loaded');
-                    }, 450);
-                }, 150);
-            };
+        // Ultra smooth ease-in-out cubic progression
+        const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-            // Ultra smooth ease-in-out cubic progression
-            const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        const step = (now) => {
+            const elapsed = now - startTime;
+            const normTime = Math.min(elapsed / duration, 1);
+            const currentProgress = easeInOutCubic(normTime) * 100;
+            
+            updatePreloader(currentProgress);
 
-            const step = (now) => {
-                const elapsed = now - startTime;
-                const normTime = Math.min(elapsed / duration, 1);
-                const currentProgress = easeInOutCubic(normTime) * 100;
-                
-                updatePreloader(currentProgress);
+            if (normTime < 1) {
+                requestAnimationFrame(step);
+            } else {
+                finishPreloader();
+            }
+        };
 
-                if (normTime < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    finishPreloader();
-                }
-            };
+        requestAnimationFrame(step);
 
-            requestAnimationFrame(step);
-
-            // Fail-safe fallback timeout
-            setTimeout(finishPreloader, 1400);
-        }
+        // Fail-safe fallback timeout
+        setTimeout(finishPreloader, hasVisitedSession ? 2200 : 6500);
     }
 
     // --- DICTIONARY FOR I18N BILINGUAL SUPPORT (loaded from translations.js) ---
