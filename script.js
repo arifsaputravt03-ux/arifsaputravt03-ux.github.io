@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // 5.5s on initial visit, ~1.5s on refresh / repeat session visits
+        // 4s on initial visit, ~1.5s on refresh / repeat session visits
         const hasVisitedSession = sessionStorage.getItem('portfolio_preloaded') === '1';
         const startTime = performance.now();
-        const duration = hasVisitedSession ? 1500 : 5500;
+        const duration = hasVisitedSession ? 1500 : 4000;
 
         const finishPreloader = () => {
             if (isDone) return;
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(step);
 
         // Fail-safe fallback timeout
-        setTimeout(finishPreloader, hasVisitedSession ? 2200 : 6500);
+        setTimeout(finishPreloader, hasVisitedSession ? 2200 : 5000);
     }
 
     // --- DICTIONARY FOR I18N BILINGUAL SUPPORT (loaded from translations.js) ---
