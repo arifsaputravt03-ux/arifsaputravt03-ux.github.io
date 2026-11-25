@@ -933,7 +933,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Attach click handler to cert cards / verify buttons
+    // Attach click handler to verify buttons only (card click performs no action)
     certCards.forEach(card => {
         const verifyBtn = card.querySelector('.btn-verify');
         if (!verifyBtn) return;
@@ -957,35 +957,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     pdfUrl: href
                 });
             });
-
-            // Card click opens PDF modal (excluding direct link clicks)
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', (e) => {
-                if (e.target.closest('.btn-verify')) return;
-                const title = card.querySelector('.cert-title')?.textContent.trim() || '';
-                const issuer = card.querySelector('.cert-issuer')?.textContent.trim() || '';
-                const idEl = card.querySelector('.cert-id strong');
-                const credentialId = idEl ? idEl.textContent.trim() : '';
-
-                openCertPdfModal({
-                    title: title,
-                    issuer: issuer,
-                    credentialId: credentialId,
-                    pdfUrl: href
-                });
-            });
-        } else {
-            // Non-PDF certificates (e.g. HackerRank, Google Drive, e-ujian):
-            // Verify button opens external link naturally (target="_blank")
-            // Card click also opens the external link directly
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', (e) => {
-                if (e.target.closest('.btn-verify')) return;
-                if (href && href !== '#') {
-                    window.open(href, '_blank', 'noopener,noreferrer');
-                }
-            });
         }
+        // Non-PDF certificates (e.g. HackerRank, Google Drive, e-ujian):
+        // Verify button opens external link naturally (target="_blank"), card click performs no action
     });
 
     // Close modals on Escape key
