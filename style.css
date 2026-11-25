@@ -178,6 +178,15 @@ body {
     }
 }
 
+/* Defer off-screen layout & paint for lower sections */
+#experience,
+#projects,
+#certifications,
+#contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+}
+
 .preloader-bg-grid {
     position: absolute;
     inset: 0;

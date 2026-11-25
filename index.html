@@ -16,10 +16,11 @@
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Boxicons CDN -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Boxicons CDN (non-blocking preload) -->
+    <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"></noscript>
     <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 
@@ -230,7 +231,7 @@
             <div class="stat-card">
                 <div class="stat-icon"><i class="bx bx-layer"></i></div>
                 <div class="stat-info">
-                    <h3><span class="stat-count" data-target="7">0</span>+</h3>
+                    <h3><span class="stat-count" data-target="10">0</span>+</h3>
                     <p data-i18n="stat_projects">IT Projects</p>
                 </div>
             </div>
@@ -551,183 +552,225 @@
                 <div class="projects-horizontal-track">
                     <div class="projects-timeline-inner">
                         <div class="timeline-horizontal-line"></div>
-                    
-                    <!-- Project 1 (2019) -->
+<!-- Project 10 (2026) - PT Alamtri Videotron & AV Integration -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2019</div>
+                            <div class="timeline-year">2026</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="iot" 
-                             data-category-label-id="IoT & Sistem"
-                             data-category-label-en="IoT & Systems"
-                             data-title-id="Sistem Peringatan Dini Bencana Banjir POLIFISH FARM Berbasis IoT"
-                             data-title-en="IoT-Based POLIFISH FARM Flood Disaster Early Warning System"
-                             data-role-id="Pengembang Software & Infrastruktur IoT"
-                             data-role-en="IT Infrastructure & Software Developer"
-                             data-location-id="Unit Kolam POLIFISH Farm Politeknik Negeri Lampung – Lampung"
-                             data-location-en="POLIFISH Farm Pond Unit, State Polytechnic of Lampung – Lampung"
-                             data-date-id="Desember 2019"
-                             data-date-en="December 2019"
-                             data-desc-id="Berkontribusi dalam pemilihan perangkat, perancangan arsitektur, dan implementasi sistem IoT end-to-end untuk pemantauan kolam ikan, pakan otomatis, ketinggian air (mitigasi banjir), dan pH air real-time dengan integrasi MQTT, web monitor, dan Telegram bot."
-                             data-desc-en="Contribute to device selection, architectural design, and end-to-end IoT system implementation for fish pond monitoring, automatic feeding, water level (flood mitigation), and water quality, with MQTT integration, web monitor, and real-time notifications via Telegram from design to operation."
-                             data-results-id="Hasilnya, sistem IoT berhasil berjalan secara real-time dengan komunikasi MQTT, web monitor, dan notifikasi Telegram, sehingga meningkatkan responsivitas monitoring kolam ikan, otomatisasi pakan, serta mitigasi risiko banjir dan pengendalian kualitas air secara lebih efektif."
-                             data-results-en="As a result, the IoT system successfully runs in real-time with MQTT communication, web monitor, and Telegram notifications, thereby increasing the responsiveness of fish pond monitoring, feed automation, as well as flood risk mitigation and water quality control more effectively."
-                             data-stack="C++, PHP, ESP32, NodeMCU, MQTT, Telegram Bot API, Web Monitor, Servo Motor, pH Sensor, Ultrasonic Sensor, Water Level Sensor, Buzzer"
-                             data-images="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Blink Dashboard.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Dashboard Monitor.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Foto Doc PUM.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Telegram Bot.png">
+                             data-category="infra" 
+                             data-category-label-id="Infrastruktur IT & Integrasi Sistem"
+                             data-category-label-en="IT Infra & System Integration"
+                             data-title-id="Instalasi & Integrasi Sistem Videotron dan Audio Visual – PT Alamtri Resources Indonesia Tbk"
+                             data-title-en="Videotron & Audio Visual System Integration – PT Alamtri Resources Indonesia Tbk"
+                             data-role-id="System Integrator & AV Infrastructure Engineer"
+                             data-role-en="System Integrator & AV Infrastructure Engineer"
+                             data-location-id="Gedung Graha Saptaindra – PT Alamtri Resources Indonesia Tbk"
+                             data-location-en="Graha Saptaindra Building – PT Alamtri Resources Indonesia Tbk"
+                             data-date-id="November 2026"
+                             data-date-en="November 2026"
+                             data-desc-id="Melakukan instalasi dan integrasi sistem Videotron & Audio Visual untuk Gedung Graha Saptaindra – PT Alamtri Resources Indonesia Tbk. Sistem ini menggabungkan layar LED Videotron (NovaStar VC6 Pro & PC Dell XPS 8930), tata suara (Mixer Allen & Heath CQ-12T, Amplifier Yamaha XMV8140, 6 Speaker Kolom JBL, Mic Wireless Sennheiser EM-XSW 1 DUAL), serta kamera konferensi AVer PTZ310UV2 yang terhubung ke Microsoft Teams. Seluruh perangkat—kamera, video processor, PC, mixer, dan amplifier—berbasis IP dan diintegrasikan ke jaringan existing melalui switch untuk pengalamatan IP Address. Dengan arsitektur terpusat ini, seluruh perangkat dapat dikontrol dengan mudah dari satu jaringan, termasuk pengaturan mixer langsung lewat tablet (MixPad) serta kontrol kamera dan videotron melalui web browser."
+                             data-desc-en="Installed and integrated the Videotron & Audio Visual system for Graha Saptaindra Building – PT Alamtri Resources Indonesia Tbk. The setup combines an LED Videotron (NovaStar VC6 Pro & Dell XPS 8930 PC), a sound system (Allen & Heath CQ-12T Mixer, Yamaha XMV8140 Amplifier, 6 JBL Column Speakers, Sennheiser EM-XSW 1 DUAL Wireless Mics), and an AVer PTZ310UV2 conference camera integrated with Microsoft Teams. All core devices—camera, video processor, PC, mixer, and amplifier—are IP-based and connected to the existing corporate network via a switch for IP addressing. This unified network allows effortless centralized control, including wireless mixer operation via tablet (MixPad) and web-based management for the camera and videotron."
+                             data-results-id="Seluruh perangkat visual, audio, dan kamera konferensi terintegrasi dalam satu jaringan LAN berbasis IP yang stabil dan mudah dikontrol (termasuk kontrol mixer via tablet), siap mendukung rapat hybrid dan acara perusahaan."
+                             data-results-en="Delivered a unified, IP-based Videotron, audio, and PTZ conferencing system controllable from a single LAN (including tablet mixer control), ready for hybrid meetings and corporate events."
+                             data-stack="NovaStar VC6 Pro, Allen &amp; Heath CQ-12T, Tablet MixPad Control, Yamaha XMV8140, 6x JBL Column Speakers, Sennheiser EM-XSW 1 DUAL, AVer PTZ310UV2 (4K), Dell XPS 8930, IP-Based Switch LAN, Microsoft Teams AV"
+                             data-images="Asset/Project Documenter/PT Saptaindra Sejati - Alamtri/Hasil.jpg,Asset/Project Documenter/PT Saptaindra Sejati - Alamtri/Pemasangaan Video Tron.jpeg,Asset/Project Documenter/PT Saptaindra Sejati - Alamtri/Topologi.jpg,Asset/Project Documenter/PT Saptaindra Sejati - Alamtri/Kolase Antarmuka Kamera dan Rapat.jpg,Asset/Project Documenter/PT Saptaindra Sejati - Alamtri/20261123_111956.jpg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Foto Doc PUM.png" alt="IoT-Based POLIFISH FARM Early Warning System" class="project-img" loading="lazy" decoding="async">
+                                <img src="Asset/Project Documenter/PT Saptaindra Sejati - Alamtri/Hasil.jpg" alt="Videotron &amp; Audio Visual System Integration – PT Alamtri Resources Indonesia Tbk" class="project-img" loading="lazy" decoding="async">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">IoT-Based POLIFISH FARM Early Warning System</h3>
-                                <p class="project-desc">End-to-end IoT system for fishpond flood monitoring, automatic feeding, and water quality control with Telegram API.</p>
+                                <span class="project-tag">IT Infra & System Integration</span>
+                                <h3 class="project-title">Videotron &amp; AV System Integration – PT Alamtri</h3>
+                                <p class="project-desc">Integrated IP-based Videotron (NovaStar VC6 Pro), AVer 4K PTZ Camera, PC, Allen &amp; Heath CQ-12T Mixer, &amp; Yamaha Amp into the existing network via switch for centralized &amp; tablet control.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">ESP32</span>
-                                    <span class="stack-tag">PHP</span>
-                                    <span class="stack-tag">Servo</span>
-                                    <span class="stack-tag">Web Monitor</span>
-                                    <span class="stack-tag">MQTT</span>
-                                    <span class="stack-tag">Telegram API</span>
+                                    <span class="stack-tag">NovaStar VC6 Pro</span>
+                                    <span class="stack-tag">Allen &amp; Heath CQ-12T</span>
+                                    <span class="stack-tag">Yamaha XMV8140</span>
+                                    <span class="stack-tag">6x JBL Speakers</span>
+                                    <span class="stack-tag">AVer PTZ310UV2</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2 (2021) -->
+<!-- Project 9 (2026) - IKN Infra Project -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2021</div>
+                            <div class="timeline-year">2026</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="iot" 
-                             data-category-label-id="IoT & Sistem"
-                             data-category-label-en="IoT & Systems"
-                             data-title-id="Alat Pengukur Suhu Tubuh & Absensi Non-Kontak Berbasis IoT"
-                             data-title-en="IoT-Based Non-Contact Body Temperature & Attendance Device"
-                             data-role-id="Pengembang Software & Infrastruktur IoT"
-                             data-role-en="IT Infrastructure & Software Developer"
-                             data-location-id="Kantor PGN Com Regional Lampung – Bandar Lampung"
-                             data-location-en="PGN Com Regional Office Lampung – Bandar Lampung"
-                             data-date-id="Juni 2021 – Januari 2022"
-                             data-date-en="June 2021 – January 2022"
-                             data-desc-id="Mengembangkan sistem absensi berbasis IoT menggunakan sensor NFC dan kedekatan untuk mendeteksi absensi dan mengukur suhu tubuh non-kontak secara real-time."
-                             data-desc-en="Develop an IoT-based non-contact attendance system using NFC and proximity sensors as triggers to automatically detect attendance and measure body temperature to support a fast, accurate, and non-contact attendance process in real-time."
-                             data-results-id="Sistem absensi berhasil mencatat kehadiran karyawan secara real-time, mengukur suhu tubuh secara akurat tanpa kontak fisik, dan mengirimkan notifikasi instan melalui Telegram."
-                             data-results-en="The attendance system successfully recorded employee presence in real-time, accurately measured body temperature without physical contact, and sent instant notifications via Telegram."
-                             data-stack="C++, JavaScript, ESP32, NodeMCU, RC522 NFC, MLX90614 Temperature Sensor, MQTT, React JS, Node JS, Firebase"
-                             data-images="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Absensi Fisik.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Arsitektur.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Dasbor.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Desain 3D.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Jam Absensi.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Kartu ID.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Kelola Akun.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Login.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Rekam Data.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Suhu Tinggi.PNG">
+                             data-category="infra" 
+                             data-category-label-id="Infrastruktur IT & Integrasi Sistem"
+                             data-category-label-en="IT Infra & System Integration"
+                             data-title-id="Pemeliharaan Infrastruktur Perangkat & Manajemen RMA – Proyek IKN"
+                             data-title-en="IT Infrastructure Maintenance & RMA Management – IKN Project"
+                             data-role-id="IT Infrastructure & Support Engineer"
+                             data-role-en="IT Infrastructure & Support Engineer"
+                             data-location-id="Ibu Kota Nusantara (IKN), Kalimantan Timur"
+                             data-location-en="Nusantara Capital City (IKN), East Kalimantan"
+                             data-date-id="Juli 2026 – Oktober 2026"
+                             data-date-en="July 2026 – October 2026"
+                             data-desc-id="Melaksanakan pemeliharaan rutin, penanganan defect, dan inspeksi perangkat infrastruktur IT di proyek Ibu Kota Nusantara (IKN). Bertanggung jawab melakukan maintenance dan monitoring perangkat CCTV, Digital Signage, Fire Alarm System, serta infrastruktur jaringan data LAN (Access Point, data outlet / keystone, dan integrasi pengkabelan). Berperan aktif merespons cepat setiap laporan defect atau kendala kerusakan unit, melakukan inspeksi teknis langsung di lokasi (on-site troubleshooting), perbaikan/maintenance perangkat di tempat, serta mengajukan dan mengawal Return Material Authorization (RMA) ke pihak vendor/prinsipal untuk penggantian sparepart maupun unit baru apabila ditemukan kerusakan permanen."
+                             data-desc-en="Responsible for on-site hardware maintenance, defect inspection, and technical troubleshooting across infrastructure deployments at the Nusantara Capital City (IKN) project. The operational scope covers CCTV systems, Digital Signage displays, Fire Alarm systems, and LAN data network infrastructure (Wi-Fi Access Points, modular data outlets, and cabling). Actively investigated reported defects or hardware malfunctions on-site, executed technical repairs and corrective maintenance, and managed Return Material Authorization (RMA) workflows with vendors for replacement parts or full unit replacements in cases of permanent hardware failure."
+                             data-results-id="Memastikan keandalan dan kesiapan operasional perangkat vital (CCTV, Digital Signage, Fire Alarm, dan jaringan data LAN / Access Point) di fasilitas IKN tetap prima, meminimalkan downtime sistem melalui respon perbaikan defect on-site yang tanggap, serta memastikan proses klaim garansi vendor dan RMA penggantian unit berjalan cepat dan terdata akurat."
+                             data-results-en="Maintained high operational reliability and uptime for vital CCTV, Digital Signage, Fire Alarm, and LAN data/Access Point infrastructure at IKN, minimized downtime through agile on-site defect troubleshooting, and streamlined vendor RMA warranty claims and unit replacement workflows."
+                             data-stack="CCTV Maintenance, Digital Signage, Fire Alarm Systems, LAN Data Network, Access Points & Data Outlets, Hardware Defect Inspection, On-site Troubleshooting, Return Material Authorization (RMA), Vendor Warranty & Replacement"
+                             data-images="Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.54.jpeg,Asset/Project Documenter/Infra-IKN/IMG12124563126.JPEG,Asset/Project Documenter/Infra-IKN/IMG_20261019_162728.jpeg,Asset/Project Documenter/Infra-IKN/IMG_20261019_182015.jpg,Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.39.jpeg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png" alt="IoT-Based Non-Contact Attendance Device" class="project-img" loading="lazy" decoding="async">
+                                <img src="Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.54.jpeg" alt="IT Infrastructure Maintenance &amp; RMA Management – IKN Project" class="project-img" loading="lazy" decoding="async" style="object-position: center 30%;">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">IoT-Based Non-Contact Temperature & Attendance Device</h3>
-                                <p class="project-desc">IoT attendance system with non-contact MLX90614 infrared temperature sensing and Firebase integration.</p>
+                                <span class="project-tag">IT Infra & System Integration</span>
+                                <h3 class="project-title">IT Infrastructure Maintenance &amp; RMA Management – IKN Project</h3>
+                                <p class="project-desc">Maintenance & troubleshooting for CCTV, Digital Signage, Fire Alarm, and LAN Data (Access Points & outlets), on-site defect inspection, and RMA unit replacement at IKN.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">ESP32</span>
-                                    <span class="stack-tag">NFC</span>
-                                    <span class="stack-tag">Firebase</span>
+                                    <span class="stack-tag">CCTV</span>
+                                    <span class="stack-tag">Digital Signage</span>
+                                    <span class="stack-tag">Fire Alarm</span>
+                                    <span class="stack-tag">LAN & Access Point</span>
+                                    <span class="stack-tag">Defect Inspection</span>
+                                    <span class="stack-tag">RMA Replacement</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 3 (2024) -->
+<!-- Project 8 (2026) - ERP -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2024</div>
+                            <div class="timeline-year">2026</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="iot" 
-                             data-category-label-id="IoT & Sistem"
-                             data-category-label-en="IoT & Systems"
-                             data-title-id="Sistem Gate Barrier Perpustakaan Universitas Widyatama"
-                             data-title-en="Gate Barrier System of Widyatama University Library"
-                             data-role-id="Pengembang Software & Infrastruktur IoT"
-                             data-role-en="IT Infrastructure & Software Developer"
-                             data-location-id="Universitas Widyatama – Bandung"
-                             data-location-en="Widyatama University – Bandung"
-                             data-date-id="Juni 2024 – Desember 2025"
-                             data-date-en="June 2024 – December 2025"
-                             data-desc-id="Mengembangkan sistem Visitor Management dan Automatic Gate Access berbasis NFC/RFID yang terintegrasi dengan SLiMS (Senayan Library Management System) untuk otomatisasi pencatatan kunjungan dan pemantauan akses perpustakaan menggunakan Kartu Tanda Mahasiswa (KTM). Sistem ini dirancang untuk berinteroperabilitas dengan sistem parkir kampus berbasis RFID sebagai identitas akses terpadu, mencakup integrasi REST API, arsitektur infrastruktur IoT (mikrokontroler ESP32/Arduino Mega 2560 & sensor PN532), pengkabelan hardware, hingga pemeliharaan dan dukungan teknis sistem."
-                             data-desc-en="Developed an NFC/RFID-based Visitor Management and Automatic Gate Access system integrated with SLiMS (Senayan Library Management System) to automate visitor logging and monitor library access using student ID cards. Designed for seamless interoperability with RFID-based campus parking systems as a centralized access identity, the project encompassed REST API integration, IoT infrastructure architecture (ESP32/Arduino Mega 2560 microcontrollers & PN532 readers), hardware wiring, and ongoing technical support."
-                             data-results-id="Meningkatkan akurasi pencatatan visitor, mengurangi input manual, dan meningkatkan keamanan akses perpustakaan."
-                             data-results-en="Improve the accuracy of visitor logging, reduce manual input, and improve library access security."
-                             data-stack="JavaScript, C++, Arduino Mega 2560, ESP32, Servo Motor, PN532 NFC Reader, AMOLED LCD, RFID/NFC Module, Access Control Integration"
-                             data-images="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Design Pemaparan.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Gate.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Hasil Nya Dipasang.jpeg">
+                             data-category="software" 
+                             data-category-label-id="Pengembangan Software"
+                             data-category-label-en="Software Development"
+                             data-title-id="Enterprise Resource Planning (ERP Custom)"
+                             data-title-en="Enterprise Resource Planning (ERP) System"
+                             data-role-id="Pengembang Software Fullstack"
+                             data-role-en="Software Developer"
+                             data-location-id="PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten"
+                             data-location-en="PT Trigatra Sistem Integrasi – South Tangerang, Banten"
+                             data-date-id="Februari 2026 – Sekarang"
+                             data-date-en="February 2026 – Present"
+                             data-desc-id="Mengembangkan sistem ERP custom menggunakan MERN Stack (MongoDB, Express.js, React.js, Node.js) untuk mendukung modul Logistik, SDM (HR), Manajemen Aset, Pengadaan (Procurement), Keuangan, Presales, dan Manajemen Proyek. Mengimplementasikan MongoDB Replica Set dengan transaksi ACID untuk konsistensi data yang andal, mengintegrasikan perangkat absensi ZKTeco BioTime melalui REST API, serta mempublikasikan aplikasi menggunakan Docker, Nginx, dan Gitea CI/CD pada kontainer Proxmox LXC. Mengonfigurasi Grafana dan Uptime Kuma untuk pemantauan real-time, pemeriksaan kesehatan layanan, dan observabilitas infrastruktur."
+                             data-desc-en="Developed a custom ERP system using the MERN Stack (MongoDB, Express.js, React.js, Node.js) to support Logistics, Human Resources (HR), Asset Management, Procurement, Finance, Presales, and Project Management modules. Implemented MongoDB Replica Set with ACID transactions for reliable data consistency, integrated ZKTeco BioTime attendance devices via REST APIs, and deployed the application using Docker, Nginx, and Gitea CI/CD on Proxmox LXC containers. Configured Grafana and Uptime Kuma for real-time monitoring, service health checks, and infrastructure observability."
+                             data-results-id="Berhasil mengembangkan sistem ERP berbasis web menggunakan MERN Stack yang mengintegrasikan modul Logistik, HR, Asset Management, Procurement, Finance, Presales, dan Project Management dalam satu platform. Sistem dilengkapi integrasi ZKTeco BioTime melalui REST API, MongoDB Replica Set dengan ACID Transactions, serta deployment menggunakan Docker, Nginx, dan Gitea CI/CD pada Proxmox, didukung Grafana dan Uptime Kuma untuk monitoring real-time sehingga meningkatkan efisiensi operasional dan keandalan sistem."
+                             data-results-en="Successfully developed a web-based ERP system using the MERN Stack integrating Logistics, HR, Asset Management, Procurement, Finance, Presales, and Project Management modules in one platform. System features ZKTeco BioTime integration via REST API, MongoDB Replica Set with ACID Transactions, and deployment using Docker, Nginx, and Gitea CI/CD on Proxmox, supported by Grafana and Uptime Kuma for real-time monitoring to enhance operational efficiency and system reliability."
+                             data-stack="React.js, Node.js, Express.js, MongoDB Replica Set, ACID Transactions, REST API, Gitea CI/CD, Docker, Nginx, Proxmox, Grafana, Uptime Kuma"
+                             data-images="Asset/Project Documenter/ERP & Monitoring Infra/CI-CD & Docker ERP.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Develope Coding.jpeg,Asset/Project Documenter/ERP & Monitoring Infra/Devloper Mobile PWA.jpeg,Asset/Project Documenter/ERP & Monitoring Infra/ERP.png,Asset/Project Documenter/ERP & Monitoring Infra/Grafana.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Proxmox DEV OPS Monitor Infra.png,Asset/Project Documenter/ERP & Monitoring Infra/Uptimekuma.jpg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg" alt="Gate Barrier System Widyatama University" class="project-img" loading="lazy" decoding="async">
+                                <img src="Asset/Project Documenter/ERP & Monitoring Infra/ERP.png" alt="Enterprise Resource Planning (ERP) System" class="project-img" loading="lazy" decoding="async">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">Gate Barrier System of Widyatama University Library</h3>
-                                <p class="project-desc">Automated NFC/RFID library gate access integrated with SLiMS management system and student ID authentication.</p>
+                                <span class="project-tag">Software Development</span>
+                                <h3 class="project-title">Enterprise Resource Planning (ERP) System</h3>
+                                <p class="project-desc">Developed a custom ERP system using MERN Stack for Logistics, HR, Finance & Projects with MongoDB Replica Set, Docker, Gitea CI/CD, Proxmox LXC, Grafana & Uptime Kuma.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">ESP32</span>
-                                    <span class="stack-tag">NFC / RFID</span>
-                                    <span class="stack-tag">SLiMS</span>
+                                    <span class="stack-tag">MERN Stack</span>
+                                    <span class="stack-tag">Docker & Gitea CI/CD</span>
+                                    <span class="stack-tag">Grafana & Uptime Kuma</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 4 (2025) -->
+<!-- Project 7 (2026) - Cold Storage CCTV -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2025</div>
+                            <div class="timeline-year">2026</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="iot" 
-                             data-category-label-id="IoT & Sistem"
-                             data-category-label-en="IoT & Systems"
-                             data-title-id="Sistem Monitoring Suhu & Kelembapan Gudang Penyimpanan Cairan Kimia Berbasis Fuzzy Logic"
-                             data-title-en="Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System"
-                             data-role-id="Pengembang Software & Infrastruktur IoT"
-                             data-role-en="IT Infrastructure & Software Developer"
-                             data-location-id="PT Ladang Karya Husada – Bandung, Jawa Barat"
-                             data-location-en="PT Ladang Karya Husada, Bandung, West Java"
-                             data-date-id="Maret 2025 – Juni 2025"
-                             data-date-en="March 2025 – June 2025"
-                             data-desc-id="Mengembangkan sistem monitoring suhu dan kelembapan berbasis IoT di gudang penyimpanan Hidrogen Peroksida menggunakan algoritma Fuzzy Logic untuk mengontrol AC dan exhaust fan secara otomatis. Dilengkapi Web PWA dan simulasi MATLAB."
-                             data-desc-en="Developed a temperature and humidity monitoring system in an IoT-based Hydrogen Peroxide storage warehouse using high-precision sensors, which are integrated with automatic control of air conditioning and exhaust fan to keep environmental conditions stable within safe limits. The system is equipped with web-based real-time monitoring and calculation analysis using MATLAB."
-                             data-results-id="Meningkatkan monitoring kondisi gudang secara real-time dan menjaga stabilitas lingkungan penyimpanan bahan kimia."
-                             data-results-en="Improve real-time monitoring of warehouse conditions and maintain the stability of the chemical storage environment."
-                             data-stack="C++, HTML, ESP32, Arduino, Temperature & Humidity Sensor, Relay Control, MQTT, MATLAB, IoT Automation"
-                             data-images="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Arsitektur Desain_1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Blok Diagram IOT_1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Desain Componen Wiring.PNG,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Foto Controler Box V1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Hasil Web.jpg">
+                             data-category="infra" 
+                             data-category-label-id="Infrastruktur IT, Monitoring &amp; Integrasi Sistem"
+                             data-category-label-en="IT Infra, Monitoring &amp; System Integration"
+                             data-title-id="Infrastruktur IT, Monitoring &amp; Integrasi Sistem"
+                             data-title-en="IT Infrastructure, Monitoring &amp; System Integration"
+                             data-role-id="IT Engineer / Infrastruktur &amp; Monitoring"
+                             data-role-en="IT Systems &amp; Infrastructure Monitoring Engineer"
+                             data-location-id="PT Trigatra Sistem Integrasi &amp; Client Sites"
+                             data-location-en="PT Trigatra Sistem Integrasi &amp; Client Sites"
+                             data-date-id="Januari 2026 – Sekarang"
+                             data-date-en="January 2026 – Present"
+                             data-desc-id="Mengelola dan memelihara infrastruktur ICT di lokasi proyek klien, termasuk monitoring jaringan menggunakan Ruijie Cloud Dashboard, Uptime Kuma, dan Grafana, serta pengelolaan Proxmox Server dan router MikroTik, Ruijie, Aruba, dan Cisco. Melakukan pra-konfigurasi, instalasi, pengujian, dan commissioning perangkat jaringan enterprise. Menangani maintenance dan troubleshooting secara remote menggunakan AnyDesk, TeamViewer, dan Remote Desktop maupun secara langsung di lokasi (on-site). Memelihara sistem CCTV, absensi biometrik, access control, fire alarm, serta memastikan seluruh sistem ICT beroperasi secara optimal."
+                             data-desc-en="Managed and maintained ICT infrastructure at client project sites, including network monitoring using Ruijie Cloud Dashboard, Uptime Kuma, and Grafana, as well as administering Proxmox Server and routers/switches from MikroTik, Ruijie, Aruba, and Cisco. Executed pre-configuration, installation, throughput testing, and commissioning of enterprise network hardware. Handled maintenance and troubleshooting remotely using AnyDesk, TeamViewer, and Remote Desktop, as well as directly on-site. Maintained CCTV systems, biometric attendance, access control, and fire alarms, ensuring all enterprise ICT systems operate reliably and at peak performance."
+                             data-results-id="Infrastruktur ICT di seluruh lokasi proyek klien beroperasi dengan stabilitas tinggi, visibilitas telemetri jaringan real-time melalui Ruijie Cloud Dashboard, Grafana, dan Uptime Kuma, serta penanganan insiden yang cepat dan responsif baik secara remote maupun on-site sehingga memastikan zero critical downtime dan performa sistem yang optimal."
+                             data-results-en="Client project ICT infrastructure achieved high operational stability, complete real-time network telemetry visibility via Ruijie Cloud Dashboard, Grafana, and Uptime Kuma, and rapid incident resolution through remote and on-site support, ensuring zero critical downtime and optimal system performance."
+                             data-stack="IT Infrastructure, Network Monitoring, Network Troubleshooting, System Administration, Ruijie Cloud Dashboard, Uptime Kuma, Grafana, Proxmox Server, MikroTik RouterOS, Aruba Switching, Cisco Enterprise, AnyDesk, TeamViewer, Remote Desktop, CCTV Systems, Biometric Attendance, Access Control, Fire Alarm System, ICT Infrastructure"
+                             data-images="Asset/Project Documenter/Infra CCTV Maintenance/Dashboard Ruijie Office.jpg,Asset/Project Documenter/Infra CCTV Maintenance/CCTV PTZ Configure Project Site.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/CCTV.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Configure Switch Aruba.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Hardware Troblushoot.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/IMG_20261019_182031.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Infra Acces Control.jpg,Asset/Project Documenter/Infra CCTV Maintenance/Maintenance Phisical Server.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Maitenance Server Problem Wiring.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Test Cabling Wiring.png">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Foto Controler Box V1.png" alt="Fuzzy Logic Chemical Storage Monitoring System" class="project-img" loading="lazy" decoding="async">
+                                <img src="Asset/Project Documenter/Infra CCTV Maintenance/Dashboard Ruijie Office.jpg" alt="IT Infrastructure, Monitoring &amp; System Integration" class="project-img" loading="lazy" decoding="async" style="object-position: top center;">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">IoT & Systems</span>
-                                <h3 class="project-title">Fuzzy Logic Chemical Storage Monitoring System</h3>
-                                <p class="project-desc">IoT temperature & humidity monitoring for chemical storage with Fuzzy Logic automated AC/fan relay control.</p>
+                                <span class="project-tag">IT Infra, Monitoring &amp; System Integrator</span>
+                                <h3 class="project-title">IT Infrastructure, Monitoring &amp; System Integration</h3>
+                                <p class="project-desc">Mengelola infrastruktur ICT &amp; monitoring jaringan via Ruijie Cloud Dashboard, Uptime Kuma, Grafana, Proxmox, MikroTik, Aruba, Cisco, CCTV, dan access control.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">ESP32</span>
-                                    <span class="stack-tag">Fuzzy Logic</span>
-                                    <span class="stack-tag">MATLAB</span>
+                                    <span class="stack-tag">IT Infrastructure</span>
+                                    <span class="stack-tag">Network Monitoring</span>
+                                    <span class="stack-tag">Network Troubleshooting</span>
+                                    <span class="stack-tag">System Administration</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 5 (2025) -->
+<!-- Project 6 (2026) -->
+                    <div class="project-timeline-item">
+                        <div class="timeline-node">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2026</div>
+                        </div>
+                        <div class="project-card glass-panel" 
+                             data-category="software" 
+                             data-category-label-id="Pengembangan Software"
+                             data-category-label-en="Software Development"
+                             data-title-id="Website Company Profile & Landing Page"
+                             data-title-en="Web Company Profile & Landing Page"
+                             data-role-id="Pengembang Software Web"
+                             data-role-en="Software Developer"
+                             data-location-id="PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten"
+                             data-location-en="PT Trigatra Sistem Integrasi – South Tangerang, Banten"
+                             data-date-id="Januari 2026"
+                             data-date-en="January 2026"
+                             data-desc-id="Membangun website company profile sebagai media informasi, layanan, dan portofolio dengan fitur integrasi email SMTP, WhatsApp, dan Google Maps API."
+                             data-desc-en="Developed a company profile website as a digital media for corporate information, services, and portfolio showcasing with email, WhatsApp, and Google Maps integration features."
+                             data-results-id="Membangun media informasi dan komunikasi perusahaan yang terintegrasi dengan layanan email, WhatsApp, dan Google Maps, serta dilengkapi proteksi bot dan anti-scraping."
+                             data-results-en="Improving corporate communication media and access to information for clients."
+                             data-url="https://trigatra.co/"
+                             data-stack="JavaScript, HTML5, CSS3, WordPress CMS, Cloudflare, SMTP Email Integration, Google Maps API, WhatsApp Link Integration, Cloudflare Turnstile, Anti-Bot & Anti-Scraping"
+                             data-images="Asset/Project Documenter/Web Company Profile & Landing Page/WEB Compro.png">
+                            <div class="project-thumbnail">
+                                <img src="Asset/Project Documenter/Web Company Profile & Landing Page/WEB Compro.png" alt="Web Company Profile & Landing Page" class="project-img" loading="lazy" decoding="async">
+                                <div class="project-overlay">
+                                    <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <span class="project-tag">Software Development</span>
+                                <h3 class="project-title">Web Company Profile & Landing Page</h3>
+                                <p class="project-desc">Official responsive company website showcasing ICT & software services with SMTP email and Google Maps integration.</p>
+                                <div class="project-stack">
+                                    <span class="stack-tag">JavaScript, HTML & CSS</span>
+                                    <span class="stack-tag">WordPress CMS</span>
+                                    <span class="stack-tag">Cloudflare & SMTP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- Project 5 (2025) -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
@@ -783,184 +826,177 @@ Key Features & Capabilities:
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 6 (2026) -->
+<!-- Project 4 (2025) -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2026</div>
+                            <div class="timeline-year">2025</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="software" 
-                             data-category-label-id="Pengembangan Software"
-                             data-category-label-en="Software Development"
-                             data-title-id="Website Company Profile & Landing Page"
-                             data-title-en="Web Company Profile & Landing Page"
-                             data-role-id="Pengembang Software Web"
-                             data-role-en="Software Developer"
-                             data-location-id="PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten"
-                             data-location-en="PT Trigatra Sistem Integrasi – South Tangerang, Banten"
-                             data-date-id="Januari 2026"
-                             data-date-en="January 2026"
-                             data-desc-id="Membangun website company profile sebagai media informasi, layanan, dan portofolio dengan fitur integrasi email SMTP, WhatsApp, dan Google Maps API."
-                             data-desc-en="Developed a company profile website as a digital media for corporate information, services, and portfolio showcasing with email, WhatsApp, and Google Maps integration features."
-                             data-results-id="Membangun media informasi dan komunikasi perusahaan yang terintegrasi dengan layanan email, WhatsApp, dan Google Maps, serta dilengkapi proteksi bot dan anti-scraping."
-                             data-results-en="Improving corporate communication media and access to information for clients."
-                             data-url="https://trigatra.co/"
-                             data-stack="JavaScript, HTML5, CSS3, WordPress CMS, Cloudflare, SMTP Email Integration, Google Maps API, WhatsApp Link Integration, Cloudflare Turnstile, Anti-Bot & Anti-Scraping"
-                             data-images="Asset/Project Documenter/Web Company Profile & Landing Page/WEB Compro.png">
+                             data-category="iot" 
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="Sistem Monitoring Suhu & Kelembapan Gudang Penyimpanan Cairan Kimia Berbasis Fuzzy Logic"
+                             data-title-en="Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="PT Ladang Karya Husada – Bandung, Jawa Barat"
+                             data-location-en="PT Ladang Karya Husada, Bandung, West Java"
+                             data-date-id="Maret 2025 – Juni 2025"
+                             data-date-en="March 2025 – June 2025"
+                             data-desc-id="Mengembangkan sistem monitoring suhu dan kelembapan berbasis IoT di gudang penyimpanan Hidrogen Peroksida menggunakan algoritma Fuzzy Logic untuk mengontrol AC dan exhaust fan secara otomatis. Dilengkapi Web PWA dan simulasi MATLAB."
+                             data-desc-en="Developed a temperature and humidity monitoring system in an IoT-based Hydrogen Peroxide storage warehouse using high-precision sensors, which are integrated with automatic control of air conditioning and exhaust fan to keep environmental conditions stable within safe limits. The system is equipped with web-based real-time monitoring and calculation analysis using MATLAB."
+                             data-results-id="Meningkatkan monitoring kondisi gudang secara real-time dan menjaga stabilitas lingkungan penyimpanan bahan kimia."
+                             data-results-en="Improve real-time monitoring of warehouse conditions and maintain the stability of the chemical storage environment."
+                             data-stack="C++, HTML, ESP32, Arduino, Temperature & Humidity Sensor, Relay Control, MQTT, MATLAB, IoT Automation"
+                             data-images="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Arsitektur Desain_1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Blok Diagram IOT_1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Desain Componen Wiring.PNG,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Foto Controler Box V1.png,Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Hasil Web.jpg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/Web Company Profile & Landing Page/WEB Compro.png" alt="Web Company Profile & Landing Page" class="project-img" loading="lazy" decoding="async">
+                                <img src="Asset/Project Documenter/Fuzzy Logic-Based Chemical Storage Temperature & Humidity Monitoring System/Foto Controler Box V1.png" alt="Fuzzy Logic Chemical Storage Monitoring System" class="project-img" loading="lazy" decoding="async">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">Software Development</span>
-                                <h3 class="project-title">Web Company Profile & Landing Page</h3>
-                                <p class="project-desc">Official responsive company website showcasing ICT & software services with SMTP email and Google Maps integration.</p>
+                                <span class="project-tag">IoT & Systems</span>
+                                <h3 class="project-title">Fuzzy Logic Chemical Storage Monitoring System</h3>
+                                <p class="project-desc">IoT temperature & humidity monitoring for chemical storage with Fuzzy Logic automated AC/fan relay control.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">JavaScript, HTML & CSS</span>
-                                    <span class="stack-tag">WordPress CMS</span>
-                                    <span class="stack-tag">Cloudflare & SMTP</span>
+                                    <span class="stack-tag">ESP32</span>
+                                    <span class="stack-tag">Fuzzy Logic</span>
+                                    <span class="stack-tag">MATLAB</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 7 (2026) - Cold Storage CCTV -->
+<!-- Project 3 (2024) -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2026</div>
+                            <div class="timeline-year">2024</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="infra" 
-                             data-category-label-id="Infrastruktur IT, Monitoring &amp; Integrasi Sistem"
-                             data-category-label-en="IT Infra, Monitoring &amp; System Integration"
-                             data-title-id="Infrastruktur IT, Monitoring &amp; Integrasi Sistem"
-                             data-title-en="IT Infrastructure, Monitoring &amp; System Integration"
-                             data-role-id="IT Engineer / Infrastruktur &amp; Monitoring"
-                             data-role-en="IT Systems &amp; Infrastructure Monitoring Engineer"
-                             data-location-id="PT Trigatra Sistem Integrasi &amp; Client Sites"
-                             data-location-en="PT Trigatra Sistem Integrasi &amp; Client Sites"
-                             data-date-id="Januari 2026 – Sekarang"
-                             data-date-en="January 2026 – Present"
-                             data-desc-id="Mengelola dan memelihara infrastruktur ICT di lokasi proyek klien, termasuk monitoring jaringan menggunakan Ruijie Cloud Dashboard, Uptime Kuma, dan Grafana, serta pengelolaan Proxmox Server dan router MikroTik, Ruijie, Aruba, dan Cisco. Melakukan pra-konfigurasi, instalasi, pengujian, dan commissioning perangkat jaringan enterprise. Menangani maintenance dan troubleshooting secara remote menggunakan AnyDesk, TeamViewer, dan Remote Desktop maupun secara langsung di lokasi (on-site). Memelihara sistem CCTV, absensi biometrik, access control, fire alarm, serta memastikan seluruh sistem ICT beroperasi secara optimal."
-                             data-desc-en="Managed and maintained ICT infrastructure at client project sites, including network monitoring using Ruijie Cloud Dashboard, Uptime Kuma, and Grafana, as well as administering Proxmox Server and routers/switches from MikroTik, Ruijie, Aruba, and Cisco. Executed pre-configuration, installation, throughput testing, and commissioning of enterprise network hardware. Handled maintenance and troubleshooting remotely using AnyDesk, TeamViewer, and Remote Desktop, as well as directly on-site. Maintained CCTV systems, biometric attendance, access control, and fire alarms, ensuring all enterprise ICT systems operate reliably and at peak performance."
-                             data-results-id="Infrastruktur ICT di seluruh lokasi proyek klien beroperasi dengan stabilitas tinggi, visibilitas telemetri jaringan real-time melalui Ruijie Cloud Dashboard, Grafana, dan Uptime Kuma, serta penanganan insiden yang cepat dan responsif baik secara remote maupun on-site sehingga memastikan zero critical downtime dan performa sistem yang optimal."
-                             data-results-en="Client project ICT infrastructure achieved high operational stability, complete real-time network telemetry visibility via Ruijie Cloud Dashboard, Grafana, and Uptime Kuma, and rapid incident resolution through remote and on-site support, ensuring zero critical downtime and optimal system performance."
-                             data-stack="IT Infrastructure, Network Monitoring, Network Troubleshooting, System Administration, Ruijie Cloud Dashboard, Uptime Kuma, Grafana, Proxmox Server, MikroTik RouterOS, Aruba Switching, Cisco Enterprise, AnyDesk, TeamViewer, Remote Desktop, CCTV Systems, Biometric Attendance, Access Control, Fire Alarm System, ICT Infrastructure"
-                             data-images="Asset/Project Documenter/Infra CCTV Maintenance/Dashboard Ruijie Office.jpg,Asset/Project Documenter/Infra CCTV Maintenance/CCTV PTZ Configure Project Site.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/CCTV.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Configure Switch Aruba.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Hardware Troblushoot.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/IMG_20261019_182031.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Infra Acces Control.jpg,Asset/Project Documenter/Infra CCTV Maintenance/Maintenance Phisical Server.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Maitenance Server Problem Wiring.jpeg,Asset/Project Documenter/Infra CCTV Maintenance/Test Cabling Wiring.png">
+                             data-category="iot" 
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="Sistem Gate Barrier Perpustakaan Universitas Widyatama"
+                             data-title-en="Gate Barrier System of Widyatama University Library"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="Universitas Widyatama – Bandung"
+                             data-location-en="Widyatama University – Bandung"
+                             data-date-id="Juni 2024 – Desember 2025"
+                             data-date-en="June 2024 – December 2025"
+                             data-desc-id="Mengembangkan sistem Visitor Management dan Automatic Gate Access berbasis NFC/RFID yang terintegrasi dengan SLiMS (Senayan Library Management System) untuk otomatisasi pencatatan kunjungan dan pemantauan akses perpustakaan menggunakan Kartu Tanda Mahasiswa (KTM). Sistem ini dirancang untuk berinteroperabilitas dengan sistem parkir kampus berbasis RFID sebagai identitas akses terpadu, mencakup integrasi REST API, arsitektur infrastruktur IoT (mikrokontroler ESP32/Arduino Mega 2560 & sensor PN532), pengkabelan hardware, hingga pemeliharaan dan dukungan teknis sistem."
+                             data-desc-en="Developed an NFC/RFID-based Visitor Management and Automatic Gate Access system integrated with SLiMS (Senayan Library Management System) to automate visitor logging and monitor library access using student ID cards. Designed for seamless interoperability with RFID-based campus parking systems as a centralized access identity, the project encompassed REST API integration, IoT infrastructure architecture (ESP32/Arduino Mega 2560 microcontrollers & PN532 readers), hardware wiring, and ongoing technical support."
+                             data-results-id="Meningkatkan akurasi pencatatan visitor, mengurangi input manual, dan meningkatkan keamanan akses perpustakaan."
+                             data-results-en="Improve the accuracy of visitor logging, reduce manual input, and improve library access security."
+                             data-stack="JavaScript, C++, Arduino Mega 2560, ESP32, Servo Motor, PN532 NFC Reader, AMOLED LCD, RFID/NFC Module, Access Control Integration"
+                             data-images="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Design Pemaparan.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Gate.jpeg,Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Hasil Nya Dipasang.jpeg">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/Infra CCTV Maintenance/Dashboard Ruijie Office.jpg" alt="IT Infrastructure, Monitoring &amp; System Integration" class="project-img" loading="lazy" decoding="async" style="object-position: top center;">
+                                <img src="Asset/Project Documenter/Gate Barrier System of Widyatama University Library/Alat Gate Jadi.jpeg" alt="Gate Barrier System Widyatama University" class="project-img" loading="lazy" decoding="async">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">IT Infra, Monitoring &amp; System Integrator</span>
-                                <h3 class="project-title">IT Infrastructure, Monitoring &amp; System Integration</h3>
-                                <p class="project-desc">Mengelola infrastruktur ICT &amp; monitoring jaringan via Ruijie Cloud Dashboard, Uptime Kuma, Grafana, Proxmox, MikroTik, Aruba, Cisco, CCTV, dan access control.</p>
+                                <span class="project-tag">IoT & Systems</span>
+                                <h3 class="project-title">Gate Barrier System of Widyatama University Library</h3>
+                                <p class="project-desc">Automated NFC/RFID library gate access integrated with SLiMS management system and student ID authentication.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">IT Infrastructure</span>
-                                    <span class="stack-tag">Network Monitoring</span>
-                                    <span class="stack-tag">Network Troubleshooting</span>
-                                    <span class="stack-tag">System Administration</span>
+                                    <span class="stack-tag">ESP32</span>
+                                    <span class="stack-tag">NFC / RFID</span>
+                                    <span class="stack-tag">SLiMS</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 8 (2026) - ERP -->
+<!-- Project 2 (2021) -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2026</div>
+                            <div class="timeline-year">2021</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="software" 
-                             data-category-label-id="Pengembangan Software"
-                             data-category-label-en="Software Development"
-                             data-title-id="Enterprise Resource Planning (ERP Custom)"
-                             data-title-en="Enterprise Resource Planning (ERP) System"
-                             data-role-id="Pengembang Software Fullstack"
-                             data-role-en="Software Developer"
-                             data-location-id="PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten"
-                             data-location-en="PT Trigatra Sistem Integrasi – South Tangerang, Banten"
-                             data-date-id="Februari 2026 – Sekarang"
-                             data-date-en="February 2026 – Present"
-                             data-desc-id="Mengembangkan sistem ERP custom menggunakan MERN Stack (MongoDB, Express.js, React.js, Node.js) untuk mendukung modul Logistik, SDM (HR), Manajemen Aset, Pengadaan (Procurement), Keuangan, Presales, dan Manajemen Proyek. Mengimplementasikan MongoDB Replica Set dengan transaksi ACID untuk konsistensi data yang andal, mengintegrasikan perangkat absensi ZKTeco BioTime melalui REST API, serta mempublikasikan aplikasi menggunakan Docker, Nginx, dan Gitea CI/CD pada kontainer Proxmox LXC. Mengonfigurasi Grafana dan Uptime Kuma untuk pemantauan real-time, pemeriksaan kesehatan layanan, dan observabilitas infrastruktur."
-                             data-desc-en="Developed a custom ERP system using the MERN Stack (MongoDB, Express.js, React.js, Node.js) to support Logistics, Human Resources (HR), Asset Management, Procurement, Finance, Presales, and Project Management modules. Implemented MongoDB Replica Set with ACID transactions for reliable data consistency, integrated ZKTeco BioTime attendance devices via REST APIs, and deployed the application using Docker, Nginx, and Gitea CI/CD on Proxmox LXC containers. Configured Grafana and Uptime Kuma for real-time monitoring, service health checks, and infrastructure observability."
-                             data-results-id="Berhasil mengembangkan sistem ERP berbasis web menggunakan MERN Stack yang mengintegrasikan modul Logistik, HR, Asset Management, Procurement, Finance, Presales, dan Project Management dalam satu platform. Sistem dilengkapi integrasi ZKTeco BioTime melalui REST API, MongoDB Replica Set dengan ACID Transactions, serta deployment menggunakan Docker, Nginx, dan Gitea CI/CD pada Proxmox, didukung Grafana dan Uptime Kuma untuk monitoring real-time sehingga meningkatkan efisiensi operasional dan keandalan sistem."
-                             data-results-en="Successfully developed a web-based ERP system using the MERN Stack integrating Logistics, HR, Asset Management, Procurement, Finance, Presales, and Project Management modules in one platform. System features ZKTeco BioTime integration via REST API, MongoDB Replica Set with ACID Transactions, and deployment using Docker, Nginx, and Gitea CI/CD on Proxmox, supported by Grafana and Uptime Kuma for real-time monitoring to enhance operational efficiency and system reliability."
-                             data-stack="React.js, Node.js, Express.js, MongoDB Replica Set, ACID Transactions, REST API, Gitea CI/CD, Docker, Nginx, Proxmox, Grafana, Uptime Kuma"
-                             data-images="Asset/Project Documenter/ERP & Monitoring Infra/CI-CD & Docker ERP.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Develope Coding.jpeg,Asset/Project Documenter/ERP & Monitoring Infra/Devloper Mobile PWA.jpeg,Asset/Project Documenter/ERP & Monitoring Infra/ERP.png,Asset/Project Documenter/ERP & Monitoring Infra/Grafana.jpg,Asset/Project Documenter/ERP & Monitoring Infra/Proxmox DEV OPS Monitor Infra.png,Asset/Project Documenter/ERP & Monitoring Infra/Uptimekuma.jpg">
+                             data-category="iot" 
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="Alat Pengukur Suhu Tubuh & Absensi Non-Kontak Berbasis IoT"
+                             data-title-en="IoT-Based Non-Contact Body Temperature & Attendance Device"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="Kantor PGN Com Regional Lampung – Bandar Lampung"
+                             data-location-en="PGN Com Regional Office Lampung – Bandar Lampung"
+                             data-date-id="Juni 2021 – Januari 2022"
+                             data-date-en="June 2021 – January 2022"
+                             data-desc-id="Mengembangkan sistem absensi berbasis IoT menggunakan sensor NFC dan kedekatan untuk mendeteksi absensi dan mengukur suhu tubuh non-kontak secara real-time."
+                             data-desc-en="Develop an IoT-based non-contact attendance system using NFC and proximity sensors as triggers to automatically detect attendance and measure body temperature to support a fast, accurate, and non-contact attendance process in real-time."
+                             data-results-id="Sistem absensi berhasil mencatat kehadiran karyawan secara real-time, mengukur suhu tubuh secara akurat tanpa kontak fisik, dan mengirimkan notifikasi instan melalui Telegram."
+                             data-results-en="The attendance system successfully recorded employee presence in real-time, accurately measured body temperature without physical contact, and sent instant notifications via Telegram."
+                             data-stack="C++, JavaScript, ESP32, NodeMCU, RC522 NFC, MLX90614 Temperature Sensor, MQTT, React JS, Node JS, Firebase"
+                             data-images="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Absensi Fisik.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Arsitektur.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Dasbor.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Desain 3D.png,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Jam Absensi.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Kartu ID.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Kelola Akun.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Login.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Rekam Data.PNG,Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/Suhu Tinggi.PNG">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/ERP & Monitoring Infra/ERP.png" alt="Enterprise Resource Planning (ERP) System" class="project-img" loading="lazy" decoding="async">
+                                <img src="Asset/Project Documenter/IoT-Based Non-Contact Body Temperature & Attendance Device/ALAT.png" alt="IoT-Based Non-Contact Attendance Device" class="project-img" loading="lazy" decoding="async">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">Software Development</span>
-                                <h3 class="project-title">Enterprise Resource Planning (ERP) System</h3>
-                                <p class="project-desc">Developed a custom ERP system using MERN Stack for Logistics, HR, Finance & Projects with MongoDB Replica Set, Docker, Gitea CI/CD, Proxmox LXC, Grafana & Uptime Kuma.</p>
+                                <span class="project-tag">IoT & Systems</span>
+                                <h3 class="project-title">IoT-Based Non-Contact Temperature & Attendance Device</h3>
+                                <p class="project-desc">IoT attendance system with non-contact MLX90614 infrared temperature sensing and Firebase integration.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">MERN Stack</span>
-                                    <span class="stack-tag">Docker & Gitea CI/CD</span>
-                                    <span class="stack-tag">Grafana & Uptime Kuma</span>
+                                    <span class="stack-tag">ESP32</span>
+                                    <span class="stack-tag">NFC</span>
+                                    <span class="stack-tag">Firebase</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 9 (2026) - IKN Infra Project -->
+<!-- Project 1 (2019) -->
                     <div class="project-timeline-item">
                         <div class="timeline-node">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-year">2026</div>
+                            <div class="timeline-year">2019</div>
                         </div>
                         <div class="project-card glass-panel" 
-                             data-category="infra" 
-                             data-category-label-id="Infrastruktur IT & Integrasi Sistem"
-                             data-category-label-en="IT Infra & System Integration"
-                             data-title-id="Pemeliharaan Infrastruktur Perangkat & Manajemen RMA – Proyek IKN"
-                             data-title-en="IT Infrastructure Maintenance & RMA Management – IKN Project"
-                             data-role-id="IT Infrastructure & Support Engineer"
-                             data-role-en="IT Infrastructure & Support Engineer"
-                             data-location-id="Ibu Kota Nusantara (IKN), Kalimantan Timur"
-                             data-location-en="Nusantara Capital City (IKN), East Kalimantan"
-                             data-date-id="Juli 2026 – Oktober 2026"
-                             data-date-en="July 2026 – October 2026"
-                             data-desc-id="Melaksanakan pemeliharaan rutin, penanganan defect, dan inspeksi perangkat infrastruktur IT di proyek Ibu Kota Nusantara (IKN). Bertanggung jawab melakukan maintenance dan monitoring perangkat CCTV, Digital Signage, Fire Alarm System, serta infrastruktur jaringan data LAN (Access Point, data outlet / keystone, dan integrasi pengkabelan). Berperan aktif merespons cepat setiap laporan defect atau kendala kerusakan unit, melakukan inspeksi teknis langsung di lokasi (on-site troubleshooting), perbaikan/maintenance perangkat di tempat, serta mengajukan dan mengawal Return Material Authorization (RMA) ke pihak vendor/prinsipal untuk penggantian sparepart maupun unit baru apabila ditemukan kerusakan permanen."
-                             data-desc-en="Responsible for on-site hardware maintenance, defect inspection, and technical troubleshooting across infrastructure deployments at the Nusantara Capital City (IKN) project. The operational scope covers CCTV systems, Digital Signage displays, Fire Alarm systems, and LAN data network infrastructure (Wi-Fi Access Points, modular data outlets, and cabling). Actively investigated reported defects or hardware malfunctions on-site, executed technical repairs and corrective maintenance, and managed Return Material Authorization (RMA) workflows with vendors for replacement parts or full unit replacements in cases of permanent hardware failure."
-                             data-results-id="Memastikan keandalan dan kesiapan operasional perangkat vital (CCTV, Digital Signage, Fire Alarm, dan jaringan data LAN / Access Point) di fasilitas IKN tetap prima, meminimalkan downtime sistem melalui respon perbaikan defect on-site yang tanggap, serta memastikan proses klaim garansi vendor dan RMA penggantian unit berjalan cepat dan terdata akurat."
-                             data-results-en="Maintained high operational reliability and uptime for vital CCTV, Digital Signage, Fire Alarm, and LAN data/Access Point infrastructure at IKN, minimized downtime through agile on-site defect troubleshooting, and streamlined vendor RMA warranty claims and unit replacement workflows."
-                             data-stack="CCTV Maintenance, Digital Signage, Fire Alarm Systems, LAN Data Network, Access Points & Data Outlets, Hardware Defect Inspection, On-site Troubleshooting, Return Material Authorization (RMA), Vendor Warranty & Replacement"
-                             data-images="Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.54.jpeg,Asset/Project Documenter/Infra-IKN/IMG12124563126.JPEG,Asset/Project Documenter/Infra-IKN/IMG_20261019_162728.jpeg,Asset/Project Documenter/Infra-IKN/IMG_20261019_182015.jpg,Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.39.jpeg">
+                             data-category="iot" 
+                             data-category-label-id="IoT & Sistem"
+                             data-category-label-en="IoT & Systems"
+                             data-title-id="Sistem Peringatan Dini Bencana Banjir POLIFISH FARM Berbasis IoT"
+                             data-title-en="IoT-Based POLIFISH FARM Flood Disaster Early Warning System"
+                             data-role-id="Pengembang Software & Infrastruktur IoT"
+                             data-role-en="IT Infrastructure & Software Developer"
+                             data-location-id="Unit Kolam POLIFISH Farm Politeknik Negeri Lampung – Lampung"
+                             data-location-en="POLIFISH Farm Pond Unit, State Polytechnic of Lampung – Lampung"
+                             data-date-id="Desember 2019"
+                             data-date-en="December 2019"
+                             data-desc-id="Berkontribusi dalam pemilihan perangkat, perancangan arsitektur, dan implementasi sistem IoT end-to-end untuk pemantauan kolam ikan, pakan otomatis, ketinggian air (mitigasi banjir), dan pH air real-time dengan integrasi MQTT, web monitor, dan Telegram bot."
+                             data-desc-en="Contribute to device selection, architectural design, and end-to-end IoT system implementation for fish pond monitoring, automatic feeding, water level (flood mitigation), and water quality, with MQTT integration, web monitor, and real-time notifications via Telegram from design to operation."
+                             data-results-id="Hasilnya, sistem IoT berhasil berjalan secara real-time dengan komunikasi MQTT, web monitor, dan notifikasi Telegram, sehingga meningkatkan responsivitas monitoring kolam ikan, otomatisasi pakan, serta mitigasi risiko banjir dan pengendalian kualitas air secara lebih efektif."
+                             data-results-en="As a result, the IoT system successfully runs in real-time with MQTT communication, web monitor, and Telegram notifications, thereby increasing the responsiveness of fish pond monitoring, feed automation, as well as flood risk mitigation and water quality control more effectively."
+                             data-stack="C++, PHP, ESP32, NodeMCU, MQTT, Telegram Bot API, Web Monitor, Servo Motor, pH Sensor, Ultrasonic Sensor, Water Level Sensor, Buzzer"
+                             data-images="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Blink Dashboard.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Dashboard Monitor.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Foto Doc PUM.png,Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Telegram Bot.png">
                             <div class="project-thumbnail">
-                                <img src="Asset/Project Documenter/Infra-IKN/WhatsApp Image 2026-05-04 at 17.26.54.jpeg" alt="IT Infrastructure Maintenance &amp; RMA Management – IKN Project" class="project-img" loading="lazy" decoding="async" style="object-position: center 30%;">
+                                <img src="Asset/Project Documenter/IoT-Based POLIFISH FARM Flood Disaster Early Warning System/Foto Doc PUM.png" alt="IoT-Based POLIFISH FARM Early Warning System" class="project-img" loading="lazy" decoding="async">
                                 <div class="project-overlay">
                                     <span class="project-view-btn"><span data-i18n="view_details">View Details</span> <i class="bx bx-zoom-in"></i></span>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">IT Infra & System Integration</span>
-                                <h3 class="project-title">IT Infrastructure Maintenance &amp; RMA Management – IKN Project</h3>
-                                <p class="project-desc">Maintenance & troubleshooting for CCTV, Digital Signage, Fire Alarm, and LAN Data (Access Points & outlets), on-site defect inspection, and RMA unit replacement at IKN.</p>
+                                <span class="project-tag">IoT & Systems</span>
+                                <h3 class="project-title">IoT-Based POLIFISH FARM Early Warning System</h3>
+                                <p class="project-desc">End-to-end IoT system for fishpond flood monitoring, automatic feeding, and water quality control with Telegram API.</p>
                                 <div class="project-stack">
-                                    <span class="stack-tag">CCTV</span>
-                                    <span class="stack-tag">Digital Signage</span>
-                                    <span class="stack-tag">Fire Alarm</span>
-                                    <span class="stack-tag">LAN & Access Point</span>
-                                    <span class="stack-tag">Defect Inspection</span>
-                                    <span class="stack-tag">RMA Replacement</span>
+                                    <span class="stack-tag">ESP32</span>
+                                    <span class="stack-tag">PHP</span>
+                                    <span class="stack-tag">Servo</span>
+                                    <span class="stack-tag">Web Monitor</span>
+                                    <span class="stack-tag">MQTT</span>
+                                    <span class="stack-tag">Telegram API</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
                 
