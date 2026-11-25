@@ -1,7 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- CYBER TERMINAL PRELOADER CONTROLLER (SMOOTH & EXTENDED) ---
+    // --- CYBER TERMINAL PRELOADER (2s INITIAL) & BLURRED ICON LOADER (0.6s REFRESH) ---
     const preloader = document.getElementById('cyber-preloader');
-    if (preloader) {
+    const refreshPreloader = document.getElementById('refresh-preloader');
+    const hasVisitedSession = sessionStorage.getItem('portfolio_preloaded') === '1';
+
+    if (hasVisitedSession && refreshPreloader) {
+        if (preloader) preloader.style.display = 'none';
+        refreshPreloader.style.display = 'flex';
+
+        let refreshDone = false;
+        const finishRefreshLoader = () => {
+            if (refreshDone) return;
+            refreshDone = true;
+            refreshPreloader.classList.add('fade-out');
+            window.dispatchEvent(new CustomEvent('portfolioReady'));
+
+            setTimeout(() => {
+                refreshPreloader.style.display = 'none';
+                document.body.classList.add('loaded');
+            }, 250);
+        };
+
+        setTimeout(finishRefreshLoader, 600);
+    } else if (preloader) {
         const line1 = document.getElementById('console-line-1');
         const line2 = document.getElementById('console-line-2');
         const line3 = document.getElementById('console-line-3');
@@ -34,10 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // 1.5s on initial visit, 0.8s on refresh / repeat session visits
-        const hasVisitedSession = sessionStorage.getItem('portfolio_preloaded') === '1';
+        // 2s original terminal loading screen on initial visit
         const startTime = performance.now();
-        const duration = hasVisitedSession ? 800 : 1500;
+        const duration = 2000;
 
         const finishPreloader = () => {
             if (isDone) return;
@@ -77,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(step);
 
         // Fail-safe fallback timeout
-        setTimeout(finishPreloader, hasVisitedSession ? 1300 : 2200);
+        setTimeout(finishPreloader, 2800);
     }
 
     // --- DICTIONARY FOR I18N BILINGUAL SUPPORT (loaded from translations.js) ---
