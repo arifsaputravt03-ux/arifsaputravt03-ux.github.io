@@ -2375,9 +2375,8 @@ header.navbar.scrolled {
 }
 
 .cert-card:hover {
-    border-color: var(--accent-primary);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 230, 153, 0.06);
+    border-color: rgba(0, 230, 153, 0.35);
+    box-shadow: 0 10px 28px rgba(0, 230, 153, 0.06);
 }
 
 .cert-badge {
@@ -3887,15 +3886,45 @@ footer {
     opacity: 1; /* Always rendered underneath the loading overlay */
 }
 
-/* Cert card interactive enhancement */
+.cert-pdf-iframe.hidden {
+    display: none;
+}
+
+.cert-pdf-canvas-container {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 8px;
+    box-sizing: border-box;
+    background: #060a14;
+}
+
+.cert-pdf-canvas-container.hidden {
+    display: none;
+}
+
+.cert-pdf-page-canvas {
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65);
+    background: #ffffff;
+}
+
+/* Cert card visual transition (non-clickable card, verify button is the action target) */
 .cert-card {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
 .cert-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(0, 230, 153, 0.4);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 230, 153, 0.15);
+    border-color: rgba(0, 230, 153, 0.35);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5), 0 0 16px rgba(0, 230, 153, 0.1);
 }
 
 /* Mobile Close Button - hidden by default on desktop */

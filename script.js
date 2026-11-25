@@ -78,393 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(finishPreloader, 3800);
     }
 
-    // --- DICTIONARY FOR I18N BILINGUAL SUPPORT ---
-    const translations = {
-        id: {
-            nav_about: "Tentang",
-            nav_experience: "Pengalaman",
-            nav_projects: "Proyek",
-            nav_skills: "Keahlian",
-            nav_certifications: "Sertifikasi",
-            nav_cta: "Hubungi Saya",
-            hero_badge: "Software Developer & IT System Engineer | Infrastruktur ERP & DevOps <br class=\"badge-br\"> Integrasi Sistem | IoT & Digital Transformation",
-            hero_title_prefix: "Halo, Saya",
-            hero_subtitle_prefix: "Saya seorang",
-            hero_desc: "Seorang profesional IT berpengalaman dalam IT Support & Systems, Software dan ERP Development, hingga Cloud Infrastructure, DevOps, Network Infrastructure, dan System Integration, dengan pengalaman mendukung operasional office serta implementasi solusi IT pada proyek enterprise.",
-            hero_btn_projects: "Lihat Proyek",
-            hero_btn_contact: "Hubungi Saya",
-            stat_exp: "Tahun Pengalaman Kerja",
-            stat_projects: "Proyek IT & Sistem",
-            stat_certs: "Sertifikat Kompetensi",
-            about_label: "Tentang Saya",
-            about_title: "Latar Belakang & Profil Profesional",
-            about_subtitle: "Ringkasan Profil",
-            about_p1: "Sarjana Teknik Informatika dengan pengalaman profesional 4+ tahun, mencakup 2+ tahun di bidang IT Systems, ERP Development, Cloud Infrastructure & DevOps, serta sekitar 2 tahun di Procurement dan administrasi proyek EPC.",
-            about_p2: "Berfokus pada Software & ERP Development, Network & Cloud Infrastructure, System Integration, IT Support, serta solusi IoT dan otomasi untuk meningkatkan efisiensi dan mendukung transformasi digital perusahaan.",
-            about_core_title: "Kompetensi Utama",
-            core1: "System Analyst",
-            core2: "System Integrator",
-            core3: "Software Developer",
-            core4: "Cybersecurity",
-            core5: "Infrastruktur IT",
-            core6: "IT Technical Support",
-            core7: "Admin Proyek EPC & Pengadaan",
-            about_soft_title: "Keahlian Interpersonal (Soft Skills)",
-            soft1: "Pemecahan Masalah & Berpikir Analitis",
-            soft2: "Komunikasi & Kolaborasi Tim",
-            soft3: "Pembelajaran Cepat & Adaptabilitas",
-            about_b1_title: "Pengembangan ERP & Integrasi Sistem",
-            about_b1_desc: "Arsitektur aplikasi berbasis web, integrasi REST API, modul HR, Keuangan, Logistik, & Biometrik",
-            about_b2_title: "Infrastruktur IT & DevOps",
-            about_b2_desc: "Proxmox VE, Docker, Nginx, CI/CD, Nextcloud & NAS Storage, Email SMTP & Domain Kantor, WordPress Web Compro, Grafana, PABX, & CCTV",
-            about_b3_title: "Digitalisasi Proses Bisnis & Pengadaan",
-            about_b3_desc: "Otomatisasi aplikasi Python OCR, dokumentasi QC Test Package, & manajemen ERP Procurement",
-            tab_it: "IT & Sistem",
-            tab_logistics: "Logistik & Pengadaan",
-            tab_admin: "Administrasi & QC",
-            it_item1_title: "Pengembangan Software & Arsitektur ERP",
-            it_item1_desc: "Pengembangan PWA ERP (React JS, Node JS, Express, MongoDB Replica Set) untuk modul Supply Chain, Finance, HR, Aset, Presales, & Proyek.",
-            it_item2_title: "Integrasi Sistem, Deployment & DevOps",
-            it_item2_desc: "Otomatisasi DevOps & deployment via REST API, Gitea CI/CD, Docker, Nginx, Mail Server, & integrasi biometrik ZKTeco.",
-            it_item3_title: "Infrastruktur IT Kantor Pusat & Proyek",
-            it_item3_desc: "Pengelolaan IT Infra & Proxmox, VLAN switching, Nextcloud, CCTV, Access Door, serta pemantauan Grafana & Uptime Kuma.",
-            it_item4_title: "Dukungan Teknis IT & Keamanan Sistem",
-            it_item4_desc: "Dukungan teknis IT (on-site/remote), backup/restore, serta pengamanan SMTP Email (SPF/DKIM/DMARC) & Cloudflare WAF.",
-            it_item5_title: "Otomatisasi Solusi IoT & ICT",
-            it_item5_desc: "Perancangan otomatisasi IoT & sensor (ESP32/Arduino, MQTT, Wiring) untuk kontrol dan telemetri real-time.",
-            log_item1_title: "Pengadaan IT & Non-IT, Vendor & Kontrol Stok",
-            log_item1_desc: "Pengadaan IT & Non-IT via ERP: pembuatan PO, manajemen vendor, verifikasi DO/invoice, & kontrol stok.",
-            log_item2_title: "Digitalisasi Rantai Pasok & Manajemen Aset ERP",
-            log_item2_desc: "Digitalisasi rantai pasok & manajemen aset perusahaan melalui pengembangan modul ERP terintegrasi.",
-            adm_item1_title: "Kontrol Dokumen Proyek EPC & Pengarsipan Digital",
-            adm_item1_desc: "Pengelolaan dokumen QC EPC (Test Package, Welding & Inspection Report) & pengarsipan digital MS 365 SharePoint.",
-            adm_item2_title: "Validasi Data Excel & Pelaporan Kualitas",
-            adm_item2_desc: "Validasi & pengolahan data QC via MS Excel (VLOOKUP, XLOOKUP, CONCATENATE, Pivot Table, & Math/Filter) untuk akurasi laporan.",
-            adm_item3_title: "Otomatisasi & Ekstraksi Dokumen Python OCR",
-            adm_item3_desc: "Otomatisasi ekstraksi dokumen berbasis Python OCR untuk konversi data terstruktur (JSON/Excel) & pencarian cepat.",
-            tag_it_erp: "Sistem IT & ERP",
-            tag_epc_admin: "Admin EPC & QC Doc Control",
-            tag_procurement: "Pengadaan & Logistik",
-            tag_it_admin: "Administrator IT & Aset",
-            tag_telecom: "Telekomunikasi & Support IT",
-            skills_label: "Keahlian",
-            skills_title: "Teknologi & Tools Utama",
-            skills_col1: "Software Development & Pemrograman",
-            skills_col2: "Keamanan Sistem & Cybersecurity",
-            skills_col3: "Infrastruktur Cloud & DevOps",
-            skills_col4: "Infrastruktur Jaringan & IoT",
-            skills_col5: "Pengelolaan Aset & Admin QC",
-            skill_c1_1: "JavaScript (ES6+), Python, C/C++ & SQL",
-            skill_c1_2: "MERN Stack Specialist (React JS, Node JS, Express & MongoDB)",
-            skill_c1_3: "Arsitektur PWA ERP & Integrasi REST API",
-            skill_c1_4: "System Analyst (Perancangan Arsitektur Solusi)",
-            skill_c1_5: "WordPress CMS, HTML5 & CSS3",
-            skill_c2_1: "System Hardening & Aturan Firewall",
-            skill_c2_2: "Keamanan SMTP Email (SPF, DKIM, DMARC) & Filtering",
-            skill_c2_3: "Keamanan Aplikasi Web & Cloudflare WAF",
-            skill_c2_4: "Keamanan Endpoint & Deteksi Intrusi Jaringan",
-            skill_c2_5: "Respons Insiden & Investigasi Kerentanan (CyberOps)",
-            skill_c3_1: "Proxmox VE, Kontainer LXC & Docker",
-            skill_c3_2: "Gitea & Pipeline CI/CD",
-            skill_c3_3: "Nginx Web Server, Nextcloud & Penyimpanan NAS",
-            skill_c3_4: "Pemantauan Real-Time (Grafana & Uptime Kuma)",
-            skill_c3_5: "Administrasi Sistem, DNS Server & Backup/Restore",
-            skill_c4_1: "Jaringan Enterprise (MikroTik, Cisco, Aruba & Ruijie, VLAN, Switching)",
-            skill_c4_2: "Perancangan Otomatisasi IoT & Sensor (ESP32/Arduino, MQTT)",
-            skill_c4_3: "Jaringan Fiber Optic, IP CCTV & Telepon PABX",
-            skill_c4_4: "Akses Kontrol Pintu & Biometrik (ZKTeco BioTime & CVAccess)",
-            skill_c4_5: "Dukungan Teknis & Maintenance Hardware (PC, Printer, Remote)",
-            skill_c5_1: "Manajemen Aset IT, Inventaris & Lisensi Software",
-            skill_c5_2: "Microsoft 365 (Teams, SharePoint, Outlook, OneDrive)",
-            skill_c5_3: "Validasi Data MS Excel (VLOOKUP, XLOOKUP, Pivot Table)",
-            skill_c5_4: "Kontrol Dokumen QC EPC (Test Package & Transmittal)",
-            skill_c5_5: "Otomatisasi & Ekstraksi Dokumen Python OCR",
-            exp_label: "Pengalaman",
-            exp_title: "Pengalaman Kerja Profesional",
-            job1_date: "Januari 2026 – Sekarang",
-            job1_title: "IT Engineer",
-            job1_subtitle: "PT Trigatra Sistem Integrasi – Tangerang Selatan, Banten",
-            exp_job1_b1: "Analisis kebutuhan klien, perancangan arsitektur solusi, & pengembangan PWA ERP berbasis web (React JS, Node JS, Express, MongoDB Replica Set).",
-            exp_job1_b2: "Administrasi IT Infra & DevOps: Proxmox VE, Docker, CI/CD, Nginx, Management VLAN, Server Mail SMTP, Nextcloud, PABX, CCTV, & Access Control.",
-            exp_job1_b3: "Dukungan teknis IT (on-site & remote) & troubleshooting hardware, software, server, jaringan enterprise, PC/printer, & peripheral pengguna.",
-            exp_job1_b4: "Monitoring sistem real-time via Grafana & Uptime Kuma, serta manajemen aset IT, inventarisasi, lisensi software, & dokumentasi teknis.",
-            job2_date: "Agustus 2025 – Desember 2025",
-            job2_title: "Admin Test Package",
-            job2_subtitle: "PT Tiga Pilar Energi – Marunda, Jawa Barat",
-            exp_job2_b1: "Pengelolaan dokumen QC proyek EPC: Test Package, Welding Report, & Cleaning Inspection Report.",
-            exp_job2_b2: "Document control, kirim transmittal, & pengarsipan digital proyek menggunakan MS 365 SharePoint, OneDrive, dan Outlook.",
-            exp_job2_b3: "Pembaruan data inspeksi & gambar teknik pada sistem dokumentasi proyek.",
-            exp_job2_b4: "Pengembangan aplikasi Python OCR untuk otomatisasi ekstraksi data & konversi dokumen proyek.",
-            job3_date: "Mei 2023 – Juli 2025",
-            job3_title: "Purchasing Staff",
-            job3_subtitle: "PT Ladang Karya Husada – Bandung, Jawa Barat",
-            exp_job3_b1: "Mengelola pengadaan melalui sistem ERP, mulai dari penerbitan PO hingga pembayaran vendor.",
-            exp_job3_b2: "Melakukan negosiasi harga, evaluasi performa supplier, dan administrasi kontrak pengadaan.",
-            exp_job3_b3: "Memverifikasi Surat Jalan (Delivery Order/DO), tagihan (invoice), dan kelengkapan dokumen pengadaan.",
-            exp_job3_b4: "Melakukan inspeksi penerimaan barang masuk dan keluar sesuai spesifikasi teknis dan standar QC.",
-            job4_date: "Mei 2022 – Mei 2023",
-            job4_title: "Administrator IT",
-            job4_subtitle: "PT Ladang Karya Husada – Bandung, Jawa Barat",
-            exp_job4_b1: "Instalasi, konfigurasi, pemeliharaan rutin, dan troubleshooting perangkat IT, jaringan, serta sistem operasi.",
-            exp_job4_b2: "Mengelola infrastruktur jaringan lokal (LAN), pengkabelan, switching, inventarisasi, dan aset IT perusahaan.",
-            exp_job4_b3: "Memberikan dukungan teknis IT secara langsung (on-site) maupun remote kepada pengguna internal.",
-            exp_job4_b4: "Mengelola data inventaris stok, katalog produk, dan administrasi melalui sistem ERP serta marketplace.",
-            job5_date: "Februari 2022 – Mei 2022",
-            job5_title: "IT Support (Magang)",
-            job5_subtitle: "PT PGAS Telekomunikasi Nusantara – Lampung",
-            exp_job5_b1: "Instalasi, pemeliharaan berkala, & troubleshooting perangkat IT dan jaringan perusahaan.",
-            exp_job5_b2: "Troubleshooting jaringan Fiber Optic (FO), pemantauan CCTV, & inspeksi fisik jalur kabel jaringan.",
-            exp_job5_b3: "Dukungan teknis pelanggan untuk penanganan gangguan jaringan dan perbaikan layanan konektivitas.",
-            projects_label: "Portofolio",
-            projects_title: "Proyek Utama",
-            filter_all: "Semua Proyek",
-            filter_software: "Pengembangan Software",
-            filter_iot: "IoT & Sistem",
-            filter_infra: "Infrastruktur IT, Monitoring & Integrasi Sistem",
-            view_details: "Lihat Detail",
-            cert_label: "Sertifikasi",
-            cert_title: "Sertifikat Kompetensi",
-            cert_cyberops: "Pengoperasian SOC perusahaan, analisis ancaman siber, keamanan OS Windows/Linux, deteksi intrusi jaringan, investigasi kerentanan endpoint, dan penerapan model incident response.",
-            cert_nse1: "Memahami dasar cybersecurity, network security, cyber threats, malware, phishing, dan security awareness.",
-            cert_nse2: "Memahami produk dan solusi Fortinet, termasuk konsep firewall, endpoint security, secure connectivity, dan network protection.",
-            cert_nse3: "Memahami penerapan Fortinet Security Fabric, FortiGate, firewall policy, traffic filtering, network segmentation, secure connectivity, dan threat protection.",
-            cert_lfc108: "Prinsip dasar keamanan siber, pengerasan sistem (system hardening), mitigasi risiko, dan praktik terbaik keamanan lingkungan komputasi.",
-            cert_lfs101: "Dasar-dasar sistem operasi Linux, administrasi antarmuka baris perintah (CLI), pengoperasian sistem, dan pengelolaan lingkungan open-source.",
-            cert_lfs158: "Arsitektur Kubernetes & kontainerisasi (Docker): Konfigurasi klaster, manajemen node, serta deployment & pengamanan aplikasi via Pods, Services, & Deployments.",
-            cert_mtcna: "Pengelolaan MikroTik RouterOS, konfigurasi aturan firewall filter, routing statis/dinamis, pembatas bandwidth (queues), dan NAT.",
-            cert_bnsp: "Sertifikasi kompetensi negara dalam administrasi database, optimasi skema database, tuning query SQL, dan pemulihan backup data.",
-            cert_cisco_rs: "Penentuan forwarding lalu lintas router, pengoperasian switch Ethernet, konfigurasi VLAN, routing statis & RIPv2, implementasi DHCP, NAT, serta filtrasi lalu lintas dengan ACL.",
-            cert_js: "Pemrograman tingkat lanjut JavaScript: OOP, penanganan asynchronous (Promises/Async-Await), DOM manipulation, dan integrasi API.",
-            cert_python: "Pemrograman Python tingkat lanjut: Pemrograman Berorientasi Objek (OOP), manajemen modul, exception handling, dan pemrosesan file/OCR.",
-            cert_ibm: "Prinsip dasar teknologi informasi, konsep komputasi awan (cloud computing), keamanan siber, dan pengelolaan sistem data.",
-            cert_honeywell: "Instalasi, pemrograman panel alarm kebakaran addressable & konvensional Notifier, serta pemeliharaan proteksi kebakaran gedung.",
-            cert_mongodb: "Operasi basis data dokumen MongoDB, manipulasi CRUD, strategi pengindeksan (indexing), aggregation pipeline, dan desain skema data.",
-            cert_sql_basic: "Query SQL dasar, konsep basis data relasional, pernyataan SELECT, pemfilteran data dengan WHERE, penggabungan tabel (JOIN), agregasi (GROUP BY, HAVING), pengurutan, dan subquery.",
-            cert_software_engineer: "Mencakup topik rekayasa perangkat lunak seperti Pemecahan Masalah (Problem Solving), Java, Go, SQL, dan pengembangan REST API.",
-            cert_toefl: "Uji Kemahiran Bahasa Inggris (TOEFL Prediction) dengan Skor 633 (Listening: 63, Structure: 60, Reading: 67) yang membuktikan kemahiran tingkat lanjut dalam tata bahasa, pemahaman bacaan, dan listening profesional.",
-            cert_lfd140: "Alur kerja pengembangan standar terbuka menggunakan GitHub: kontrol versi Git, manajemen repositori, otomatisasi CI/CD, alur kerja issues & pull requests, konsensus komunitas, dan tata kelola kolaborasi open-source.",
-            cert_filter_all: "Semua Sertifikasi",
-            cert_filter_cyber: "Keamanan Siber",
-            cert_filter_devops: "DevOps",
-            cert_filter_infra: "Infrastruktur & Jaringan",
-            cert_filter_software: "Pengembangan Software",
-            cert_filter_db: "Administrasi Database",
-            cert_filter_industrial: "Sistem Industri",
-            cert_filter_language: "Kemahiran Bahasa (English)",
-            view_cert: "Lihat Sertifikat",
-            verify_cert: "Verifikasi",
-            contact_label: "Kontak",
-            contact_title: "Mari Terhubung",
-            contact_desc: "Tertarik untuk berdiskusi mengenai peluang kerja atau kolaborasi di bidang IT Support, System Integration, System Administration, Cloud DevOps, maupun Software Development? Mari terhubung!",
-            contact_location: "Tangerang Selatan, Banten, Indonesia",
-            footer_text: "© 2026 Arif Saputra | Portofolio. Hak cipta dilindungi.",
-            modal_label_role: "Peran / Posisi",
-            modal_label_date: "Periode Proyek",
-            modal_label_location: "Lokasi Proyek",
-            modal_head_desc: "Deskripsi Proyek",
-            modal_head_results: "Hasil & Dampak Utama",
-            modal_head_stack: "Technology Stack",
-            visit_website: "Kunjungi Website (trigatra.co)",
-            pdf_view_title: "Pratinjau Sertifikat",
-            pdf_open_new_tab: "Buka Tab Baru",
-            pdf_download: "Unduh PDF",
-            pdf_loading: "Memuat Dokumen Sertifikat...",
-            pdf_fallback_hint: "Browser ini tidak mendukung pratinjau PDF langsung di dalam halaman.",
-            lang_label: "Pilih Bahasa:"
-        },
-        en: {
-            nav_about: "About",
-            nav_experience: "Experience",
-            nav_projects: "Projects",
-            nav_skills: "Skills",
-            nav_certifications: "Certifications",
-            nav_cta: "Contact Me",
-            hero_badge: "Software Developer & IT System Engineer | ERP & DevOps Infrastructure <br class=\"badge-br\"> System Integration | IoT & Digital Transformation",
-            hero_title_prefix: "Hello, I'm",
-            hero_subtitle_prefix: "I'm an",
-            hero_desc: "An experienced IT professional in IT Support & Systems, Software and ERP Development, Cloud Infrastructure, DevOps, Network Infrastructure, and System Integration, with proven experience supporting corporate office operations and implementing IT solutions for enterprise projects.",
-            hero_btn_projects: "View Projects",
-            hero_btn_contact: "Contact Me",
-            stat_exp: "Years of Professional Experience",
-            stat_projects: "IT & System Projects",
-            stat_certs: "Certificates of Competence",
-            about_label: "About Me",
-            about_title: "Background & Professional Profile",
-            about_subtitle: "Profile Summary",
-            about_p1: "Bachelor of Informatics Engineering with 4+ years of professional experience, encompassing 2+ years in IT Systems, ERP Development, Cloud Infrastructure & DevOps, and approximately 2 years in Procurement and EPC project administration.",
-            about_p2: "Focused on Software & ERP Development, Network & Cloud Infrastructure, System Integration, IT Support, as well as IoT solutions and automation to enhance efficiency and drive corporate digital transformation.",
-            about_core_title: "Core Competencies",
-            core1: "System Analyst",
-            core2: "System Integrator",
-            core3: "Software Developer",
-            core4: "Cybersecurity",
-            core5: "IT Infrastructure",
-            core6: "IT Technical Support",
-            core7: "EPC Project Admin & Procurement",
-            about_soft_title: "Soft Skills & Core Qualities",
-            soft1: "Problem Solving & Analytical Thinking",
-            soft2: "Communication & Teamwork",
-            soft3: "Fast Learning & Adaptability",
-            about_b1_title: "ERP Development & System Integration",
-            about_b1_desc: "Web-based application architecture, REST API integration, HR, Finance, Logistics, & Biometrics modules",
-            about_b2_title: "IT Infrastructure & DevOps",
-            about_b2_desc: "Proxmox VE, Docker, Nginx, CI/CD, Nextcloud, NAS Storage, Corporate SMTP Mail & Domain, WordPress Compro Maintenance, Grafana, PABX, & CCTV",
-            about_b3_title: "Business Process Digitization & Procurement",
-            about_b3_desc: "Python OCR document automation, QC Test Package documentation, & ERP Procurement management",
-            tab_it: "IT & Systems",
-            tab_logistics: "Logistics & Procurement",
-            tab_admin: "Administration & QC",
-            it_item1_title: "Software Development & ERP Architecture",
-            it_item1_desc: "PWA ERP development (React JS, Node JS, Express, & MongoDB Replica Set) covering Supply Chain, Finance, HR, Assets, Presales, & Project modules.",
-            it_item2_title: "System Integration, Deployment & DevOps",
-            it_item2_desc: "DevOps automation & deployment via REST API, Gitea CI/CD, Docker, Nginx, Mail Systems, & ZKTeco biometric integration.",
-            it_item3_title: "Head Office & Project IT Infrastructure",
-            it_item3_desc: "Management of IT Infra & Proxmox, VLAN switching, Nextcloud, CCTV, Access Control, and Grafana & Uptime Kuma monitoring.",
-            it_item4_title: "IT Technical Support & System Security",
-            it_item4_desc: "On-site & remote IT support, backup/recovery, corporate SMTP Email security (SPF/DKIM/DMARC), and Cloudflare WAF protection.",
-            it_item5_title: "IoT & ICT Automation Solutions",
-            it_item5_desc: "IoT & sensor automation design (ESP32/Arduino, MQTT, Wiring) for real-time telemetry and automated control.",
-            log_item1_title: "IT & Non-IT Procurement & Stock Control",
-            log_item1_desc: "IT & Non-IT ERP procurement: PO creation, vendor management, DO/invoice verification, & stock control.",
-            log_item2_title: "Supply Chain & Asset Management Digitization",
-            log_item2_desc: "Supply chain & corporate asset management digitization through customized integrated ERP modules.",
-            adm_item1_title: "EPC Project Document Control & Archiving",
-            adm_item1_desc: "EPC QC document management (Test Package, Welding & Inspection Reports) & MS 365 SharePoint digital archiving.",
-            adm_item2_title: "Excel Data Validation & Quality Reporting",
-            adm_item2_desc: "QC data validation via MS Excel (VLOOKUP, XLOOKUP, CONCATENATE, Pivot Tables, & Math/Filters) for report accuracy.",
-            adm_item3_title: "Python OCR Automation & Document Extraction",
-            adm_item3_desc: "Python OCR document processing automation for structured data conversion (JSON/Excel) & rapid retrieval.",
-            tag_it_erp: "IT Systems & ERP",
-            tag_epc_admin: "EPC Admin & QC Doc Control",
-            tag_procurement: "Procurement & Logistics",
-            tag_it_admin: "IT Administrator & Assets",
-            tag_telecom: "Telecom & IT Support",
-            skills_label: "Skills",
-            skills_title: "Tech Stack & Main Tools",
-            skills_col1: "Software Development & Programming",
-            skills_col2: "System Security & Cybersecurity",
-            skills_col3: "Cloud Infrastructure & DevOps",
-            skills_col4: "Network Infrastructure & IoT",
-            skills_col5: "Asset Management & QC Admin",
-            skill_c1_1: "JavaScript (ES6+), Python, C/C++ & SQL",
-            skill_c1_2: "MERN Stack Specialist (React JS, Node JS, Express & MongoDB)",
-            skill_c1_3: "PWA ERP Architecture & REST API Integration",
-            skill_c1_4: "System Analyst (Solution Architecture Design)",
-            skill_c1_5: "WordPress CMS, HTML5 & CSS3",
-            skill_c2_1: "System Hardening & Firewall Rules",
-            skill_c2_2: "SMTP Email Security (SPF, DKIM, DMARC) & Filtering",
-            skill_c2_3: "Web Application Security & Cloudflare WAF",
-            skill_c2_4: "Endpoint Security & Network Intrusion Detection",
-            skill_c2_5: "Incident Response & Vulnerability Investigation (CyberOps)",
-            skill_c3_1: "Proxmox VE, LXC & Docker Containers",
-            skill_c3_2: "Gitea & CI/CD Pipeline",
-            skill_c3_3: "Nginx Web Server, Nextcloud & NAS Storage",
-            skill_c3_4: "Real-Time Monitoring (Grafana & Uptime Kuma)",
-            skill_c3_5: "System Administration, DNS Server & Backup/Restore",
-            skill_c4_1: "Enterprise Networking (MikroTik, Cisco, Aruba & Ruijie, VLAN, Switching)",
-            skill_c4_2: "IoT Automation & Sensor Design (ESP32/Arduino, MQTT)",
-            skill_c4_3: "Fiber Optic Network, IP CCTV & PABX Telephone",
-            skill_c4_4: "Door Access Control & Biometrics (ZKTeco BioTime & CVAccess)",
-            skill_c4_5: "Technical Support & Hardware Maintenance (PC, Printer, Remote)",
-            skill_c5_1: "IT Asset Management, Inventory & Software Licensing",
-            skill_c5_2: "Microsoft 365 (Teams, SharePoint, Outlook, OneDrive)",
-            skill_c5_3: "MS Excel Data Validation (VLOOKUP, XLOOKUP, Pivot Table)",
-            skill_c5_4: "EPC QC Document Control (Test Package & Transmittal)",
-            skill_c5_5: "Python OCR Document Automation & Extraction",
-            exp_label: "Experience",
-            exp_title: "Professional Work Experience",
-            job1_date: "January 2026 – Present",
-            job1_title: "IT Engineer",
-            job1_subtitle: "PT Trigatra Sistem Integrasi – South Tangerang, Banten",
-            exp_job1_b1: "Client requirements analysis, solution architecture design, & web-based PWA ERP development (React JS, Node JS, Express, MongoDB Replica Set).",
-            exp_job1_b2: "IT Infra & DevOps administration: Proxmox VE, Docker, CI/CD, Nginx, Management VLAN, Server Mail SMTP, Nextcloud, PABX, CCTV, & Access Control.",
-            exp_job1_b3: "On-site & remote IT technical support & troubleshooting for hardware, software, servers, enterprise networks, PCs/printers, & user peripherals.",
-            exp_job1_b4: "Real-time system monitoring via Grafana & Uptime Kuma, alongside IT asset tracking, inventory, software licensing, & technical documentation.",
-            job2_date: "August 2025 – December 2025",
-            job2_title: "Admin Test Package",
-            job2_subtitle: "PT Tiga Pilar Energi – Marunda, West Java",
-            exp_job2_b1: "Management of EPC project QC documentation: Test Package, Welding Report, & Cleaning Inspection Report.",
-            exp_job2_b2: "Document control, send transmittal, & digital archiving using MS 365 SharePoint, OneDrive, and Outlook.",
-            exp_job2_b3: "Updating inspection data & technical drawings on project documentation systems.",
-            exp_job2_b4: "Development of Python OCR applications for data extraction automation & project document conversion.",
-            job3_date: "May 2023 – July 2025",
-            job3_title: "Purchasing Staff",
-            job3_subtitle: "PT Ladang Karya Husada – Bandung, West Java",
-            exp_job3_b1: "Managed procurement through ERP system, from PO issuance to vendor payments.",
-            exp_job3_b2: "Conducted price negotiations, supplier performance evaluation, and procurement contract administration.",
-            exp_job3_b3: "Verified Delivery Orders (DO), invoices, and procurement document completeness.",
-            exp_job3_b4: "Inspected incoming and outgoing goods according to technical specifications and QC standards.",
-            job4_date: "May 2022 – May 2023",
-            job4_title: "IT Administrator",
-            job4_subtitle: "PT Ladang Karya Husada – Bandung, West Java",
-            exp_job4_b1: "Installation, configuration, routine maintenance, and troubleshooting of IT devices, networks, and operating systems.",
-            exp_job4_b2: "Managed LAN infrastructure, cabling, switching, inventory, and corporate IT assets.",
-            exp_job4_b3: "Provided technical support to users both on-site and remotely.",
-            exp_job4_b4: "Managed stock data, product catalogs, and administration through ERP systems and marketplaces.",
-            job5_date: "February 2022 – May 2022",
-            job5_title: "IT Support (Internship)",
-            job5_subtitle: "PT PGAS Telekomunikasi Nusantara – Lampung",
-            exp_job5_b1: "Installation, periodic maintenance, & troubleshooting of company IT devices and network.",
-            exp_job5_b2: "Fiber Optic (FO) network troubleshooting, CCTV monitoring, & physical cable route inspection.",
-            exp_job5_b3: "Customer technical support for network incident resolution and connectivity service repairs.",
-            projects_label: "Portfolio",
-            projects_title: "Featured Projects",
-            filter_all: "All Projects",
-            filter_software: "Software Development",
-            filter_iot: "IoT & Systems",
-            filter_infra: "IT Infra, Monitoring & System Integration",
-            view_details: "View Details",
-            cert_label: "Certifications",
-            cert_title: "Certificates of Competence",
-            cert_cyberops: "Enterprise SOC operations, cybersecurity threat analysis, Windows/Linux OS security, network intrusion detection, endpoint vulnerability investigation, and incident response models.",
-            cert_nse1: "Understanding cybersecurity fundamentals, network security, cyber threats, malware, phishing, and security awareness.",
-            cert_nse2: "Understanding Fortinet products and solutions, including firewall concepts, endpoint security, secure connectivity, and network protection.",
-            cert_nse3: "Understanding the application of Fortinet Security Fabric, FortiGate, firewall policies, traffic filtering, network segmentation, secure connectivity, and threat protection.",
-            cert_lfc108: "Fundamentals of cybersecurity principles, system hardening, risk mitigation, and security best practices for computing environments.",
-            cert_lfs101: "Fundamentals of Linux OS, command-line interface (CLI) administration, system operations, and open-source environment management.",
-            cert_mtcna: "Administering MikroTik RouterOS, firewall filters, static/dynamic routing, bandwidth queues, and NAT.",
-            cert_bnsp: "State competency certification in database administration, schema optimization, SQL query tuning, and backup/restore.",
-            cert_cisco_rs: "Router traffic forwarding operations, Ethernet switching, VLAN implementation, static routing & RIPv2, DHCP, NAT, ACL traffic filtering, and network troubleshooting.",
-            cert_js: "Advanced JavaScript programming: OOP, async handling (Promises/Async-Await), DOM manipulation, and API integration.",
-            cert_python: "Advanced Python programming: Object-Oriented Programming (OOP), module management, exception handling, and file/OCR processing.",
-            cert_ibm: "Information technology fundamentals, cloud computing concepts, cybersecurity, and data system management.",
-            cert_honeywell: "Installation, programming of addressable & conventional Notifier fire alarm panels, and building fire protection maintenance.",
-            cert_mongodb: "MongoDB document database operations, CRUD manipulation, indexing strategies, aggregation pipeline, and schema design.",
-            cert_sql_basic: "Basic SQL queries, relational database concepts, SELECT statements, filtering with WHERE, joins (INNER, LEFT, RIGHT), aggregations (GROUP BY, HAVING), sorting, and subqueries.",
-            cert_software_engineer: "Core software engineering topics including Problem Solving, Java, Go, SQL, and REST API development.",
-            cert_lfs158: "Kubernetes architecture & containerization (Docker): Cluster setup, node administration, application deployment and workload orchestration with Pods, Services, & Deployments.",
-            cert_toefl: "Standardized English Proficiency Test (TOEFL Prediction) with a Total Score of 633 (Listening: 63, Structure: 60, Reading: 67) demonstrating advanced professional proficiency in English listening, grammar, and reading comprehension.",
-            cert_lfd140: "Open standards development workflows using GitHub: Git version control, repository management, CI/CD automation, issues & PR workflows, consensus building, and open-source collaboration governance.",
-            cert_filter_all: "All Certifications",
-            cert_filter_cyber: "Cybersecurity",
-            cert_filter_devops: "DevOps",
-            cert_filter_infra: "IT Infra & Networking",
-            cert_filter_software: "Software Dev",
-            cert_filter_db: "Database Admin",
-            cert_filter_industrial: "Industrial Systems",
-            cert_filter_language: "Language Proficiency",
-            view_cert: "View Certificate",
-            verify_cert: "Verify",
-            contact_label: "Contact",
-            contact_title: "Let's Connect",
-            contact_desc: "Interested in discussing career opportunities or technical collaboration in IT Support, System Integration, System Administration, Cloud DevOps, or Software Development? Let's connect!",
-            contact_location: "South Tangerang, Banten, Indonesia",
-            footer_text: "© 2026 Arif Saputra | Portfolio. All rights reserved.",
-            modal_label_role: "Role / Position",
-            modal_label_date: "Timeline",
-            modal_label_location: "Project Location",
-            modal_head_desc: "Project Description",
-            modal_head_results: "Results & Key Impact",
-            modal_head_stack: "Technology Stack",
-            visit_website: "Visit Website (trigatra.co)",
-            pdf_view_title: "Certificate Preview",
-            pdf_open_new_tab: "Open in New Tab",
-            pdf_download: "Download PDF",
-            pdf_loading: "Loading Certificate Document...",
-            pdf_fallback_hint: "This browser does not preview PDFs inline in the page.",
-            lang_label: "Select Language:"
-        }
-    };
+    // --- DICTIONARY FOR I18N BILINGUAL SUPPORT (loaded from translations.js) ---
+    const translations = window.PORTFOLIO_TRANSLATIONS || { id: {}, en: {} };
 
     let currentLang = localStorage.getItem('user_lang') || 'en';
 
@@ -777,6 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const certPdfClose = document.getElementById('cert-pdf-close');
     const certPdfCloseMobile = document.getElementById('cert-pdf-close-mobile');
     const certPdfIframe = document.getElementById('cert-pdf-iframe');
+    const certPdfCanvasContainer = document.getElementById('cert-pdf-canvas-container');
     const certPdfLoading = document.getElementById('cert-pdf-loading');
     const certPdfFallback = document.getElementById('cert-pdf-fallback');
     const certFallbackTitle = document.getElementById('cert-fallback-title');
@@ -791,11 +407,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let certPdfRevealTimer = null;
     let certPdfIdleResetTimer = null;
+    let pdfJsLoaderPromise = null;
+    let activePdfRenderToken = 0;
+
+    function loadPdfJs() {
+        if (window.pdfjsLib) {
+            return Promise.resolve(window.pdfjsLib);
+        }
+        if (pdfJsLoaderPromise) {
+            return pdfJsLoaderPromise;
+        }
+        pdfJsLoaderPromise = new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+            script.async = true;
+            script.onload = () => {
+                if (window.pdfjsLib) {
+                    window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+                        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    resolve(window.pdfjsLib);
+                } else {
+                    reject(new Error('PDF.js failed to initialize'));
+                }
+            };
+            script.onerror = () => reject(new Error('Failed to load PDF.js'));
+            document.head.appendChild(script);
+        });
+        return pdfJsLoaderPromise;
+    }
+
+    async function renderPdfWithPdfJs(pdfUrl, renderToken) {
+        if (!certPdfCanvasContainer) {
+            if (certPdfLoading) certPdfLoading.classList.add('hidden');
+            if (certPdfFallback) certPdfFallback.classList.remove('hidden');
+            return;
+        }
+
+        if (certPdfIframe) certPdfIframe.classList.add('hidden');
+        certPdfCanvasContainer.innerHTML = '';
+        certPdfCanvasContainer.classList.remove('hidden');
+        if (certPdfLoading) certPdfLoading.classList.remove('hidden');
+
+        try {
+            const pdfjsLib = await loadPdfJs();
+            if (renderToken !== activePdfRenderToken) return;
+
+            const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+            if (renderToken !== activePdfRenderToken) return;
+
+            const containerWidth = Math.max(certPdfCanvasContainer.clientWidth - 20, 280);
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                if (renderToken !== activePdfRenderToken) return;
+                const page = await pdf.getPage(pageNum);
+                const unscaledViewport = page.getViewport({ scale: 1 });
+                const cssScale = containerWidth / unscaledViewport.width;
+                const viewport = page.getViewport({ scale: cssScale * dpr });
+
+                const canvas = document.createElement('canvas');
+                canvas.className = 'cert-pdf-page-canvas';
+                canvas.width = Math.floor(viewport.width);
+                canvas.height = Math.floor(viewport.height);
+                canvas.style.width = `${Math.floor(unscaledViewport.width * cssScale)}px`;
+
+                const ctx = canvas.getContext('2d');
+                certPdfCanvasContainer.appendChild(canvas);
+
+                await page.render({ canvasContext: ctx, viewport }).promise;
+            }
+
+            if (renderToken === activePdfRenderToken && certPdfLoading) {
+                certPdfLoading.classList.add('hidden');
+            }
+        } catch (err) {
+            if (renderToken !== activePdfRenderToken) return;
+            certPdfCanvasContainer.classList.add('hidden');
+            certPdfCanvasContainer.innerHTML = '';
+            if (certPdfLoading) certPdfLoading.classList.add('hidden');
+            if (certPdfFallback) certPdfFallback.classList.remove('hidden');
+        }
+    }
 
     function openCertPdfModal(data) {
         if (!certPdfModal) return;
 
-        // Cancel pending timers
+        // Cancel pending timers & invalidate any in-flight PDF.js render
+        activePdfRenderToken++;
+        const currentToken = activePdfRenderToken;
         if (certPdfRevealTimer) {
             clearTimeout(certPdfRevealTimer);
             certPdfRevealTimer = null;
@@ -834,8 +533,13 @@ document.addEventListener('DOMContentLoaded', () => {
             certFallbackDownloadBtn.setAttribute('download', filename);
         }
 
-        // Reset fallback view
+        // Reset fallback and canvas views
         if (certPdfFallback) certPdfFallback.classList.add('hidden');
+        if (certPdfCanvasContainer) {
+            certPdfCanvasContainer.classList.add('hidden');
+            certPdfCanvasContainer.innerHTML = '';
+        }
+        if (certPdfIframe) certPdfIframe.classList.remove('hidden');
 
         // Check mobile/unsupported inline PDF environment (e.g. Android Chrome)
         const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -847,9 +551,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
 
         if (isMobileDevice && !canInlinePdf) {
-            // Mobile browser that downloads instead of displaying inline in iframes
-            if (certPdfLoading) certPdfLoading.classList.add('hidden');
-            if (certPdfFallback) certPdfFallback.classList.remove('hidden');
+            // Render inline using PDF.js canvas viewer on mobile browsers without native inline PDF support
+            renderPdfWithPdfJs(cleanUrl, currentToken);
             return;
         }
 
@@ -883,7 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     certPdfIframe.onload = revealPdf;
                     certPdfIframe.onerror = () => {
                         revealPdf();
-                        if (certPdfFallback) certPdfFallback.classList.remove('hidden');
+                        renderPdfWithPdfJs(cleanUrl, currentToken);
                     };
                     certPdfIframe.src = targetSrc;
 
@@ -898,6 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeCertPdfModal() {
         if (!certPdfModal) return;
+        activePdfRenderToken++;
         if (certPdfRevealTimer) {
             clearTimeout(certPdfRevealTimer);
             certPdfRevealTimer = null;
@@ -905,6 +609,11 @@ document.addEventListener('DOMContentLoaded', () => {
         certPdfModal.classList.remove('active');
         certPdfModal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        if (certPdfCanvasContainer) {
+            certPdfCanvasContainer.classList.add('hidden');
+            certPdfCanvasContainer.innerHTML = '';
+        }
+        if (certPdfIframe) certPdfIframe.classList.remove('hidden');
         
         // Keep the browser PDF plugin process warm for instant reopening.
         // Only release iframe src if the modal stays closed for more than 60 seconds.
