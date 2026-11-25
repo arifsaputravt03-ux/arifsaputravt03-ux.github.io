@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+/* Google Fonts loaded via <link> in index.html for parallel non-blocking fetch */
 
 /* --- CUSTOM VARIABLES (Cyber Black, Blue, White, Green) --- */
 :root {
@@ -3498,6 +3498,13 @@ footer {
 
     .cert-card {
         padding: 16px;
+    }
+
+    /* Reduce expensive GPU backdrop-blur on mobile cards for smoother 60fps scrolling */
+    .glass-panel {
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        background: rgba(13, 20, 38, 0.72);
     }
 
     .social-links-centered {

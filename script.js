@@ -34,48 +34,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Smooth & luxurious progression curve (~2.4s total)
-        const startTime = performance.now();
-        const duration = 2400;
+        // Fast initial preloader (~750ms) and instant bypass on repeat session visits
+        const hasVisitedSession = sessionStorage.getItem('portfolio_preloaded') === '1';
+        if (hasVisitedSession) {
+            preloader.style.display = 'none';
+            document.body.classList.add('loaded');
+            window.dispatchEvent(new CustomEvent('portfolioReady'));
+        } else {
+            const startTime = performance.now();
+            const duration = 750;
 
-        const finishPreloader = () => {
-            if (isDone) return;
-            isDone = true;
-            updatePreloader(100);
-
-            setTimeout(() => {
-                preloader.classList.add('fade-out');
-                // Trigger event so counters and hero effects start right as the screen reveals
-                window.dispatchEvent(new CustomEvent('portfolioReady'));
+            const finishPreloader = () => {
+                if (isDone) return;
+                isDone = true;
+                sessionStorage.setItem('portfolio_preloaded', '1');
+                updatePreloader(100);
 
                 setTimeout(() => {
-                    preloader.style.display = 'none';
-                    document.body.classList.add('loaded');
-                }, 600);
-            }, 300);
-        };
+                    preloader.classList.add('fade-out');
+                    // Trigger event so counters and hero effects start right as the screen reveals
+                    window.dispatchEvent(new CustomEvent('portfolioReady'));
 
-        // Ultra smooth ease-in-out cubic progression
-        const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                        document.body.classList.add('loaded');
+                    }, 450);
+                }, 150);
+            };
 
-        const step = (now) => {
-            const elapsed = now - startTime;
-            const normTime = Math.min(elapsed / duration, 1);
-            const currentProgress = easeInOutCubic(normTime) * 100;
-            
-            updatePreloader(currentProgress);
+            // Ultra smooth ease-in-out cubic progression
+            const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-            if (normTime < 1) {
-                requestAnimationFrame(step);
-            } else {
-                finishPreloader();
-            }
-        };
+            const step = (now) => {
+                const elapsed = now - startTime;
+                const normTime = Math.min(elapsed / duration, 1);
+                const currentProgress = easeInOutCubic(normTime) * 100;
+                
+                updatePreloader(currentProgress);
 
-        requestAnimationFrame(step);
+                if (normTime < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    finishPreloader();
+                }
+            };
 
-        // Fail-safe fallback timeout
-        setTimeout(finishPreloader, 3800);
+            requestAnimationFrame(step);
+
+            // Fail-safe fallback timeout
+            setTimeout(finishPreloader, 1400);
+        }
     }
 
     // --- DICTIONARY FOR I18N BILINGUAL SUPPORT (loaded from translations.js) ---
@@ -835,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.style.opacity = track.scrollLeft >= maxScrollLeft - 5 ? '0.3' : '1';
         };
         
-        track.addEventListener('scroll', toggleButtons);
+        track.addEventListener('scroll', toggleButtons, { passive: true });
         window.addEventListener('resize', toggleButtons);
         setTimeout(toggleButtons, 300);
     }
@@ -942,7 +950,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        let particleRafId = null;
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         function animateParticles() {
+            if (document.hidden || prefersReducedMotion) {
+                particleRafId = null;
+                return;
+            }
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             for (let i = 0; i < particles.length; i++) {
@@ -966,11 +981,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            requestAnimationFrame(animateParticles);
+            particleRafId = requestAnimationFrame(animateParticles);
         }
 
         initParticles();
-        animateParticles();
+        if (!prefersReducedMotion) {
+            animateParticles();
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && !prefersReducedMotion && !particleRafId) {
+                animateParticles();
+            }
+        });
 
         let resizeTimeout;
         window.addEventListener('resize', () => {
